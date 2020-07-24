@@ -1,10 +1,10 @@
 # Avalanche Postman Collection
 
-Postman collection for Avalanche
+Postman collection for [Avalanche](https://docs.avax.network).
 
 ## Installation
 
-1. Download [Postman(https://postman.com)
+1. Download [Postman](https://postman.com)
 2. Import Avalanche Postman Collection. Import -> Upload Files -> `Avalanche.postman_collection.json`
 3. Call any Avalanche RPC endpoint
 
