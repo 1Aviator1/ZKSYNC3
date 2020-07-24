@@ -1736,7 +1736,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.deleteUser\",\n    \"params\" : {\n        \"username\" : \"bob\",\n        \"password\" : \"3l33th4x0r!!1!\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.deleteUser\",\n    \"params\" : {\n        \"username\" : \"username\",\n        \"password\" : \"passsword\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1766,7 +1766,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.exportUser\",\n    \"params\" :{\n        \"username\"  :\"bob\",\n        \"password\"  :\"creme fraiche\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.exportUser\",\n    \"params\" :{\n        \"username\"  :\"username\",\n        \"password\"  :\"password\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2015,7 +2015,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createAccount\",\n    \"params\": {\n        \"username\":\"bob\",\n        \"password\":\"loblaw\",\n        \"privateKey\":\"24jUJ9vZexUM6expyMcT48LBx27k1m7xpraoV62oSQAHdziao5\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createAccount\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"privateKey\":\"24jUJ9vZexUM6expyMcT48LBx27k1m7xpraoV62oSQAHdziao5\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2405,7 +2405,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVA\",\n    \"params\": {\n        \"username\":\"bob\",\n        \"password\":\"loblaw\",\n        \"to\":\"Bg6e45gxCUTLXcfUuoy3go2U6V3bRZ5jH\",\n        \"payerNonce\":1\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVA\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"to\":\"Bg6e45gxCUTLXcfUuoy3go2U6V3bRZ5jH\",\n        \"payerNonce\":1\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2435,7 +2435,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\" :\"bob\",\n        \"password\":\"loblaw\",\n        \"privateKey\":\"ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\" :\"username\",\n        \"password\":\"password\",\n        \"privateKey\":\"ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2585,7 +2585,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"111Bit5JNASbJyTLrd2kWkYRoc96swEWoWdmEhuGAFK3rCAyTnTzomuFwgx1SCUdUE71KbtXPnqj93KGr3CeftpPN37kVyqBaAQ5xaDjr7wU8riGS89NDJ8AwVgZgnFkgF3uMfwCiCuPvvubGyQxNHE4TM9iDgj6h3URdGQ4JntP44wokCEP3ADn7sMM8kUTbmcNo84U87\",\n        \"signer\":\"6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\",\n        \"username\":\"bob\",\n        \"password\":\"loblaw\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"111Bit5JNASbJyTLrd2kWkYRoc96swEWoWdmEhuGAFK3rCAyTnTzomuFwgx1SCUdUE71KbtXPnqj93KGr3CeftpPN37kVyqBaAQ5xaDjr7wU8riGS89NDJ8AwVgZgnFkgF3uMfwCiCuPvvubGyQxNHE4TM9iDgj6h3URdGQ4JntP44wokCEP3ADn7sMM8kUTbmcNo84U87\",\n        \"signer\":\"6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
