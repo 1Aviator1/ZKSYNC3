@@ -1,0 +1,2746 @@
+{
+	"info": {
+		"_postman_id": "89e38f9a-a562-40b2-a46b-28136ee83186",
+		"name": "Avalanche",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "alias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.alias\",\n    \"params\": {\n        \"alias\":\"myAlias\",\n        \"endpoint\":\"bc/x\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"admin"
+							]
+						},
+						"description": "Assign an API an alias, a different endpoint for the API. The original endpoint will still work. This change only affects this node; other nodes will not know about this alias. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminalias)"
+					},
+					"response": []
+				},
+				{
+					"name": "aliasChain",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.aliasChain\",\n    \"params\": {\n        \"chain\":\"sV6o671RtkGBcno1FiaDbVcFv2sG5aVXMZYzKdP4VQAWmJQnM\",\n        \"alias\":\"myBlockchainAlias\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"admin"
+							]
+						},
+						"description": "Give a blockchain an alias, a different name that can be used any place the blockchain’s ID is used. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminaliaschain)"
+					},
+					"response": []
+				},
+				{
+					"name": "lockProfile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.lockProfile\",\n    \"params\" :{\n        \"fileName\":\"lock.profile\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"admin"
+							]
+						},
+						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminlockprofile)"
+					},
+					"response": []
+				},
+				{
+					"name": "startCPUProfiler",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.startCPUProfiler\",\n    \"params\" :{\n        \"fileName\":\"cpu.profile\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"admin"
+							]
+						},
+						"description": "Start profiling the CPU utilization of the node. Will write the profile to the specified file on stop. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminstartcpuprofiler)"
+					},
+					"response": []
+				},
+				{
+					"name": "stopCPUProfiler",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.stopCPUProfiler\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"admin"
+							]
+						},
+						"description": "Stop the CPU profile that was previously started. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminstopcpuprofiler)"
+					},
+					"response": []
+				}
+			],
+			"description": "This API can be used for measuring node health and debugging. [More info](https://docs.avax.network/v1.0/en/api/admin)",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "AVM",
+			"item": [
+				{
+					"name": "buildGenesis",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\"     : 1,\n    \"method\" : \"avm.buildGenesis\",\n    \"params\" : {\n        \"genesisData\": {\n            \"asset1\": {\n                \"name\": \"myFixedCapAsset\",\n                \"symbol\":\"MFCA\",\n                \"initialState\": {\n                    \"fixedCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"8UeduLccQuSmYiY3fGQEyotM9uXxoHoQQ\"\n                        },\n                        {\n                            \"amount\":100000,\n                            \"address\": \"AgVkHvvDShLumJrzXzkwuHa7rYpewj9Kg\"\n                        },\n                        {\n                            \"amount\":50000,\n                            \"address\": \"AwBDGsUwNdXgVc8XG2E8A8dL3bkoVbkL9\"\n                        },\n                        {\n                            \"amount\":50000,\n                            \"address\": \"AATN8YjgmFjC2jQRq45sEeGcBFXNYPcM8\"\n                        }\n                    ]\n                }\n            },\n            \"asset2\": {\n                \"name\": \"myVarCapAsset\",\n                \"symbol\":\"MVCA\",\n                \"initialState\": {\n                    \"variableCap\" : [\n                        {\n                            \"minters\": [\n                                \"AATN8YjgmFjC2jQRq45sEeGcBFXNYPcM8\",\n                                \"FNqMDYafoDVYQ2o4a7Zd9maJAxcUEieQb\"\n                            ],\n                            \"threshold\":1\n                        },\n                        {\n                            \"minters\": [\n                                \"JJSiKQfha9Z2TiMxBZ8XdW9F6KFw8aKS4\",\n                                \"7jJHY1vZL6AAbCFb97KMLY8nqMQVyd5JG\",\n                                \"58pM5cEf1wMSncPdCwtQ8tbHs2xdMA4eo\"\n                            ],\n                            \"threshold\":2\n                        }\n                    ]\n                }\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/vm/avm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"vm",
+								"avm"
+							]
+						},
+						"description": "Given a JSON representation of this Virtual Machine’s genesis state, create the byte representation of that state. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmbuildgenesis)"
+					},
+					"response": []
+				},
+				{
+					"name": "createAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avm.createAddress\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\" \n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Create a new address controlled by the given user. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreateaddress)"
+					},
+					"response": []
+				},
+				{
+					"name": "createFixedCapAsset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createFixedCapAsset\",\n    \"params\" :{\n        \"name\": \"myFixedCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"initialHolders\": [\n            {\n                \"address\": \"X-AW87kLa9vP6TqEVsfvmLcTrroi73CQkng\",\n                \"amount\": 10000\n            },\n            {\n                \"address\":\"X-Gwafp5KZKPxtZbrW7RtQ7w1cQEAbVntGn\",\n                \"amount\":50000\n            }\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Create a new fixed-cap, fungible asset. A quantity of it is created at initialization and then no more is ever created. The asset can be sent with `avm.send`. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreatefixedcapasset)"
+					},
+					"response": []
+				},
+				{
+					"name": "createMintTx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createMintTx\",\n    \"params\" :{\n        \"amount\":10000000,\n        \"assetID\":\"2QbZFE7J4MAny9iXHUwq8Pz8SpFhWk3maCw4SkinVPv6wPmAbK\",\n        \"to\":\"X-AHFNFP9rqditmGx4ZkSewmkyRPbBpnf22\",\n        \"minters\":[\n            \"X-AHFNFP9rqditmGx4ZkSewmkyRPbBpnf22\",\n            \"X-PkGQYz92QaCSCUbY48pZ9fhXgDX2Z4hAb\"\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Create an unsigned transaction to mint more of a variable-cap asset (an asset created with `avm.createVariableCapAsset`.) [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreateminttx)"
+					},
+					"response": []
+				},
+				{
+					"name": "createVariableCapAsset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createVariableCapAsset\",\n    \"params\" :{\n        \"name\":\"myVariableCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"X-5LC8hETB2XeTPrLGk8jjjZZVU6VzW1kXw\"\n                ],\n                \"threshold\": 1\n            },\n            {\n                \"minters\": [\n                    \"X-81XNrdH8xwRk8A9u6vAtLssiZYv7YFb6h\",\n                    \"X-8sL4nTb2L2AZo9Bkp1TFPxxFf6GpRMsdf\",\n                    \"X-NyiSJaddAG6GGTKHDroWs3PytbuvqfKXo\"\n                ],\n                \"threshold\": 2\n            }\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Create a new variable-cap, fungible asset. No units of the asset exist at initialization. Minters can mint units of this asset using `createMintTx`, `signMintTx` and `issueTx`. The asset can be sent with `avm.send`. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreatevariablecapasset)"
+					},
+					"response": []
+				},
+				{
+					"name": "exportAVA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVA\",\n    \"params\" :{\n        \"to\":\"GWh7Q1K4dQiKY7yQ4YZ1s4HJjfbDSEHda\",\n        \"amount\": 54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "(Note: This method will change to `exportAVAX` in the next release.)\n\nSend AVAX from the X-Chain to an account on the P-Chain.\nAfter calling this method, you must call the P-Chain’s importAVA method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportava)"
+					},
+					"response": []
+				},
+				{
+					"name": "exportKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\" :\"username\",\n        \"password\":\"password\",\n        \"address\": \"X-7u5FQArVaMSgGZzeTE9ckheWtDhU5T3KS\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Get the private key that controls a given address.\nThe returned private key can be added to a user with `avm.importKey`. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportkey)\n\n"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBalances",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"X-Go7PyA65ZUVichsQVmAt9d65h2S7Exiw\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Get the balances of all assets controlled by a given address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetallbalances)"
+					},
+					"response": []
+				},
+				{
+					"name": "getAssetDescription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getAssetDescription\",\n    \"params\" :{\n        \"assetID\" :\"ZiKfqRXCZgHLgZ4rxGU9Qbycdzuq5DRY4tdSNS9ku8kcNxNLD\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Get information about an asset. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetassetdescription)"
+					},
+					"response": []
+				},
+				{
+					"name": "getBalance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0f59a49f-22e2-40f8-a240-5dc964613fd9",
+								"exec": [
+									"var template = `",
+									"    <table bgcolor=\"#FFFFFF\">",
+									"        <tr>",
+									"            <th>Name</th>",
+									"            <th>Email</th>",
+									"        </tr>",
+									"",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{email}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"    </table>",
+									"`;",
+									"",
+									"// Set visualizer",
+									"pm.visualizer.set(template, {",
+									"    // Pass the response body parsed as JSON as `data`",
+									"    response: pm.response.json()",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"jsonrpc\":\"2.0\",\n  \"id\"     : 1,\n  \"method\" :\"avm.getBalance\",\n  \"params\" :{\n      \"address\":\"X-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\",\n      \"assetID\": \"AVA\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Get the balance of an asset controlled by a given address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetbalance)"
+					},
+					"response": []
+				},
+				{
+					"name": "getTx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getTx\",\n    \"params\" :{\n        \"txID\":\"2QouvFWUbjuySRxeX5xMbNCuAaKWfbk5FeEa2JmoF85RKLk2dD\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Returns the specified transaction [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetbalance)"
+					},
+					"response": []
+				},
+				{
+					"name": "getTxStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getTxStatus\",\n    \"params\" :{\n        \"txID\":\"2QouvFWUbjuySRxeX5xMbNCuAaKWfbk5FeEa2JmoF85RKLk2dD\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Get the status of a transaction sent to the network. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgettxstatus)"
+					},
+					"response": []
+				},
+				{
+					"name": "getUTXOs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"X-xMrKg8uUECt5CS9RE9j5hizv2t2SWTbk\"]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Get the UTXOs that reference a given address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetutxos)"
+					},
+					"response": []
+				},
+				{
+					"name": "importAVA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVA\",\n    \"params\" :{\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"to\":\"X-G5ZGXEfoWYNFZH5JF9C4QPKAbPTKwRbyB\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "(Note: This method will change to `importAVAX` in the next release.)\n\nFinalize a transfer of AVAX from the P-Chain to the X-Chain.\n\nBefore this method is called, you must call the P-Chain’s exportAVA method to initiate the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportava)"
+					},
+					"response": []
+				},
+				{
+					"name": "importKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"privateKey\":\"ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Give a user control over an address by providing the private key that controls the address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportkey)"
+					},
+					"response": []
+				},
+				{
+					"name": "issueTx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.issueTx\",\n    \"params\" :{\n        \"tx\":\"6sTENqXfk3gahxkJbEPsmX9eJTEFZRSRw83cRJqoHWBiaeAhVbz9QV4i6SLd6Dek4eLsojeR8FbT3arFtsGz9ycpHFaWHLX69edJPEmj2tPApsEqsFd7wDVp7fFxkG6HmySR\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Send a signed transaction to the network. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmissuetx)"
+					},
+					"response": []
+				},
+				{
+					"name": "listAddresses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avm.listAddresses\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "List addresses controlled by the given user. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmlistaddresses)"
+					},
+					"response": []
+				},
+				{
+					"name": "send",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" :\"AVA\",\n        \"amount\"  :10000,\n        \"to\"      :\"X-Fnm4c26EX6Wq5DRegpgb7VBUBuxcoSfh9\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmsend)"
+					},
+					"response": []
+				},
+				{
+					"name": "signMintTx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.signMintTx\",\n    \"params\" :{\n        \"tx\":\"1112yKaDdTb7XZXqX38X8U6ro7EC4GQdxDU48eHTcoQxPtJncHSQEMCi9n3hYaPp33K95i8sntkox5ZMHNq26DeNui4yuSQANXgFEeondXZvq65Pk1jnXbUpkJPkjX4KG1W9XQMAmCNpXs5xHzpX4THcYg3WY569Rj7cdf9Km4FQ3r3VDUAn1dpZLsCyQHeGb8Lr3ub7PGh4pn42KPAWsS6N4xCAGg1GGww2XNBxoDfu81toejPJFuqTJQg6tzgL82uT3amebb4FYQVU5B2gxH5Amevm1zsiTTfNDWui4BfB6e7jt8fc36UWYgb4MiaaApmySUe4ndt7SjFTT6taDkVNFdbUWuNEfiebrYFLpqL86mQ1XD\",\n        \"minter\":\"X-xMrKg8uUECt5CS9RE9j5hizv2t2SWTbk\",\n        \"username\":\"userThatControlsTheSignerAddress\",\n        \"password\":\"passwordOfThatUser\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Sign an unsigned or partially signed transaction. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmsignminttx)"
+					},
+					"response": []
+				}
+			],
+			"description": "The X-Chain, Avalanche’s native platform for creating and trading assets, is an instance of the Avalanche Virtual Machine (AVM). This API allows clients to create and trade assets on the X-Chain and other instances of the AVM. [More info](https://docs.avax.network/v1.0/en/api/avm)",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EVM",
+			"item": [
+				{
+					"name": "web3_clientVersion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"web3_clientVersion\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting the current client version. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-current-client-version)"
+					},
+					"response": []
+				},
+				{
+					"name": "net_version",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"net_version\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting the network ID. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-network-id)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_chainId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_chainId\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Not well documented in JSON-RPC references. See instead EIP694. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-chain-id)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_blockNumber",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_blockNumber\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting the most recent block number. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-most-recent-block-number)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_getBalance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getBalance\",\n    \"params\": [\n        \"0x820891f8b95daf5ea7d7ce7667e6bba2dd5c5594\",\n        \"latest\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting an account’s balance. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-an-accounts-balance)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_getTransactionCount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getTransactionCount\",\n    \"params\": [\n        \"0x820891f8b95daf5ea7d7ce7667e6bba2dd5c5594\",\n        \"latest\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting an account’s nonce. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-an-accounts-nonce)"
+					},
+					"response": []
+				},
+				{
+					"name": "web3_sha3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"web3_sha3\",\n    \"params\": [\n        \"0x736e6f7773746f726d\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Calculate a cryptographic hash.\n\nThe input parameter contains hexidecimal bytes of arbitrary length. The example here uses the UTF-8 text string “snowstorm” converted to hexidecimal bytes. [More info](https://docs.avax.network/v1.0/en/api/evm/#calculate-a-cryptographic-hash)"
+					},
+					"response": []
+				},
+				{
+					"name": "personal_newAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_newAccount\",\n    \"params\": [\n        \"cheese\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Creating a new account (private key generated automatically)\n\nThe EVM will create a new account using the passphrase `cheese` to encrypt and store the new account credentials. cheese is not the seed phrase and cannot be used to restore this account from scratch. Calling this function repeatedly with the same passphrase will create multiple unique accounts. Also keep in mind there are no options to export private keys stored in the EVM database. Users are encouraged to use wallet software instead for safer account creation and backup. This method is more suitable for quick account creation for a testnet."
+					},
+					"response": []
+				},
+				{
+					"name": "personal_importRawKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_importRawKey\",\n    \"params\": [\n        \"627119bb8286874a15d562d32829613311a678da26ca7a6a785ec4ad85937d06\",\n        \"this is my passphrase\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Creating a new account (using plaintext private key).\n\nIf the private key is known upfront, it can be provided as plaintext to load into the EVM account database. For more secure account management, consider using wallet software instead. The example below loads the private key `0x627119bb8286874a15d562d32829613311a678da26ca7a6a785ec4ad85937d06` with the passphrase `this is my passphrase`. Note that `0x` prefix cannot be included in the private key argument, otherwise the EVM will throw an error. The example response returns the associated public key."
+					},
+					"response": []
+				},
+				{
+					"name": "personal_listAccounts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_listAccounts\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Listing accounts loaded in EVM node. [More info](https://docs.avax.network/v1.0/en/api/evm/#listing-accounts-loaded-in-evm-node)"
+					},
+					"response": []
+				},
+				{
+					"name": "personal_unlockAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_unlockAccount\",\n    \"params\": [\n        \"0xa64b27635c967dfe9674926bc004626163ddce97\",\n        \"cheese\",\n        60\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Unlocking an account.\n\nPersonal accounts loaded directly in the EVM can only sign transactions while in an unlocked state. The example below unlocks the listed account address for 60 seconds. Note the associated passphrase `cheese` must be provided for authorization. [More info](https://docs.avax.network/v1.0/en/api/evm/#unlocking-an-account)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_signTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_signTransaction\",\n    \"params\": [{\n        \"from\": \"0xa64b27635c967dfe9674926bc004626163ddce97\",\n        \"to\": \"0x1c5b0e12e90e9c52235babad76cfccab2519bb95\",\n        \"gas\": \"0x5208\",\n        \"gasPrice\": \"0x0\",\n        \"nonce\": \"0x0\",\n        \"value\": \"0x0\"\n    }],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Signing a transaction.\n\nThis method will create a signed transaction, but will not publish it automatically to the network. Instead, the `raw` result output should be used with `eth_sendRawTransaction` to execute the transaction. [More info](https://docs.avax.network/v1.0/en/api/evm/#signing-a-transaction)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_sendRawTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_sendRawTransaction\",\n    \"params\": [\n        \"0xf8628080825208941c5b0e12e90e9c52235babad76cfccab2519bb958080830150efa0308ca8002f3df1a468eea9973d2d618eb866e2ef0a57cba4d34efb3025b70a0aa0592b7b0a803e7b70ec26dd74ab85aa71126198eff5552e5be638e6e26a455ee0\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Send a raw transaction.\n\nExample below shows a raw transaction published to the network and its associated transaction hash. [More info](https://docs.avax.network/v1.0/en/api/evm/#send-a-raw-transaction)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_call",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_call\",\n    \"params\": [\n        {\n            \"to\": \"0x197E90f9FAD81970bA7976f33CbD77088E5D7cf7\",\n            \"data\": \"0xc92aecc4\"\n        },\n        \"latest\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Call a contract. [More info](https://docs.avax.network/v1.0/en/api/evm/#call-a-contract)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_getBlockByHash",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getBlockByHash\",\n    \"params\": [\n        \"0x14d9c2aeec20254d966a947e23eb3172ae5067e66fd4e69aecc3c9d6ff24443a\",\n        true\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting a block by hash. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-a-block-by-hash)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_getBlockByNumber",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getBlockByNumber\",\n    \"params\": [\n        \"0x5\",\n        true\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting a block by number. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-a-block-by-number)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_getTransactionByHash",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getTransactionByHash\",\n    \"params\": [\n        \"0xd33150a3f3783f29084eee4e12098f3ef707557f8deb916677a9af68e05613b7\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting a transaction by hash. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-a-transaction-by-hash)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_getTransactionReceipt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getTransactionReceipt\",\n    \"params\": [\n        \"0xd33150a3f3783f29084eee4e12098f3ef707557f8deb916677a9af68e05613b7\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting a transaction receipt. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-a-transaction-receipt)"
+					},
+					"response": []
+				},
+				{
+					"name": "txpool_status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"txpool_status\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/C/rpc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting count of pending transactions.\n\n“Pending” transactions will be non-zero during periods of heavy network use. “Queued” transactions indicate transactions have been submitted with nonce values ahead of the next expected value for an address, which places them on hold until a transaction with the next expected nonce value is submitted. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-count-of-pending-transactions)"
+					},
+					"response": []
+				}
+			],
+			"description": "This document describes the API of the C-Chain, which is an instance of the Ethereum Virtual Machine (EVM.)\n\nNote: Ethereum has its own notion of `networkID` and `chainID`. The C-Chain uses `1` and `43110` for these values, obtained using the `net_version` and `eth_chainId` methods shown below. These have no relationship to AVA’s view of networkID and chainID, and are purely internal to the C-Chain. [More info](https://docs.avax.network/v1.0/en/api/evm)",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "getLiveness",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"health.getLiveness\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"health"
+							]
+						},
+						"description": "Get health check on this node. [More info](https://docs.avax.network/v1.0/en/api/health/#healthgetliveness)"
+					},
+					"response": []
+				}
+			],
+			"description": "This API can be used for measuring node health. [More info](https://docs.avax.network/v1.0/en/api/health)",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Info",
+			"item": [
+				{
+					"name": "getBlockchainID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getBlockchainID\",\n    \"params\": {\n        \"alias\":\"X\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Given a blockchain’s alias, get its ID. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetblockchainid)"
+					},
+					"response": []
+				},
+				{
+					"name": "getNetworkID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNetworkID\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Get the ID of the network this node is participating in. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetnetworkid)"
+					},
+					"response": []
+				},
+				{
+					"name": "getNetworkName",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNetworkName\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Get the name of the network this node is participating in. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetnetworkname)"
+					},
+					"response": []
+				},
+				{
+					"name": "getNodeID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNodeID\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Get the name of the network this node is participating in. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetnodeid)"
+					},
+					"response": []
+				},
+				{
+					"name": "getNodeVersion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNodeVersion\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Get the version of this node. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetnodeversion)"
+					},
+					"response": []
+				},
+				{
+					"name": "peers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.peers\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Get description of peer connections. [More info](https://docs.avax.network/v1.0/en/api/info/#infopeers)"
+					},
+					"response": []
+				}
+			],
+			"description": "This API can be used to access basic information about the node.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "IPC",
+			"item": [
+				{
+					"name": "publishBlockchain",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ipcs.publishBlockchain\",\n    \"params\":{\n        \"blockchainID\":\"GJABrZ9A6UQFpwjPU8MDxDd8vuyRoDVeDAXc694wJ5t3zEkhU\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/ipcs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"ipcs"
+							]
+						},
+						"description": "Register a blockchain so it publishes accepted vertices to a Unix domain socket. [More info](https://docs.avax.network/v1.0/en/api/ipc/#ipcspublishblockchain)"
+					},
+					"response": []
+				},
+				{
+					"name": "unpublishBlockchain",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ipcs.unpublishBlockchain\",\n    \"params\":{\n        \"blockchainID\":\"GJABrZ9A6UQFpwjPU8MDxDd8vuyRoDVeDAXc694wJ5t3zEkhU\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/ipcs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"ipcs"
+							]
+						},
+						"description": "Deregister a blockchain so that it no longer publishes to a Unix domain socket. [More info](https://docs.avax.network/v1.0/en/api/ipc/#ipcspublishblockchain)"
+					},
+					"response": []
+				}
+			],
+			"description": "The IPC API allows users to create a UNIX domain socket for a blockchain to publish to. When the blockchain accepts a vertex/block it will publish the vertex to the socket.\n\nA node will only expose this API if it is started with command-line argument `api-ipcs-enabled=true`. [More info](https://docs.avax.network/v1.0/en/api/ipc/)",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Keystore",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.createUser\",\n    \"params\" :{\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/keystore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"keystore"
+							]
+						},
+						"description": "Create a new user with the specified username and password. [More info](https://docs.avax.network/v1.0/en/api/keystore/#keystorecreateuser)"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.deleteUser\",\n    \"params\" : {\n        \"username\" : \"bob\",\n        \"password\" : \"3l33th4x0r!!1!\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/keystore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"keystore"
+							]
+						},
+						"description": "Delete a user. [More info](https://docs.avax.network/v1.0/en/api/keystore/#kesytoredeleteuser)"
+					},
+					"response": []
+				},
+				{
+					"name": "exportUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.exportUser\",\n    \"params\" :{\n        \"username\"  :\"bob\",\n        \"password\"  :\"creme fraiche\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/keystore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"keystore"
+							]
+						},
+						"description": "Export a user. The user can be imported to another node with `keystore.importUser`. The user’s password remains encrypted. [More info](https://docs.avax.network/v1.0/en/api/keystore/#keystoreexportuser)"
+					},
+					"response": []
+				},
+				{
+					"name": "importUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.importUser\",\n    \"params\" :{\n        \"username\":\"accountNameCanBeDifferent\",\n        \"password\":\"creme fraiche\",\n        \"user\"    :\"4CsUh5sfVwz2jNrJXBVpoPtDsb4tZksWykqmxC5CXoDEERyhoRryq62jYTETYh53y13v7NzeReisi\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/keystore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"keystore"
+							]
+						},
+						"description": "Import a user. `password` must match the user’s password. `username` doesn’t have to match the username `user` had when it was exported. [More info](https://docs.avax.network/v1.0/en/api/keystore/#keystoreimportuser)"
+					},
+					"response": []
+				},
+				{
+					"name": "listUsers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.listUsers\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/keystore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"keystore"
+							]
+						},
+						"description": "List the users in this keystore. [More info](https://docs.avax.network/v1.0/en/api/keystore/#keystorelistusers)"
+					},
+					"response": []
+				}
+			],
+			"description": "Every node has a built-in keystore. Clients create users on the keystore, which act as identities to be used when interacting with blockchains. A keystore exists at the node level, so if you create a user on a node it exists only on that node. However, users may be imported and exported using this API. \n\n**You should only create a keystore user on a node that you operate, as the node operator has access to your plaintext password.**\n\n[More info](https://docs.avax.network/v1.0/en/api/keystore)",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Metrics",
+			"item": [
+				{
+					"name": "metrics",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/metrics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"metrics"
+							]
+						},
+						"description": "To get the node metrics. [More info](https://docs.avax.network/v1.0/en/api/metrics)"
+					},
+					"response": []
+				}
+			],
+			"description": "The API allows clients to get statistics about a node’s health and performance. [More info](https://docs.avax.network/v1.0/en/api/metrics/)",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Platform",
+			"item": [
+				{
+					"name": "addDefaultSubnetDelegator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"id\":\"MFrZFVCXPv5iCn6M9K6XduxGTYp891xXZ\",\n        \"payerNonce\":1,\n        \"destination\":\"Q4MzFZZDPHRPAHFeDs3NiyyaZDvxHKivf\",\n        \"startTime\":1594102400,\n        \"endTime\":1604102400,\n        \"stakeAmount\":100000\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Add a delegator to the Default Subnet.\n\nA delegator stakes AVAX and specifies a validator (the delegatee) to validate on their behalf. The delegatee has an increased probability of being sampled by other validators (weight) in proportion to the stake delegated to them.\n\nThe delegatee charges a fee to the delegator; the former receives a percentage of the delegator’s validation reward (if any.)\n\nThe delegation period must be a subset of the perdiod that the delegatee validates the Default Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformadddefaultsubnetdelegator)"
+					},
+					"response": []
+				},
+				{
+					"name": "createAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"id\":\"MFrZFVCXPv5iCn6M9K6XduxGTYp891xXZ\",\n        \"payerNonce\":1,\n        \"destination\":\"Q4MzFZZDPHRPAHFeDs3NiyyaZDvxHKivf\",\n        \"startTime\":1594102400,\n        \"endTime\":1604102400,\n        \"stakeAmount\":100000\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Add a delegator to the Default Subnet.\n\nA delegator stakes AVAX and specifies a validator (the delegatee) to validate on their behalf. The delegatee has an increased probability of being sampled by other validators (weight) in proportion to the stake delegated to them.\n\nThe delegatee charges a fee to the delegator; the former receives a percentage of the delegator’s validation reward (if any.)\n\nThe delegation period must be a subset of the perdiod that the delegatee validates the Default Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformadddefaultsubnetdelegator)"
+					},
+					"response": []
+				},
+				{
+					"name": "addDefaultSubnetValidator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetValidator\",\n    \"params\": {\n        \"id\":\"ARCLrphAHZ28xZEBfUL7SVAmzkTZNe1LK\",\n        \"payerNonce\":1,\n        \"destination\":\"Q4MzFZZDPHRPAHFeDs3NiyyaZDvxHKivf\",\n        \"startTime\":1595050498,\n        \"endTime\":1597641900,\n        \"stakeAmount\":1000000,\n        \"delegationFeeRate\":100000\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Add a validator to the Default Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformadddefaultsubnetvalidator)"
+					},
+					"response": []
+				},
+				{
+					"name": "addNonDefaultSubnetValidator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addNonDefaultSubnetValidator\",\n    \"params\": {\n        \"id\":\"7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg\",\n        \"subnetID\":\"zBfoWW1FfkPVRfywpJ1CVQRfnYesEpdFC61hmU2n9JNGhDUEL\",\n        \"startTime\":1583524047,\n        \"endTime\":1604102399,\n        \"weight\":1,\n        \"payerNonce\":2\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Add a validator to a Subnet other than the Default Subnet. The validator must validate the Default Subnet for the entire duration they validate this Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformaddnondefaultsubnetvalidator)"
+					},
+					"response": []
+				},
+				{
+					"name": "createAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createAccount\",\n    \"params\": {\n        \"username\":\"bob\",\n        \"password\":\"loblaw\",\n        \"privateKey\":\"24jUJ9vZexUM6expyMcT48LBx27k1m7xpraoV62oSQAHdziao5\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "The P-Chain uses an account model. This method creates an account. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformcreateaccount)"
+					},
+					"response": []
+				},
+				{
+					"name": "createBlockchain",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"timestamp\",\n        \"SubnetID\":\"2bRCr6B4MiEfSjidDwxDpdCyviwnfUVqB2HGwhm947w9YYqb7r\",\n        \"name\":\"My new timestamp\",\n        \"genesisData\": \"45oj4CqFViNHUtBxJ55TZfqaVAXFwMRMj2XkHVqUYjJYoTaEM\",\n        \"payerNonce\" : 6\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Create a new blockchain. Currently only supports creation of new instances of the AVM and the Timestamp VM. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformcreateblockchain)"
+					},
+					"response": []
+				},
+				{
+					"name": "createSubnet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"98vMGrh2nWNr8oDNKVK9jdxN1bwkeg4Jd\",\n            \"6UGRmWANxejv1uM5T8BiRR2VPFSk1aFWA\"\n        ],\n        \"threshold\":2,\n        \"payerNonce\":1\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Create an unsigned transaction to create a new Subnet.\n\nThe unsigned transaction must be signed with the key of the account paying the transaction fee.\n\nThe Subnet’s ID is the ID of the transaction that creates it (ie the response from `issueTx` when issuing the signed transaction. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformcreatesubnet)"
+					},
+					"response": []
+				},
+				{
+					"name": "getAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getAccount\",\n    \"params\" :{\n        \"address\": \"GWh7Q1K4dQiKY7yQ4YZ1s4HJjfbDSEHda\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "The P-Chain uses an account model. An account is identified by an address. This method returns the account with the given address. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetaccount)"
+					},
+					"response": []
+				},
+				{
+					"name": "getBalance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"address\":\"P-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\"    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Get the balance of an asset controlled by a given address. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetbalance)"
+					},
+					"response": []
+				},
+				{
+					"name": "getBlockchains",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getBlockchains\",\n    \"params\": {},\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Get all the blockchains that exist (excluding the P-Chain). [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetblockchains)"
+					},
+					"response": []
+				},
+				{
+					"name": "getBlockchainStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getBlockchainStatus\",\n    \"params\":{\n        \"blockchainID\":\"2NbS4dwGaf2p1MaXb65PrkZdXRwmSX4ZzGnUu7jm3aykgThuZE\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Get the status of a blockchain. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetblockchainstatus)"
+					},
+					"response": []
+				},
+				{
+					"name": "getCurrentValidators",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getCurrentValidators\",\n    \"params\": {},\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "List the current validators of the given Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetcurrentvalidators)"
+					},
+					"response": []
+				},
+				{
+					"name": "getHeight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getHeight\",\n    \"params\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Returns the height of the last accepted block [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetheight)"
+					},
+					"response": []
+				},
+				{
+					"name": "getPendingValidators",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getPendingValidators\",\n    \"params\": {},\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "List the validators in the pending validator set of the specified Subnet. Each validator is not currently validating the Subnet but will in the future. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetpendingvalidators)"
+					},
+					"response": []
+				},
+				{
+					"name": "getSubnets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getSubnets\",\n    \"params\": {},\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Get all the Subnets that exist. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetsubnets)"
+					},
+					"response": []
+				},
+				{
+					"name": "exportAVA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.exportAVA\",\n    \"params\": {\n        \"to\":\"G5ZGXEfoWYNFZH5JF9C4QPKAbPTKwRbyB\",\n        \"amount\":1,\n        \"payerNonce\":2\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "(Note: This method will change to `exportAVAX` in the next release.)\n\nSend AVAX from an account on the P-Chain to an address on the X-Chain.\nThis transaction must be signed with the key of the account that the AVAX is sent from and which pays the transaction fee.\nAfter issuing this transaction, you must call the X-Chain’s importAVA method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformexportava)"
+					},
+					"response": []
+				},
+				{
+					"name": "exportKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n         \"username\": \"username\",\n        \"password\": \"password\",\n        \"address\": \"P-4aSYmEcMhjH4VAtVn6P6okqufrWWEw4fQ\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Get the private key that controls a given address.\nThe returned private key can be added to a user with `platform.importKey`. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformexportkey)"
+					},
+					"response": []
+				},
+				{
+					"name": "importAVA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVA\",\n    \"params\": {\n        \"username\":\"bob\",\n        \"password\":\"loblaw\",\n        \"to\":\"Bg6e45gxCUTLXcfUuoy3go2U6V3bRZ5jH\",\n        \"payerNonce\":1\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "(Note: This method will change to `importAVAX` in the next release.)\n\nComplete a transfer of AVAX from the X-Chain to the P-Chain.\n\nBefore this method is called, you must call the X-Chain’s `exportAVA` method to initiate the transfer."
+					},
+					"response": []
+				},
+				{
+					"name": "importKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\" :\"bob\",\n        \"password\":\"loblaw\",\n        \"privateKey\":\"ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Give a user control over an address by providing the private key that controls the address. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformimportkey)"
+					},
+					"response": []
+				},
+				{
+					"name": "issueTx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.issueTx\",\n    \"params\": {\n        \"tx\":\"111Bit5JNASbJyTLrd2kWkYRoc96swEWoWdmEhuGAFK3rCAyTnTzomuFwgx1SCUdUE71KbtXPnqj93KGr3CeftpPN37kVyqBaAQ5xaDjr7wVBTUYi9iV7kYJnHF61yovViJF74mJJy7WWQKeRMDRTiPuii5gsd11gtNahCCsKbm9seJtk2h1wAPZn9M1eL84CGVPnLUiLP\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Issue a transaction to the Platform Chain. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformissuetx)"
+					},
+					"response": []
+				},
+				{
+					"name": "listAccounts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.listAccounts\",\n    \"params\" :{\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "List the accounts controlled by the specified user. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformlistaccounts)"
+					},
+					"response": []
+				},
+				{
+					"name": "listAddresses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.listAddresses\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "List the addresses controlled by the given user. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformlistaddresses)"
+					},
+					"response": []
+				},
+				{
+					"name": "sampleValidators",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.sampleValidators\",\n    \"params\" :{\n        \"size\":2\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Sample validators from the specified Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformsamplevalidators)"
+					},
+					"response": []
+				},
+				{
+					"name": "sign",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"111Bit5JNASbJyTLrd2kWkYRoc96swEWoWdmEhuGAFK3rCAyTnTzomuFwgx1SCUdUE71KbtXPnqj93KGr3CeftpPN37kVyqBaAQ5xaDjr7wU8riGS89NDJ8AwVgZgnFkgF3uMfwCiCuPvvubGyQxNHE4TM9iDgj6h3URdGQ4JntP44wokCEP3ADn7sMM8kUTbmcNo84U87\",\n        \"signer\":\"6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\",\n        \"username\":\"bob\",\n        \"password\":\"loblaw\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Sign an unsigned or partially signed transaction.\n\nTransactions to add non-default Subnets require signatures from control keys and from the account paying the transaction fee. If `signer` is a control key and the transaction needs more signatures from control keys, `sign` will provide a control signature. Otherwise, `signer` will sign to pay the transaction fee."
+					},
+					"response": []
+				},
+				{
+					"name": "validatedBy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.validatedBy\",\n    \"params\": {\n        \"blockchainID\": \"KDYHHKjM4yTJTT8H8qPs5KXzE6gQH5TZrmP1qVr1P6qECj3XN\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Get the Subnet that validates a given blockchain. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformvalidatedby)"
+					},
+					"response": []
+				},
+				{
+					"name": "validates",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.validates\",\n    \"params\": {\n        \"subnetID\":\"2bRCr6B4MiEfSjidDwxDpdCyviwnfUVqB2HGwhm947w9YYqb7r\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Get the IDs of the blockchains a Subnet validates. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformvalidates)"
+					},
+					"response": []
+				}
+			],
+			"description": "This API allows clients to interact with the P-Chain (Platform Chain), which maintains Avalanche’s validator set and handles blockchain creation. [More info](https://docs.avax.network/v1.0/en/api/platform)",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Timestamp",
+			"item": [
+				{
+					"name": "getBlock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"timestamp.getBlock\",\n    \"params\":{\n        \"id\":\"xqQV1jDnCXDxhfnNT7tDBcXeoH2jC3Hh7Pyv4GXE1z1hfup5K\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/timestamp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"timestamp"
+							]
+						},
+						"description": "Get a block by its ID. If no ID is provided, get the latest block. [More info](https://docs.avax.network/v1.0/en/api/timestamp/#timestampgetblock)"
+					},
+					"response": []
+				},
+				{
+					"name": "proposeBlock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"timestamp.proposeBlock\",\n    \"params\":{\n        \"data\":\"SkB92YpWm4Q2iPnLGCuDPZPgUQMxajqQQuz91oi3xD984f8r\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/timestamp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"timestamp"
+							]
+						},
+						"description": "Propose the creation of a new block. [More info](https://docs.avax.network/v1.0/en/api/timestamp/#timestampproposeblock)"
+					},
+					"response": []
+				}
+			],
+			"description": "This API allows clients to interact with the Timestamp Chain.\n\nThe Timestamp Chain is a timestamp server. Each block contains a 32 byte payload and the timestamp when the block was created.\n\nThe genesis data for a new instance of the Timestamp Chain is the genesis block’s 32 byte payload. [More info](https://docs.avax.network/v1.0/en/api/timestamp)",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
