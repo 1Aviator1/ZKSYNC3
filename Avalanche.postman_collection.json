@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "89e38f9a-a562-40b2-a46b-28136ee83186",
+		"_postman_id": "f48cbb3a-188c-43ec-97a0-c0e33ba45c5c",
 		"name": "Avalanche",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -290,6 +290,37 @@
 					"response": []
 				},
 				{
+					"name": "createNFTAsset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createNFTAsset\",\n    \"params\" :{\n        \"name\":\"Coincert\",\n        \"symbol\":\"TIXX\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"X-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Create a new non-fungible asset. No units of the asset exist at initialization. Minters can mint units of this asset using `mintTx` and `signMintTx`. The asset can be sent with `avm.sendNFT`. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreatenftasset)"
+					},
+					"response": []
+				},
+				{
 					"name": "createVariableCapAsset",
 					"request": {
 						"method": "POST",
@@ -450,7 +481,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0f59a49f-22e2-40f8-a240-5dc964613fd9",
+								"id": "92d6f2dc-74a9-4fae-8431-c98340bc52a4",
 								"exec": [
 									"var template = `",
 									"    <table bgcolor=\"#FFFFFF\">",
@@ -576,7 +607,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"X-xMrKg8uUECt5CS9RE9j5hizv2t2SWTbk\"]\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"X-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\"]\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -721,6 +752,37 @@
 							]
 						},
 						"description": "List addresses controlled by the given user. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmlistaddresses)"
+					},
+					"response": []
+				},
+				{
+					"name": "mintNFT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"amount\":1,\n        \"assetID\":\"7ifkSF7D2heHgF7owoWQgzDV4fDzneqWJ9B4qa7peMPE8foBf\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"to\":\"X-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\",\n        \"minters\":[\n            \"X-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\"\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Mint more of a non-fungible asset (an asset created with `avm.createNFTAsset`.) [More info](https://docs.avax.network/v1.0/en/api/avm/#avmmintnft)"
 					},
 					"response": []
 				},
@@ -1796,7 +1858,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.importUser\",\n    \"params\" :{\n        \"username\":\"accountNameCanBeDifferent\",\n        \"password\":\"creme fraiche\",\n        \"user\"    :\"4CsUh5sfVwz2jNrJXBVpoPtDsb4tZksWykqmxC5CXoDEERyhoRryq62jYTETYh53y13v7NzeReisi\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.importUser\",\n    \"params\" :{\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"user\"    :\"21fDEsBk5U3FkquFGYpNdn3G9Ctr8BhW5wPVDuJqR86rEKKminsx8VvNFL4dKu6m6YjmJvwDA6f3a32d9F1qnTCkhD4Fw1URX3Cmz3GD3buzZp316dacYzx7gcEs2khxcaoGBudbcg3wiKJvbQhJS4Lcc5HZxEuMZtgNrgJgTBeoZrSpVgqafadQiUYTVycHmabFdduBS2C628v71Gx6gCMRYg15wxvg5jbLjF8xvijMDgdw29bf7aHkp5MT69mnj4pNr7VoKgquktCbu9tK2uX1PWea8kDDXzKaYwYC4tVVpGefX9qVvLf8eFaudkLiKdMM2FbedyUzQo9zS5cEJDLwH9EtANdqnp5kHqTRVeGebVsGXaVf7LMfQg4DZAGSk5C8qrDUdqkKH7MY9UW19DguKCY8jERkK2wauzKdHw4kMmYBA5SVMbjn88i61rq7iUHUuGis9927ihBS1\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1895,7 +1957,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"id\":\"MFrZFVCXPv5iCn6M9K6XduxGTYp891xXZ\",\n        \"payerNonce\":1,\n        \"destination\":\"Q4MzFZZDPHRPAHFeDs3NiyyaZDvxHKivf\",\n        \"startTime\":1594102400,\n        \"endTime\":1604102400,\n        \"stakeAmount\":100000\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"id\":\"7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg\",\n        \"destination\":\"P-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\",\n        \"startTime\":1595726193,\n        \"endTime\":1598317594,\n        \"stakeAmount\":54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
