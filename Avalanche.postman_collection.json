@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f48cbb3a-188c-43ec-97a0-c0e33ba45c5c",
+		"_postman_id": "408ae13b-4ab1-4efd-8da1-7d37c32fce93",
 		"name": "Avalanche",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -45,7 +45,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.aliasChain\",\n    \"params\": {\n        \"chain\":\"sV6o671RtkGBcno1FiaDbVcFv2sG5aVXMZYzKdP4VQAWmJQnM\",\n        \"alias\":\"myBlockchainAlias\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.aliasChain\",\n    \"params\": {\n        \"chain\":\"2VvmkRw4yrz8tPrVnCCbvEK1JxNyujpqhmU6SGonxMpkWBx9UD\",\n        \"alias\":\"myBlockchainAlias\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,6 +95,36 @@
 							]
 						},
 						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminlockprofile)"
+					},
+					"response": []
+				},
+				{
+					"name": "memoryProfile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.memoryProfile\",\n    \"params\" :{\n        \"fileName\":\"mem.profile\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"admin"
+							]
+						},
+						"description": "Runs a memory profile writing to the specified file. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminmemoryprofile)"
 					},
 					"response": []
 				},
@@ -234,7 +264,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createFixedCapAsset\",\n    \"params\" :{\n        \"name\": \"myFixedCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"initialHolders\": [\n            {\n                \"address\": \"X-AW87kLa9vP6TqEVsfvmLcTrroi73CQkng\",\n                \"amount\": 10000\n            },\n            {\n                \"address\":\"X-Gwafp5KZKPxtZbrW7RtQ7w1cQEAbVntGn\",\n                \"amount\":50000\n            }\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createFixedCapAsset\",\n    \"params\" :{\n        \"name\": \"Test Token\",\n        \"symbol\":\"TEST\",\n        \"initialHolders\": [\n            {\n                \"address\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n                \"amount\":400\n            }\n        ],\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -259,44 +289,13 @@
 					"response": []
 				},
 				{
-					"name": "createMintTx",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createMintTx\",\n    \"params\" :{\n        \"amount\":10000000,\n        \"assetID\":\"2QbZFE7J4MAny9iXHUwq8Pz8SpFhWk3maCw4SkinVPv6wPmAbK\",\n        \"to\":\"X-AHFNFP9rqditmGx4ZkSewmkyRPbBpnf22\",\n        \"minters\":[\n            \"X-AHFNFP9rqditmGx4ZkSewmkyRPbBpnf22\",\n            \"X-PkGQYz92QaCSCUbY48pZ9fhXgDX2Z4hAb\"\n        ]\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9650",
-							"path": [
-								"ext",
-								"bc",
-								"X"
-							]
-						},
-						"description": "Create an unsigned transaction to mint more of a variable-cap asset (an asset created with `avm.createVariableCapAsset`.) [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreateminttx)"
-					},
-					"response": []
-				},
-				{
 					"name": "createNFTAsset",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createNFTAsset\",\n    \"params\" :{\n        \"name\":\"Coincert\",\n        \"symbol\":\"TIXX\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"X-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createNFTAsset\",\n    \"params\" :{\n        \"name\":\"Coincert\",\n        \"symbol\":\"TIXX\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -327,7 +326,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createVariableCapAsset\",\n    \"params\" :{\n        \"name\":\"myVariableCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"X-5LC8hETB2XeTPrLGk8jjjZZVU6VzW1kXw\"\n                ],\n                \"threshold\": 1\n            },\n            {\n                \"minters\": [\n                    \"X-81XNrdH8xwRk8A9u6vAtLssiZYv7YFb6h\",\n                    \"X-8sL4nTb2L2AZo9Bkp1TFPxxFf6GpRMsdf\",\n                    \"X-NyiSJaddAG6GGTKHDroWs3PytbuvqfKXo\"\n                ],\n                \"threshold\": 2\n            }\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createVariableCapAsset\",\n    \"params\" :{\n        \"name\":\"myVariableCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                ],\n                \"threshold\": 1\n            },\n            {\n                \"minters\": [\n                    \"X-local1xywj3thpwhregec3en5d80la5utdepemnfglul\",\n                    \"X-local1zuentmjqe22gra0e6n7fjnvz8xg3klad6s4l3p\",\n                    \"X-local1skxqa40msdytj82rqcdtmrd2dqamvsncly0xra\"\n                ],\n                \"threshold\": 2\n            }\n        ],\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -352,13 +351,13 @@
 					"response": []
 				},
 				{
-					"name": "exportAVA",
+					"name": "exportAVAX",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVA\",\n    \"params\" :{\n        \"to\":\"GWh7Q1K4dQiKY7yQ4YZ1s4HJjfbDSEHda\",\n        \"amount\": 54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVAX\",\n    \"params\" :{\n        \"to\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"amount\": 54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -378,7 +377,7 @@
 								"X"
 							]
 						},
-						"description": "(Note: This method will change to `exportAVAX` in the next release.)\n\nSend AVAX from the X-Chain to an account on the P-Chain.\nAfter calling this method, you must call the P-Chain’s importAVA method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportava)"
+						"description": "Send AVAX from the X-Chain to an account on the P-Chain.\nAfter calling this method, you must call the P-Chain’s `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
 					},
 					"response": []
 				},
@@ -389,7 +388,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\" :\"username\",\n        \"password\":\"password\",\n        \"address\": \"X-7u5FQArVaMSgGZzeTE9ckheWtDhU5T3KS\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"address\": \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -420,7 +419,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"X-Go7PyA65ZUVichsQVmAt9d65h2S7Exiw\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -481,7 +480,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "92d6f2dc-74a9-4fae-8431-c98340bc52a4",
+								"id": "0517447b-9c03-4e5f-aa56-b8ef675fbfcb",
 								"exec": [
 									"var template = `",
 									"    <table bgcolor=\"#FFFFFF\">",
@@ -514,7 +513,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"jsonrpc\":\"2.0\",\n  \"id\"     : 1,\n  \"method\" :\"avm.getBalance\",\n  \"params\" :{\n      \"address\":\"X-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\",\n      \"assetID\": \"AVA\"\n  }\n}",
+							"raw": "{\n  \"jsonrpc\":\"2.0\",\n  \"id\"     : 1,\n  \"method\" :\"avm.getBalance\",\n  \"params\" :{\n      \"address\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n      \"assetID\": \"A4b5GnV3znHhYPsPdZZ4NBnok8VmABhfJ7uQnhHhKZc22XZz6\"\n  }\n} ",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -607,7 +606,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"X-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\"]\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"],\n        \"limit\": 5\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -632,13 +631,13 @@
 					"response": []
 				},
 				{
-					"name": "importAVA",
+					"name": "importAVAX",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVA\",\n    \"params\" :{\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"to\":\"X-G5ZGXEfoWYNFZH5JF9C4QPKAbPTKwRbyB\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVA\",\n    \"params\" :{\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"to\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -658,7 +657,7 @@
 								"X"
 							]
 						},
-						"description": "(Note: This method will change to `importAVAX` in the next release.)\n\nFinalize a transfer of AVAX from the P-Chain to the X-Chain.\n\nBefore this method is called, you must call the P-Chain’s exportAVA method to initiate the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportava)"
+						"description": "Finalize a transfer of AVAX from the P-Chain to the X-Chain.\n\nBefore this method is called, you must call the P-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportavax)"
 					},
 					"response": []
 				},
@@ -669,7 +668,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"privateKey\":\"ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"username\",\n        \"password\": \"password\",\n        \"privateKey\":\"PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -756,13 +755,44 @@
 					"response": []
 				},
 				{
+					"name": "mint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mint\",\n    \"params\" :{\n        \"amount\":10000000,\n        \"assetID\":\"MHSxjU1wGfBWPL3eC47ri8aKH9HhLUtRDurZqALDNzBne2NTU\",\n        \"to\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"minters\":[\n            \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n        ],\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Create an unsigned transaction to mint more of a variable-cap asset (an asset created with `avm.createVariableCapAsset`.) [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreateminttx)"
+					},
+					"response": []
+				},
+				{
 					"name": "mintNFT",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"amount\":1,\n        \"assetID\":\"7ifkSF7D2heHgF7owoWQgzDV4fDzneqWJ9B4qa7peMPE8foBf\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"to\":\"X-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\",\n        \"minters\":[\n            \"X-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\"\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"amount\":1,\n        \"assetID\":\"7ifkSF7D2heHgF7owoWQgzDV4fDzneqWJ9B4qa7peMPE8foBf\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"to\":\"X-local1xywj3thpwhregec3en5d80la5utdepemnfglul\",\n        \"minters\":[\n            \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -793,7 +823,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" :\"AVA\",\n        \"amount\"  :10000,\n        \"to\"      :\"X-Fnm4c26EX6Wq5DRegpgb7VBUBuxcoSfh9\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" :\"AVA\",\n        \"amount\"  :10000,\n        \"to\"      :\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -824,7 +854,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.signMintTx\",\n    \"params\" :{\n        \"tx\":\"1112yKaDdTb7XZXqX38X8U6ro7EC4GQdxDU48eHTcoQxPtJncHSQEMCi9n3hYaPp33K95i8sntkox5ZMHNq26DeNui4yuSQANXgFEeondXZvq65Pk1jnXbUpkJPkjX4KG1W9XQMAmCNpXs5xHzpX4THcYg3WY569Rj7cdf9Km4FQ3r3VDUAn1dpZLsCyQHeGb8Lr3ub7PGh4pn42KPAWsS6N4xCAGg1GGww2XNBxoDfu81toejPJFuqTJQg6tzgL82uT3amebb4FYQVU5B2gxH5Amevm1zsiTTfNDWui4BfB6e7jt8fc36UWYgb4MiaaApmySUe4ndt7SjFTT6taDkVNFdbUWuNEfiebrYFLpqL86mQ1XD\",\n        \"minter\":\"X-xMrKg8uUECt5CS9RE9j5hizv2t2SWTbk\",\n        \"username\":\"userThatControlsTheSignerAddress\",\n        \"password\":\"passwordOfThatUser\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.signMintTx\",\n    \"params\" :{\n        \"tx\":\"1112yKaDdTb7XZXqX38X8U6ro7EC4GQdxDU48eHTcoQxPtJncHSQEMCi9n3hYaPp33K95i8sntkox5ZMHNq26DeNui4yuSQANXgFEeondXZvq65Pk1jnXbUpkJPkjX4KG1W9XQMAmCNpXs5xHzpX4THcYg3WY569Rj7cdf9Km4FQ3r3VDUAn1dpZLsCyQHeGb8Lr3ub7PGh4pn42KPAWsS6N4xCAGg1GGww2XNBxoDfu81toejPJFuqTJQg6tzgL82uT3amebb4FYQVU5B2gxH5Amevm1zsiTTfNDWui4BfB6e7jt8fc36UWYgb4MiaaApmySUe4ndt7SjFTT6taDkVNFdbUWuNEfiebrYFLpqL86mQ1XD\",\n        \"minter\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"userThatControlsTheSignerAddress\",\n        \"password\":\"passwordOfThatUser\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1925,7 +1955,10 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:9650/ext/metrics",
@@ -1948,7 +1981,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Platform",
+			"name": "PlatformVM",
 			"item": [
 				{
 					"name": "addDefaultSubnetDelegator",
@@ -1957,37 +1990,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"id\":\"7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg\",\n        \"destination\":\"P-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\",\n        \"startTime\":1595726193,\n        \"endTime\":1598317594,\n        \"stakeAmount\":54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9650",
-							"path": [
-								"ext",
-								"P"
-							]
-						},
-						"description": "Add a delegator to the Default Subnet.\n\nA delegator stakes AVAX and specifies a validator (the delegatee) to validate on their behalf. The delegatee has an increased probability of being sampled by other validators (weight) in proportion to the stake delegated to them.\n\nThe delegatee charges a fee to the delegator; the former receives a percentage of the delegator’s validation reward (if any.)\n\nThe delegation period must be a subset of the perdiod that the delegatee validates the Default Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformadddefaultsubnetdelegator)"
-					},
-					"response": []
-				},
-				{
-					"name": "createAddress",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"id\":\"MFrZFVCXPv5iCn6M9K6XduxGTYp891xXZ\",\n        \"payerNonce\":1,\n        \"destination\":\"Q4MzFZZDPHRPAHFeDs3NiyyaZDvxHKivf\",\n        \"startTime\":1594102400,\n        \"endTime\":1604102400,\n        \"stakeAmount\":100000\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"id\":\"7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg\",\n        \"destination\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"startTime\":1595726193,\n        \"endTime\":1598317594,\n        \"stakeAmount\":54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2017,7 +2020,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetValidator\",\n    \"params\": {\n        \"id\":\"ARCLrphAHZ28xZEBfUL7SVAmzkTZNe1LK\",\n        \"payerNonce\":1,\n        \"destination\":\"Q4MzFZZDPHRPAHFeDs3NiyyaZDvxHKivf\",\n        \"startTime\":1595050498,\n        \"endTime\":1597641900,\n        \"stakeAmount\":1000000,\n        \"delegationFeeRate\":100000\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetValidator\",\n    \"params\": {\n        \"id\":\"ARCLrphAHZ28xZEBfUL7SVAmzkTZNe1LK\",\n        \"destination\":\"Q4MzFZZDPHRPAHFeDs3NiyyaZDvxHKivf\",\n        \"startTime\":1595050498,\n        \"endTime\":1597641900,\n        \"stakeAmount\":1000000,\n        \"delegationFeeRate\":100000\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2047,7 +2050,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addNonDefaultSubnetValidator\",\n    \"params\": {\n        \"id\":\"7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg\",\n        \"subnetID\":\"zBfoWW1FfkPVRfywpJ1CVQRfnYesEpdFC61hmU2n9JNGhDUEL\",\n        \"startTime\":1583524047,\n        \"endTime\":1604102399,\n        \"weight\":1,\n        \"payerNonce\":2\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addNonDefaultSubnetValidator\",\n    \"params\": {\n        \"id\":\"7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg\",\n        \"subnetID\":\"zBfoWW1FfkPVRfywpJ1CVQRfnYesEpdFC61hmU2n9JNGhDUEL\",\n        \"startTime\":1583524047,\n        \"endTime\":1604102399,\n        \"weight\":1\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2071,13 +2074,13 @@
 					"response": []
 				},
 				{
-					"name": "createAccount",
+					"name": "createAddress",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createAccount\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"privateKey\":\"24jUJ9vZexUM6expyMcT48LBx27k1m7xpraoV62oSQAHdziao5\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createAddress\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\" \n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2096,7 +2099,7 @@
 								"P"
 							]
 						},
-						"description": "The P-Chain uses an account model. This method creates an account. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformcreateaccount)"
+						"description": "Add a delegator to the Default Subnet.\n\nA delegator stakes AVAX and specifies a validator (the delegatee) to validate on their behalf. The delegatee has an increased probability of being sampled by other validators (weight) in proportion to the stake delegated to them.\n\nThe delegatee charges a fee to the delegator; the former receives a percentage of the delegator’s validation reward (if any.)\n\nThe delegation period must be a subset of the perdiod that the delegatee validates the Default Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformadddefaultsubnetdelegator)"
 					},
 					"response": []
 				},
@@ -2107,7 +2110,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"timestamp\",\n        \"SubnetID\":\"2bRCr6B4MiEfSjidDwxDpdCyviwnfUVqB2HGwhm947w9YYqb7r\",\n        \"name\":\"My new timestamp\",\n        \"genesisData\": \"45oj4CqFViNHUtBxJ55TZfqaVAXFwMRMj2XkHVqUYjJYoTaEM\",\n        \"payerNonce\" : 6\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"timestamp\",\n        \"SubnetID\":\"2bRCr6B4MiEfSjidDwxDpdCyviwnfUVqB2HGwhm947w9YYqb7r\",\n        \"name\":\"My new timestamp\",\n        \"genesisData\": \"45oj4CqFViNHUtBxJ55TZfqaVAXFwMRMj2XkHVqUYjJYoTaEM\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2137,7 +2140,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"98vMGrh2nWNr8oDNKVK9jdxN1bwkeg4Jd\",\n            \"6UGRmWANxejv1uM5T8BiRR2VPFSk1aFWA\"\n        ],\n        \"threshold\":2,\n        \"payerNonce\":1\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"98vMGrh2nWNr8oDNKVK9jdxN1bwkeg4Jd\",\n            \"6UGRmWANxejv1uM5T8BiRR2VPFSk1aFWA\"\n        ],\n        \"threshold\":2\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2161,43 +2164,13 @@
 					"response": []
 				},
 				{
-					"name": "getAccount",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getAccount\",\n    \"params\" :{\n        \"address\": \"GWh7Q1K4dQiKY7yQ4YZ1s4HJjfbDSEHda\"\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9650",
-							"path": [
-								"ext",
-								"P"
-							]
-						},
-						"description": "The P-Chain uses an account model. An account is identified by an address. This method returns the account with the given address. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetaccount)"
-					},
-					"response": []
-				},
-				{
 					"name": "getBalance",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"address\":\"P-6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\"    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"address\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"    \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2401,13 +2374,13 @@
 					"response": []
 				},
 				{
-					"name": "exportAVA",
+					"name": "exportAVAX",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.exportAVA\",\n    \"params\": {\n        \"to\":\"G5ZGXEfoWYNFZH5JF9C4QPKAbPTKwRbyB\",\n        \"amount\":1,\n        \"payerNonce\":2\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.exportAVAX\",\n    \"params\": {\n        \"to\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"amount\":54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2426,7 +2399,7 @@
 								"P"
 							]
 						},
-						"description": "(Note: This method will change to `exportAVAX` in the next release.)\n\nSend AVAX from an account on the P-Chain to an address on the X-Chain.\nThis transaction must be signed with the key of the account that the AVAX is sent from and which pays the transaction fee.\nAfter issuing this transaction, you must call the X-Chain’s importAVA method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformexportava)"
+						"description": "Send AVAX from an account on the P-Chain to an address on the X-Chain.\nThis transaction must be signed with the key of the account that the AVAX is sent from and which pays the transaction fee.\nAfter issuing this transaction, you must call the X-Chain’s `importAVA` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformexportavax)"
 					},
 					"response": []
 				},
@@ -2437,7 +2410,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n         \"username\": \"username\",\n        \"password\": \"password\",\n        \"address\": \"P-4aSYmEcMhjH4VAtVn6P6okqufrWWEw4fQ\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n        \"username\": \"username\",\n        \"password\": \"uYO0Mf6h!1\",\n        \"address\": \"P-local1k8jrjsqy574xv22s336pa2jv3pmyucc39zndkl\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2461,13 +2434,13 @@
 					"response": []
 				},
 				{
-					"name": "importAVA",
+					"name": "importAVAX",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVA\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"to\":\"Bg6e45gxCUTLXcfUuoy3go2U6V3bRZ5jH\",\n        \"payerNonce\":1\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVAX\",\n    \"params\": {\n        \"username\": \"username\",\n        \"password\": \"password\",\n        \"to\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2486,7 +2459,7 @@
 								"P"
 							]
 						},
-						"description": "(Note: This method will change to `importAVAX` in the next release.)\n\nComplete a transfer of AVAX from the X-Chain to the P-Chain.\n\nBefore this method is called, you must call the X-Chain’s `exportAVA` method to initiate the transfer."
+						"description": "Complete a transfer of AVAX from the X-Chain to the P-Chain.\n\nBefore this method is called, you must call the X-Chain’s `exportAVAX` method to initiate the transfer. [More Info](https://docs.avax.network/v1.0/en/api/platform/#avmimportava)"
 					},
 					"response": []
 				},
@@ -2497,7 +2470,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\" :\"username\",\n        \"password\":\"password\",\n        \"privateKey\":\"ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\" :\"username\",\n        \"password\":\"password\",\n        \"privateKey\":\"PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2547,36 +2520,6 @@
 							]
 						},
 						"description": "Issue a transaction to the Platform Chain. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformissuetx)"
-					},
-					"response": []
-				},
-				{
-					"name": "listAccounts",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.listAccounts\",\n    \"params\" :{\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9650",
-							"path": [
-								"ext",
-								"P"
-							]
-						},
-						"description": "List the accounts controlled by the specified user. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformlistaccounts)"
 					},
 					"response": []
 				},
@@ -2647,7 +2590,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"111Bit5JNASbJyTLrd2kWkYRoc96swEWoWdmEhuGAFK3rCAyTnTzomuFwgx1SCUdUE71KbtXPnqj93KGr3CeftpPN37kVyqBaAQ5xaDjr7wU8riGS89NDJ8AwVgZgnFkgF3uMfwCiCuPvvubGyQxNHE4TM9iDgj6h3URdGQ4JntP44wokCEP3ADn7sMM8kUTbmcNo84U87\",\n        \"signer\":\"6Y3kysjF9jnHnYkdS9yGAuoHyae2eNmeV\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"111Bit5JNASbJyTLrd2kWkYRoc96swEWoWdmEhuGAFK3rCAyTnTzomuFwgx1SCUdUE71KbtXPnqj93KGr3CeftpPN37kVyqBaAQ5xaDjr7wU8riGS89NDJ8AwVgZgnFkgF3uMfwCiCuPvvubGyQxNHE4TM9iDgj6h3URdGQ4JntP44wokCEP3ADn7sMM8kUTbmcNo84U87\",\n        \"signer\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
