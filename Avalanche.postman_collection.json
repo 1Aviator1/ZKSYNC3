@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "408ae13b-4ab1-4efd-8da1-7d37c32fce93",
+		"_postman_id": "e935c935-aad0-4d36-99ea-db1283e94515",
 		"name": "Avalanche",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -23,12 +23,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/admin",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/admin",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -45,7 +45,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.aliasChain\",\n    \"params\": {\n        \"chain\":\"2VvmkRw4yrz8tPrVnCCbvEK1JxNyujpqhmU6SGonxMpkWBx9UD\",\n        \"alias\":\"myBlockchainAlias\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.aliasChain\",\n    \"params\": {\n        \"chain\":\"{{avalanceBlockchainId}}\",\n        \"alias\":\"myBlockchainAlias\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -53,12 +53,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/admin",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/admin",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -113,12 +113,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/admin",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/admin",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -143,12 +143,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/admin",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/admin",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -173,12 +173,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/admin",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/admin",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -210,12 +210,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/vm/avm",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/vm/avm",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"vm",
@@ -233,7 +233,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avm.createAddress\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\" \n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avm.createAddress\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -241,15 +241,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -264,7 +263,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createFixedCapAsset\",\n    \"params\" :{\n        \"name\": \"Test Token\",\n        \"symbol\":\"TEST\",\n        \"initialHolders\": [\n            {\n                \"address\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n                \"amount\":400\n            }\n        ],\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createFixedCapAsset\",\n    \"params\" :{\n        \"name\": \"Test Token\",\n        \"symbol\":\"TEST\",\n        \"initialHolders\": [\n            {\n                \"address\":\"{{xchainAddress}}\",\n                \"amount\":400\n            }\n        ],\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -272,15 +271,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -295,7 +293,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createNFTAsset\",\n    \"params\" :{\n        \"name\":\"Coincert\",\n        \"symbol\":\"TIXX\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createNFTAsset\",\n    \"params\" :{\n        \"name\":\"Coincert\",\n        \"symbol\":\"TIXX\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -303,15 +301,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -326,7 +323,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createVariableCapAsset\",\n    \"params\" :{\n        \"name\":\"myVariableCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                ],\n                \"threshold\": 1\n            },\n            {\n                \"minters\": [\n                    \"X-local1xywj3thpwhregec3en5d80la5utdepemnfglul\",\n                    \"X-local1zuentmjqe22gra0e6n7fjnvz8xg3klad6s4l3p\",\n                    \"X-local1skxqa40msdytj82rqcdtmrd2dqamvsncly0xra\"\n                ],\n                \"threshold\": 2\n            }\n        ],\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createVariableCapAsset\",\n    \"params\" :{\n        \"name\":\"myVariableCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            },\n            {\n                \"minters\": [\n                    \"X-local1xywj3thpwhregec3en5d80la5utdepemnfglul\",\n                    \"X-local1zuentmjqe22gra0e6n7fjnvz8xg3klad6s4l3p\",\n                    \"X-local1skxqa40msdytj82rqcdtmrd2dqamvsncly0xra\"\n                ],\n                \"threshold\": 2\n            }\n        ],\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -334,15 +331,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -357,7 +353,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVAX\",\n    \"params\" :{\n        \"to\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"amount\": 54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVAX\",\n    \"params\" :{\n        \"to\":\"{{pchainAddress}}\",\n        \"amount\": 100000,\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -365,15 +361,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -388,7 +383,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"address\": \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\": \"{{xchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -396,15 +391,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -419,7 +413,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"{{xchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -427,15 +421,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -450,7 +443,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getAssetDescription\",\n    \"params\" :{\n        \"assetID\" :\"ZiKfqRXCZgHLgZ4rxGU9Qbycdzuq5DRY4tdSNS9ku8kcNxNLD\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getAssetDescription\",\n    \"params\" :{\n        \"assetID\" :\"{{avaxAssetId}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -458,15 +451,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -480,7 +472,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0517447b-9c03-4e5f-aa56-b8ef675fbfcb",
+								"id": "cf50830d-fafc-4a6d-b0d7-2f596b44ae1b",
 								"exec": [
 									"var template = `",
 									"    <table bgcolor=\"#FFFFFF\">",
@@ -513,7 +505,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"jsonrpc\":\"2.0\",\n  \"id\"     : 1,\n  \"method\" :\"avm.getBalance\",\n  \"params\" :{\n      \"address\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n      \"assetID\": \"A4b5GnV3znHhYPsPdZZ4NBnok8VmABhfJ7uQnhHhKZc22XZz6\"\n  }\n} ",
+							"raw": "{\n  \"jsonrpc\":\"2.0\",\n  \"id\"     : 1,\n  \"method\" :\"avm.getBalance\",\n  \"params\" :{\n      \"address\":\"{{xchainAddress}}\",\n      \"assetID\": \"{{avaxAssetId}}\"\n  }\n} ",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -521,15 +513,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -552,15 +543,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -575,7 +565,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getTxStatus\",\n    \"params\" :{\n        \"txID\":\"2QouvFWUbjuySRxeX5xMbNCuAaKWfbk5FeEa2JmoF85RKLk2dD\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getTxStatus\",\n    \"params\" :{\n        \"txID\":\"3K4aPCTZVZwjWk44fEkdbESzRWoFAbZCRSSpcFouGGH2g1XUf\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -583,15 +573,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -606,7 +595,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"],\n        \"limit\": 5\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{xchainAddress}}\"],\n        \"limit\": 5\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -614,15 +603,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -637,7 +625,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVA\",\n    \"params\" :{\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"to\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVA\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"to\":\"{{xchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -645,15 +633,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -668,7 +655,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"username\",\n        \"password\": \"password\",\n        \"privateKey\":\"PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"privateKey\":\"PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -676,15 +663,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -707,15 +693,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -730,7 +715,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avm.listAddresses\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avm.listAddresses\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -738,15 +723,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -761,7 +745,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mint\",\n    \"params\" :{\n        \"amount\":10000000,\n        \"assetID\":\"MHSxjU1wGfBWPL3eC47ri8aKH9HhLUtRDurZqALDNzBne2NTU\",\n        \"to\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"minters\":[\n            \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n        ],\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mint\",\n    \"params\" :{\n        \"amount\":10000000,\n        \"assetID\":\"MHSxjU1wGfBWPL3eC47ri8aKH9HhLUtRDurZqALDNzBne2NTU\",\n        \"to\":\"{{xchainAddress}}\",\n        \"minters\":[\n            \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n        ],\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -769,15 +753,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -792,7 +775,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"amount\":1,\n        \"assetID\":\"7ifkSF7D2heHgF7owoWQgzDV4fDzneqWJ9B4qa7peMPE8foBf\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"to\":\"X-local1xywj3thpwhregec3en5d80la5utdepemnfglul\",\n        \"minters\":[\n            \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n        ],\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"amount\":1,\n        \"assetID\":\"7ifkSF7D2heHgF7owoWQgzDV4fDzneqWJ9B4qa7peMPE8foBf\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"to\":\"{{xchainAddress}}\",\n        \"minters\":[\n            \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n        ],\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -800,15 +783,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -823,7 +805,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" :\"AVA\",\n        \"amount\"  :10000,\n        \"to\"      :\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" :\"{{avaxAssetId}}\",\n        \"amount\"  :10000,\n        \"to\"      :\"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -831,15 +813,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -854,7 +835,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.signMintTx\",\n    \"params\" :{\n        \"tx\":\"1112yKaDdTb7XZXqX38X8U6ro7EC4GQdxDU48eHTcoQxPtJncHSQEMCi9n3hYaPp33K95i8sntkox5ZMHNq26DeNui4yuSQANXgFEeondXZvq65Pk1jnXbUpkJPkjX4KG1W9XQMAmCNpXs5xHzpX4THcYg3WY569Rj7cdf9Km4FQ3r3VDUAn1dpZLsCyQHeGb8Lr3ub7PGh4pn42KPAWsS6N4xCAGg1GGww2XNBxoDfu81toejPJFuqTJQg6tzgL82uT3amebb4FYQVU5B2gxH5Amevm1zsiTTfNDWui4BfB6e7jt8fc36UWYgb4MiaaApmySUe4ndt7SjFTT6taDkVNFdbUWuNEfiebrYFLpqL86mQ1XD\",\n        \"minter\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"userThatControlsTheSignerAddress\",\n        \"password\":\"passwordOfThatUser\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.signMintTx\",\n    \"params\" :{\n        \"tx\":\"1112yKaDdTb7XZXqX38X8U6ro7EC4GQdxDU48eHTcoQxPtJncHSQEMCi9n3hYaPp33K95i8sntkox5ZMHNq26DeNui4yuSQANXgFEeondXZvq65Pk1jnXbUpkJPkjX4KG1W9XQMAmCNpXs5xHzpX4THcYg3WY569Rj7cdf9Km4FQ3r3VDUAn1dpZLsCyQHeGb8Lr3ub7PGh4pn42KPAWsS6N4xCAGg1GGww2XNBxoDfu81toejPJFuqTJQg6tzgL82uT3amebb4FYQVU5B2gxH5Amevm1zsiTTfNDWui4BfB6e7jt8fc36UWYgb4MiaaApmySUe4ndt7SjFTT6taDkVNFdbUWuNEfiebrYFLpqL86mQ1XD\",\n        \"minter\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -862,15 +843,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"X"
 							]
 						},
@@ -900,12 +880,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -932,12 +912,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -964,12 +944,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -996,12 +976,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1020,7 +1000,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getBalance\",\n    \"params\": [\n        \"0x820891f8b95daf5ea7d7ce7667e6bba2dd5c5594\",\n        \"latest\"\n    ],\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getBalance\",\n    \"params\": [\n        \"{{cchainAddress}}\",\n        \"latest\"\n    ],\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1028,12 +1008,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1052,7 +1032,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getTransactionCount\",\n    \"params\": [\n        \"0x820891f8b95daf5ea7d7ce7667e6bba2dd5c5594\",\n        \"latest\"\n    ],\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getTransactionCount\",\n    \"params\": [\n        \"{{cchainAddress}}\",\n        \"latest\"\n    ],\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1060,12 +1040,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1092,12 +1072,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1124,12 +1104,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1148,7 +1128,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_importRawKey\",\n    \"params\": [\n        \"627119bb8286874a15d562d32829613311a678da26ca7a6a785ec4ad85937d06\",\n        \"this is my passphrase\"\n    ],\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_importRawKey\",\n    \"params\": [\n        \"627119bb8286874a15d562d32829613311a678da26ca7a6a785ec4ad85937d07\",\n        \"{{cchainPassphrase}}\"\n    ],\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1156,12 +1136,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1188,12 +1168,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1212,7 +1192,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_unlockAccount\",\n    \"params\": [\n        \"0xa64b27635c967dfe9674926bc004626163ddce97\",\n        \"cheese\",\n        60\n    ],\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_unlockAccount\",\n    \"params\": [\n        \"{{cchainAddress}}\",\n        \"{{cchainPassphrase}}\",\n        600\n    ],\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1220,12 +1200,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1284,12 +1264,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1316,12 +1296,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1348,12 +1328,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1380,12 +1360,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1412,12 +1392,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1444,12 +1424,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1476,12 +1456,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1515,12 +1495,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/health",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/health",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"health"
@@ -1552,12 +1532,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/info",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -1582,12 +1562,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/info",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -1612,12 +1592,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/info",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -1642,12 +1622,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/info",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -1672,12 +1652,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/info",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -1702,12 +1682,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/info",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -1731,7 +1711,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ipcs.publishBlockchain\",\n    \"params\":{\n        \"blockchainID\":\"GJABrZ9A6UQFpwjPU8MDxDd8vuyRoDVeDAXc694wJ5t3zEkhU\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ipcs.publishBlockchain\",\n    \"params\":{\n        \"blockchainID\":\"{{avalanceBlockchainId}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1739,12 +1719,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/ipcs",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/ipcs",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"ipcs"
@@ -1761,7 +1741,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ipcs.unpublishBlockchain\",\n    \"params\":{\n        \"blockchainID\":\"GJABrZ9A6UQFpwjPU8MDxDd8vuyRoDVeDAXc694wJ5t3zEkhU\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ipcs.unpublishBlockchain\",\n    \"params\":{\n        \"blockchainID\":\"{{avalanceBlockchainId}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1769,12 +1749,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/ipcs",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/ipcs",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"ipcs"
@@ -1798,7 +1778,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.createUser\",\n    \"params\" :{\n        \"username\": \"username\",\n        \"password\": \"password\"\n    }\n}",
+							"raw": "{   \n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.createUser\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1806,12 +1786,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/keystore",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/keystore",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"keystore"
@@ -1828,7 +1808,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.deleteUser\",\n    \"params\" : {\n        \"username\" : \"username\",\n        \"password\" : \"passsword\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.deleteUser\",\n    \"params\" : {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1836,12 +1816,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/keystore",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/keystore",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"keystore"
@@ -1858,7 +1838,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.exportUser\",\n    \"params\" :{\n        \"username\"  :\"username\",\n        \"password\"  :\"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"keystore.exportUser\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1866,12 +1846,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/keystore",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/keystore",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"keystore"
@@ -1888,7 +1868,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.importUser\",\n    \"params\" :{\n        \"username\":\"username\",\n        \"password\":\"password\",\n        \"user\"    :\"21fDEsBk5U3FkquFGYpNdn3G9Ctr8BhW5wPVDuJqR86rEKKminsx8VvNFL4dKu6m6YjmJvwDA6f3a32d9F1qnTCkhD4Fw1URX3Cmz3GD3buzZp316dacYzx7gcEs2khxcaoGBudbcg3wiKJvbQhJS4Lcc5HZxEuMZtgNrgJgTBeoZrSpVgqafadQiUYTVycHmabFdduBS2C628v71Gx6gCMRYg15wxvg5jbLjF8xvijMDgdw29bf7aHkp5MT69mnj4pNr7VoKgquktCbu9tK2uX1PWea8kDDXzKaYwYC4tVVpGefX9qVvLf8eFaudkLiKdMM2FbedyUzQo9zS5cEJDLwH9EtANdqnp5kHqTRVeGebVsGXaVf7LMfQg4DZAGSk5C8qrDUdqkKH7MY9UW19DguKCY8jERkK2wauzKdHw4kMmYBA5SVMbjn88i61rq7iUHUuGis9927ihBS1\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.importUser\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"user\"    :\"21fDEsBk5U3FkquFGYpNdn3G9Ctr8BhW5wPVDuJqR86rEKKminsx8VvNFL4dKu6m6YjmJvwDA6f3a32d9F1qnTCkhD4Fw1URX3Cmz3GD3buzZp316dacYzx7gcEs2khxcaoGBudbcg3wiKJvbQhJS4Lcc5HZxEuMZtgNrgJgTBeoZrSpVgqafadQiUYTVycHmabFdduBS2C628v71Gx6gCMRYg15wxvg5jbLjF8xvijMDgdw29bf7aHkp5MT69mnj4pNr7VoKgquktCbu9tK2uX1PWea8kDDXzKaYwYC4tVVpGefX9qVvLf8eFaudkLiKdMM2FbedyUzQo9zS5cEJDLwH9EtANdqnp5kHqTRVeGebVsGXaVf7LMfQg4DZAGSk5C8qrDUdqkKH7MY9UW19DguKCY8jERkK2wauzKdHw4kMmYBA5SVMbjn88i61rq7iUHUuGis9927ihBS1\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1896,12 +1876,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/keystore",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/keystore",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"keystore"
@@ -1926,12 +1906,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/keystore",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/keystore",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"keystore"
@@ -1961,12 +1941,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/metrics",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/metrics",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"metrics"
@@ -1990,7 +1970,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"id\":\"7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg\",\n        \"destination\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"startTime\":1595726193,\n        \"endTime\":1598317594,\n        \"stakeAmount\":54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"destination\":\"{{pchainAddress}}\",\n        \"startTime\":1598726193,\n        \"endTime\":1599317594,\n        \"stakeAmount\":100000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1998,12 +1978,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2020,7 +2000,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetValidator\",\n    \"params\": {\n        \"id\":\"ARCLrphAHZ28xZEBfUL7SVAmzkTZNe1LK\",\n        \"destination\":\"Q4MzFZZDPHRPAHFeDs3NiyyaZDvxHKivf\",\n        \"startTime\":1595050498,\n        \"endTime\":1597641900,\n        \"stakeAmount\":1000000,\n        \"delegationFeeRate\":100000\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"startTime\":1597784180,\n        \"endTime\":1597894180,\n        \"stakeAmount\":1000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"delegationFeeRate\":10,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2028,12 +2008,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2050,7 +2030,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addNonDefaultSubnetValidator\",\n    \"params\": {\n        \"id\":\"7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg\",\n        \"subnetID\":\"zBfoWW1FfkPVRfywpJ1CVQRfnYesEpdFC61hmU2n9JNGhDUEL\",\n        \"startTime\":1583524047,\n        \"endTime\":1604102399,\n        \"weight\":1\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addNonDefaultSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"subnetID\":\"{{avalancheSubnetId}}\",\n        \"startTime\":1583524047,\n        \"endTime\":1604102399,\n        \"weight\":1,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2058,12 +2038,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2080,7 +2060,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createAddress\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\" \n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createAddress\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2088,12 +2068,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2110,7 +2090,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"timestamp\",\n        \"SubnetID\":\"2bRCr6B4MiEfSjidDwxDpdCyviwnfUVqB2HGwhm947w9YYqb7r\",\n        \"name\":\"My new timestamp\",\n        \"genesisData\": \"45oj4CqFViNHUtBxJ55TZfqaVAXFwMRMj2XkHVqUYjJYoTaEM\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"timestamp\",\n        \"SubnetID\":\"{{avalancheSubnetId}}\",\n        \"name\":\"My new timestamp\",\n        \"genesisData\": \"45oj4CqFViNHUtBxJ55TZfqaVAXFwMRMj2XkHVqUYjJYoTaEM\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2118,12 +2098,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2140,7 +2120,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"98vMGrh2nWNr8oDNKVK9jdxN1bwkeg4Jd\",\n            \"6UGRmWANxejv1uM5T8BiRR2VPFSk1aFWA\"\n        ],\n        \"threshold\":2\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"P-local1xx0upt9xfzxg0g2z2wjalxktnqe8c2pkk3w684\",\n            \"P-local17389pxz9esldtxfdfpvprfjw6r6pth7gu3zkcd\"\n        ],\n        \"threshold\":2,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2148,12 +2128,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2170,7 +2150,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"address\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"    \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"address\":\"{{pchainAddress}}\"    \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2178,12 +2158,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2208,12 +2188,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2230,7 +2210,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getBlockchainStatus\",\n    \"params\":{\n        \"blockchainID\":\"2NbS4dwGaf2p1MaXb65PrkZdXRwmSX4ZzGnUu7jm3aykgThuZE\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getBlockchainStatus\",\n    \"params\":{\n        \"blockchainID\":\"{{avalanceBlockchainId}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2238,12 +2218,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2268,12 +2248,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2298,12 +2278,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2314,13 +2294,13 @@
 					"response": []
 				},
 				{
-					"name": "getPendingValidators",
+					"name": "getTxStatus",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getPendingValidators\",\n    \"params\": {},\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getTxStatus\",\n    \"params\": {\n        \"txID\": \"g2qkgkbfwkSrjKvCHN79XC3FkvC4pcC1abubLce42cyh2bSh9\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2328,12 +2308,42 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Returns the status of a platform chain transaction."
+					},
+					"response": []
+				},
+				{
+					"name": "getPendingValidators",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getPendingValidators\",\n    \"params\": {\n        \"subnetID\": \"{{avalancheSubnetId}}\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2358,12 +2368,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2380,7 +2390,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.exportAVAX\",\n    \"params\": {\n        \"to\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"amount\":54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.exportAVAX\",\n    \"params\": {\n        \"to\":\"{{xchainAddress}}\",\n        \"amount\":54321,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2388,12 +2398,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2410,7 +2420,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n        \"username\": \"username\",\n        \"password\": \"uYO0Mf6h!1\",\n        \"address\": \"P-local1k8jrjsqy574xv22s336pa2jv3pmyucc39zndkl\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"address\": \"{{pchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2418,12 +2428,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2440,7 +2450,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVAX\",\n    \"params\": {\n        \"username\": \"username\",\n        \"password\": \"password\",\n        \"to\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"X\",\n        \"to\":\"{{pchainAddress}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2448,12 +2458,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2470,7 +2480,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\" :\"username\",\n        \"password\":\"password\",\n        \"privateKey\":\"PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2478,12 +2488,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2508,12 +2518,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2530,7 +2540,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.listAddresses\",\n    \"params\": {\n        \"username\":\"username\",\n        \"password\":\"password\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.listAddresses\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2538,12 +2548,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2568,12 +2578,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2590,7 +2600,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"111Bit5JNASbJyTLrd2kWkYRoc96swEWoWdmEhuGAFK3rCAyTnTzomuFwgx1SCUdUE71KbtXPnqj93KGr3CeftpPN37kVyqBaAQ5xaDjr7wU8riGS89NDJ8AwVgZgnFkgF3uMfwCiCuPvvubGyQxNHE4TM9iDgj6h3URdGQ4JntP44wokCEP3ADn7sMM8kUTbmcNo84U87\",\n        \"signer\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"111Bit5JNASbJyTLrd2kWkYRoc96swEWoWdmEhuGAFK3rCAyTnTzomuFwgx1SCUdUE71KbtXPnqj93KGr3CeftpPN37kVyqBaAQ5xaDjr7wU8riGS89NDJ8AwVgZgnFkgF3uMfwCiCuPvvubGyQxNHE4TM9iDgj6h3URdGQ4JntP44wokCEP3ADn7sMM8kUTbmcNo84U87\",\n        \"signer\":\"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2598,12 +2608,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2620,7 +2630,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.validatedBy\",\n    \"params\": {\n        \"blockchainID\": \"KDYHHKjM4yTJTT8H8qPs5KXzE6gQH5TZrmP1qVr1P6qECj3XN\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.validatedBy\",\n    \"params\": {\n        \"blockchainID\": \"{{avalanceBlockchainId}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2628,12 +2638,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2650,7 +2660,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.validates\",\n    \"params\": {\n        \"subnetID\":\"2bRCr6B4MiEfSjidDwxDpdCyviwnfUVqB2HGwhm947w9YYqb7r\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.validates\",\n    \"params\": {\n        \"subnetID\":\"{{avalancheSubnetId}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2658,12 +2668,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"P"
@@ -2695,12 +2705,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/timestamp",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/timestamp",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2726,12 +2736,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/timestamp",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/timestamp",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
