@@ -45,7 +45,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.aliasChain\",\n    \"params\": {\n        \"chain\":\"2VvmkRw4yrz8tPrVnCCbvEK1JxNyujpqhmU6SGonxMpkWBx9UD\",\n        \"alias\":\"myBlockchainAlias\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.aliasChain\",\n    \"params\": {\n        \"chain\":\"2VvmkRw4yrz8tPrVnCCbvEK1JxNyujpqhmU6SGonxMpkWBx9UD\",\n        \"alias\":\"myXChainAlias\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -823,7 +823,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" :\"AVA\",\n        \"amount\"  :10000,\n        \"to\"      :\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" :\"AVAX\",\n        \"amount\"  :10000,\n        \"to\"      :\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -844,37 +844,6 @@
 							]
 						},
 						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmsend)"
-					},
-					"response": []
-				},
-				{
-					"name": "signMintTx",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.signMintTx\",\n    \"params\" :{\n        \"tx\":\"1112yKaDdTb7XZXqX38X8U6ro7EC4GQdxDU48eHTcoQxPtJncHSQEMCi9n3hYaPp33K95i8sntkox5ZMHNq26DeNui4yuSQANXgFEeondXZvq65Pk1jnXbUpkJPkjX4KG1W9XQMAmCNpXs5xHzpX4THcYg3WY569Rj7cdf9Km4FQ3r3VDUAn1dpZLsCyQHeGb8Lr3ub7PGh4pn42KPAWsS6N4xCAGg1GGww2XNBxoDfu81toejPJFuqTJQg6tzgL82uT3amebb4FYQVU5B2gxH5Amevm1zsiTTfNDWui4BfB6e7jt8fc36UWYgb4MiaaApmySUe4ndt7SjFTT6taDkVNFdbUWuNEfiebrYFLpqL86mQ1XD\",\n        \"minter\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"userThatControlsTheSignerAddress\",\n        \"password\":\"passwordOfThatUser\"\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:9650/ext/bc/X",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9650",
-							"path": [
-								"ext",
-								"bc",
-								"X"
-							]
-						},
-						"description": "Sign an unsigned or partially signed transaction. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmsignminttx)"
 					},
 					"response": []
 				}
@@ -1990,7 +1959,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"id\":\"7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg\",\n        \"destination\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"startTime\":1595726193,\n        \"endTime\":1598317594,\n        \"stakeAmount\":54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"nodeID\":\"NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg\",\n        \"rewardAddress\":\"P-local17g8d3p7hdyxdzss5vyeqry65q47av034e3vfd2\",\n        \"startTime\":1597773103,\n        \"endTime\":1600364505,\n        \"stakeAmount\":54321,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2020,7 +1989,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetValidator\",\n    \"params\": {\n        \"id\":\"ARCLrphAHZ28xZEBfUL7SVAmzkTZNe1LK\",\n        \"destination\":\"Q4MzFZZDPHRPAHFeDs3NiyyaZDvxHKivf\",\n        \"startTime\":1595050498,\n        \"endTime\":1597641900,\n        \"stakeAmount\":1000000,\n        \"delegationFeeRate\":100000\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"NodeID-5mb46qkSBj81k9g9e4VFjGGSbaaSLFRzD\",\n        \"rewardAddress\":\"P-local17g8d3p7hdyxdzss5vyeqry65q47av034e3vfd2\",\n        \"startTime\":1597768339,\n        \"endTime\":1600359741,\n        \"stakeAmount\":2000000,\n        \"delegationFeeRate\":10,\n        \"username\": \"username\",\n        \"password\": \"password\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2374,6 +2343,68 @@
 					"response": []
 				},
 				{
+					"name": "getTx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTx\",\n    \"params\" :{\n        \"txID\":\"LK5gemsUXLQEuAjq37iGct2E5GC72KKLZxaVoDF7foQiSY6mu\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "Returns the specified transaction [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetbalance)"
+					},
+					"response": []
+				},
+				{
+					"name": "getTxStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTxStatus\",\n    \"params\" :{\n        \"txID\":\"LK5gemsUXLQEuAjq37iGct2E5GC72KKLZxaVoDF7foQiSY6mu\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9650/ext/bc/P",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9650",
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "Returns the specified transaction [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetbalance)"
+					},
+					"response": []
+				},
+				{
 					"name": "exportAVAX",
 					"request": {
 						"method": "POST",
@@ -2410,7 +2441,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n        \"username\": \"username\",\n        \"password\": \"uYO0Mf6h!1\",\n        \"address\": \"P-local1k8jrjsqy574xv22s336pa2jv3pmyucc39zndkl\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n        \"username\": \"username\",\n        \"password\": \"password\",\n        \"address\": \"P-local1k8jrjsqy574xv22s336pa2jv3pmyucc39zndkl\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2440,7 +2471,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVAX\",\n    \"params\": {\n        \"username\": \"username\",\n        \"password\": \"password\",\n        \"to\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVAX\",\n    \"params\": {\n        \"username\": \"username\",\n        \"password\": \"password\",\n        \"sourceChain\":\"X\",\n        \"to\":\"P-local17g8d3p7hdyxdzss5vyeqry65q47av034e3vfd2\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2580,36 +2611,6 @@
 							]
 						},
 						"description": "Sample validators from the specified Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformsamplevalidators)"
-					},
-					"response": []
-				},
-				{
-					"name": "sign",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"111Bit5JNASbJyTLrd2kWkYRoc96swEWoWdmEhuGAFK3rCAyTnTzomuFwgx1SCUdUE71KbtXPnqj93KGr3CeftpPN37kVyqBaAQ5xaDjr7wU8riGS89NDJ8AwVgZgnFkgF3uMfwCiCuPvvubGyQxNHE4TM9iDgj6h3URdGQ4JntP44wokCEP3ADn7sMM8kUTbmcNo84U87\",\n        \"signer\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"username\":\"username\",\n        \"password\":\"password\"\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:9650/ext/P",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9650",
-							"path": [
-								"ext",
-								"P"
-							]
-						},
-						"description": "Sign an unsigned or partially signed transaction.\n\nTransactions to add non-default Subnets require signatures from control keys and from the account paying the transaction fee. If `signer` is a control key and the transaction needs more signatures from control keys, `sign` will provide a control signature. Otherwise, `signer` will sign to pay the transaction fee."
 					},
 					"response": []
 				},
