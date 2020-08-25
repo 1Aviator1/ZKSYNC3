@@ -6,7 +6,7 @@ Postman collection for [Avalanche](https://docs.avax.network).
 
 1. Download [Postman](https://postman.com)
 1. Import Avalanche Postman Collection. Import -> Upload Files -> `Avalanche.postman_collection.json`
-1. Import the Example Avalanche Postman Envirnonment. Settings -> Import -> Choose Files -> `Example_Avalanche_Environment.postman_environment.json`
+1. Import the Example Avalanche Postman Environment. Settings -> Import -> Choose Files -> `Example_Avalanche_Environment.postman_environment.json`
 1. Call any Avalanche RPC endpoint
 
 ## Contributing
