@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e935c935-aad0-4d36-99ea-db1283e94515",
+		"_postman_id": "3b7439ce-aea0-4e37-8d28-361ac42bcb40",
 		"name": "Avalanche",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -472,7 +472,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cf50830d-fafc-4a6d-b0d7-2f596b44ae1b",
+								"id": "46707d03-a0fe-4aa1-83ec-5f6efbf3a1c4",
 								"exec": [
 									"var template = `",
 									"    <table bgcolor=\"#FFFFFF\">",
@@ -1666,6 +1666,39 @@
 						"description": "Get description of peer connections. [More info](https://docs.avax.network/v1.0/en/api/info/#infopeers)"
 					},
 					"response": []
+				},
+				{
+					"name": "isBootstrapped",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"info.isBootstrapped\",\r\n    \"params\": {\r\n        \"chain\":\"X\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Checks whether the chain is done boostrapping. Use \"chain\" parameter to select which chain to query, can be one of \"X\", \"P\" or \"C\"."
+					},
+					"response": []
 				}
 			],
 			"description": "This API can be used to access basic information about the node.",
@@ -2368,7 +2401,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
