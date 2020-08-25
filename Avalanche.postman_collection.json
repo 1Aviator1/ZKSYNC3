@@ -2401,7 +2401,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2409,7 +2409,6 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"P"
 							]
 						},
@@ -2432,15 +2431,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"P"
 							]
 						},
