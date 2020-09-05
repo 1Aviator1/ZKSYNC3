@@ -1672,6 +1672,36 @@
 					"response": []
 				},
 				{
+					"name": "getMinStake",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getTxFee\",\n    \"params\": {\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Get the minimum staking amount of the network. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetminstake)"
+					},
+					"response": []
+				},
+				{
 					"name": "getNetworkID",
 					"request": {
 						"method": "POST",
@@ -1792,6 +1822,36 @@
 					"response": []
 				},
 				{
+					"name": "getTxFee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getTxFee\",\n    \"params\": {\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Get the transaction fee of the network. [More info](https://docs.avax.network/v1.0/en/api/info/#infogettxfee)"
+					},
+					"response": []
+				},
+				{
 					"name": "peers",
 					"request": {
 						"method": "POST",
@@ -1818,39 +1878,6 @@
 							]
 						},
 						"description": "Get description of peer connections. [More info](https://docs.avax.network/v1.0/en/api/info/#infopeers)"
-					},
-					"response": []
-				},
-				{
-					"name": "isBootstrapped",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {}
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"info.isBootstrapped\",\r\n    \"params\": {\r\n        \"chain\":\"X\"\r\n    }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"info"
-							]
-						},
-						"description": "Checks whether the chain is done boostrapping. Use \"chain\" parameter to select which chain to query, can be one of \"X\", \"P\" or \"C\"."
 					},
 					"response": []
 				}
@@ -2563,6 +2590,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
