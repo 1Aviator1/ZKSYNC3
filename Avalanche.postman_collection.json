@@ -1820,6 +1820,39 @@
 						"description": "Get description of peer connections. [More info](https://docs.avax.network/v1.0/en/api/info/#infopeers)"
 					},
 					"response": []
+				},
+				{
+					"name": "isBootstrapped",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"info.isBootstrapped\",\r\n    \"params\": {\r\n        \"chain\":\"X\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Checks whether the chain is done boostrapping. Use \"chain\" parameter to select which chain to query, can be one of \"X\", \"P\" or \"C\"."
+					},
+					"response": []
 				}
 			],
 			"description": "This API can be used to access basic information about the node.",
@@ -2530,7 +2563,6 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"P"
 							]
 						},
