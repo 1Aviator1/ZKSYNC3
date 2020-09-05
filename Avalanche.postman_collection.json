@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e935c935-aad0-4d36-99ea-db1283e94515",
+		"_postman_id": "e337c02e-d072-4741-b24f-e38be44db4b7",
 		"name": "Avalanche",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -75,7 +75,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.lockProfile\",\n    \"params\" :{\n        \"fileName\":\"lock.profile\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.lockProfile\",\n    \"params\" :{}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -105,7 +105,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.memoryProfile\",\n    \"params\" :{\n        \"fileName\":\"mem.profile\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.memoryProfile\",\n    \"params\" :{}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -472,7 +472,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cf50830d-fafc-4a6d-b0d7-2f596b44ae1b",
+								"id": "f7d94043-85db-4047-999d-24b4e3b97254",
 								"exec": [
 									"var template = `",
 									"    <table bgcolor=\"#FFFFFF\">",
@@ -625,7 +625,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVA\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"to\":\"{{xchainAddress}}\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVAX\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"to\":\"X-local1q9styn7wfk5mtlg76cy9sczgt3tavkjq0awk2w\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -806,6 +806,36 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" :\"{{avaxAssetId}}\",\n        \"amount\"  :10000,\n        \"to\"      :\"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"X"
+							]
+						},
+						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmsend)"
+					},
+					"response": []
+				},
+				{
+					"name": "sendNFT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendNFT\",\n    \"params\" :{ \n        \"assetID\" :\"6DP2VKHJFyfFWJ3FXbFrm8FSNSMuHVpSB1GZY8geAfd58HxQy\",\n        \"to\"      :\"X-local1q9styn7wfk5mtlg76cy9sczgt3tavkjq0awk2w\",\n        \"groupID\" : 0,\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1056,6 +1086,130 @@
 							]
 						},
 						"description": "Calculate a cryptographic hash.\n\nThe input parameter contains hexidecimal bytes of arbitrary length. The example here uses the UTF-8 text string “snowstorm” converted to hexidecimal bytes. [More info](https://docs.avax.network/v1.0/en/api/evm/#calculate-a-cryptographic-hash)"
+					},
+					"response": []
+				},
+				{
+					"name": "importAVAX",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ava.importAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"jnUjZSRt16TcRnZzmh5aMhavwVHz3zBrSN8GfFMTQkzUnoBxC\",\n        \"to\":\"c876DF0F099b3eb32cBB78820d39F5813f73E18C\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/ava",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"ava"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ExportAVAX",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ava.importAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"jnUjZSRt16TcRnZzmh5aMhavwVHz3zBrSN8GfFMTQkzUnoBxC\",\n        \"to\":\"c876DF0F099b3eb32cBB78820d39F5813f73E18C\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/ava",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"ava"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exportKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ava.exportKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\":\"{{cchainAddress}}\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/ava",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"ava"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "importKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ava.exportKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\":\"{{cchainAddress}}\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/ava",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"ava"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1934,13 +2088,13 @@
 			"name": "PlatformVM",
 			"item": [
 				{
-					"name": "addDefaultSubnetDelegator",
+					"name": "addDelegator",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"destination\":\"{{pchainAddress}}\",\n        \"startTime\":1598726193,\n        \"endTime\":1599317594,\n        \"stakeAmount\":100000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"startTime\":1598726193,\n        \"endTime\":1599317594,\n        \"stakeAmount\":20000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1964,13 +2118,13 @@
 					"response": []
 				},
 				{
-					"name": "addDefaultSubnetValidator",
+					"name": "addValidator",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDefaultSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"startTime\":1597784180,\n        \"endTime\":1597894180,\n        \"stakeAmount\":1000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"delegationFeeRate\":10,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"startTime\":1598664856,\n        \"endTime\":1601256253,\n        \"stakeAmount\":200000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"delegationFeeRate\":10,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1994,13 +2148,13 @@
 					"response": []
 				},
 				{
-					"name": "addNonDefaultSubnetValidator",
+					"name": "addSubnetValidator",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addNonDefaultSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"subnetID\":\"{{avalancheSubnetId}}\",\n        \"startTime\":1583524047,\n        \"endTime\":1604102399,\n        \"weight\":1,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"subnetID\":\"{{avalancheSubnetId}}\",\n        \"startTime\":1583524047,\n        \"endTime\":1604102399,\n        \"weight\":1,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2368,7 +2522,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2391,7 +2545,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTxStatus\",\n    \"params\" :{\n        \"txID\":\"LK5gemsUXLQEuAjq37iGct2E5GC72KKLZxaVoDF7foQiSY6mu\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTxStatus\",\n    \"params\" :{\n        \"txID\":\"2C3AVShejyq6mLhEXvEGCnpaQi8tRwudBhSbT34hFiytffEFoe\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2399,19 +2553,48 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/bc/P",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
-								"bc",
 								"P"
 							]
 						},
 						"description": "Returns the specified transaction [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetbalance)"
+					},
+					"response": []
+				},
+				{
+					"name": "getUTXOs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{pchainAddress}}\"],\n        \"limit\": 5\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Get the UTXOs that reference a given address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetutxos)"
 					},
 					"response": []
 				},
