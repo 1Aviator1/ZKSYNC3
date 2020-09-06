@@ -1127,7 +1127,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ava.exportAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"to\":\"c876DF0F099b3eb32cBB78820d39F5813f73E18C\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ava.exportAVAX\",\n    \"params\": {\n        \"to\":\"{{xchainAddress}}\",\n        \"amount\": 99000000,\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
