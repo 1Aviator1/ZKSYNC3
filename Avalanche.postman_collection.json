@@ -1822,6 +1822,36 @@
 					"response": []
 				},
 				{
+					"name": "isBootstrapped",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.isBootstrapped\",\n    \"params\": {\n        \"chain\": \"X\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Check whether a given chain is done bootstrapping. [More info](https://docs.avax.network/v1.0/en/api/info/#infoisbootstrapped)"
+					},
+					"response": []
+				},
+				{
 					"name": "getTxFee",
 					"request": {
 						"method": "POST",
@@ -2635,7 +2665,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{pchainAddress}}\"],\n        \"limit\": 5\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"],\n        \"sourceChain\": \"X\",\n        \"limit\": 5\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
