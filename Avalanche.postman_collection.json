@@ -193,6 +193,103 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "newToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"auth.newToken\",\n    \"params\": {\n        \"password\":\"YOUR PASSWORD GOES HERE\",\n        \"endpoints\":[\"/ext/bc/X\", \"/ext/info\"]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/auth",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"auth"
+							]
+						},
+						"description": "Creates a new authorization token that grants access to one or more API endpoints.\n (https://docs.avax.network/v1.0/en/api/auth/#authnewtoken)"
+					},
+					"response": []
+				},
+				{
+					"name": "revokeToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"auth.revokeToken\",\n    \"params\": {\n        \"password\":\"password goes here\",\n        \"token\":\"token goes here\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/auth",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"auth"
+							]
+						},
+						"description": "Revoke a previously generated token. The given token will no longer grant access to any endpoint.\nIf the token is invalid, does nothing. [More info](https://docs.avax.network/v1.0/en/api/auth/#authrevoketoken)"
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"auth.changePassword\",\n    \"params\": {\n        \"oldPassword\":\"old password goes here\",\n        \"newPassword\":\"new password goes here\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/auth",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"auth"
+							]
+						},
+						"description": "Change this node's authorization token password. Any authorization tokens created under an old password will become invalid. [More info](https://docs.avax.network/v1.0/en/api/auth/#authchangepassword)"
+					},
+					"response": []
+				}
+			],
+			"description": "This API can be used for measuring node health and debugging. [More info](https://docs.avax.network/v1.0/en/api/admin)",
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "AVM",
 			"item": [
 				{
@@ -353,7 +450,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVAX\",\n    \"params\" :{\n        \"to\":\"{{pchainAddress}}\",\n        \"amount\": 100000,\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVAX\",\n    \"params\" :{\n        \"to\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"amount\": 4000001000000,\n        \"destinationChain\": \"P\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1672,36 +1769,6 @@
 					"response": []
 				},
 				{
-					"name": "getMinStake",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getTxFee\",\n    \"params\": {\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"info"
-							]
-						},
-						"description": "Get the minimum staking amount of the network. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetminstake)"
-					},
-					"response": []
-				},
-				{
 					"name": "getNetworkID",
 					"request": {
 						"method": "POST",
@@ -2334,7 +2401,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"P-local1xx0upt9xfzxg0g2z2wjalxktnqe8c2pkk3w684\",\n            \"P-local17389pxz9esldtxfdfpvprfjw6r6pth7gu3zkcd\"\n        ],\n        \"threshold\":2,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"{{pchainAddress}}\"\n        ],\n        \"threshold\":1,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2454,7 +2521,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getCurrentValidators\",\n    \"params\": {},\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getCurrentValidators\",\n    \"params\": {\n        \"subnetID\": \"j87H8JFHc3wWQ8FQ3P8gGyu9UHdPcz3BcqNTvJKUG6AJ6DDpF\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2504,6 +2571,36 @@
 							]
 						},
 						"description": "Returns the height of the last accepted block [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetheight)"
+					},
+					"response": []
+				},
+				{
+					"name": "getMinStake",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getMinStake\",\n    \"params\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Returns the minimum stake amount [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetminstake)"
 					},
 					"response": []
 				},
