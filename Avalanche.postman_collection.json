@@ -2605,6 +2605,36 @@
 					"response": []
 				},
 				{
+					"name": "getStake",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStake\",\n    \"params\": {\n        \"addresses\": []\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"P"
+							]
+						},
+						"description": "Returns the staked amount for an array of addresses [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetstake)"
+					},
+					"response": []
+				},
+				{
 					"name": "getTxStatus",
 					"request": {
 						"method": "POST",
