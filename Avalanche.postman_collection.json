@@ -83,12 +83,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9650/ext/admin",
-							"protocol": "http",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/admin",
+							"protocol": "{{http}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9650",
+							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -165,7 +165,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.stopCPUProfiler\"\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.stopCPUProfiler\",\n    \"params\" :{\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1775,7 +1775,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNetworkID\"\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNetworkID\",\n    \"params\" :{\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1805,7 +1805,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNetworkName\"\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNetworkName\",\n    \"params\" :{\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1835,7 +1835,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNodeID\"\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNodeID\",\n    \"params\" :{\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1865,7 +1865,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNodeVersion\"\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNodeVersion\",\n    \"params\" :{\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1955,7 +1955,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.peers\"\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.peers\",\n    \"params\" :{\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
