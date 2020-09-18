@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.alias\",\n    \"params\": {\n        \"alias\":\"myAlias\",\n        \"endpoint\":\"bc/x\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.alias\",\n    \"params\": {\n        \"alias\":\"myAlias\",\n        \"endpoint\":\"bc/X\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -135,7 +135,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.startCPUProfiler\",\n    \"params\" :{\n        \"fileName\":\"cpu.profile\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.startCPUProfiler\",\n    \"params\" :{\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -450,7 +450,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVAX\",\n    \"params\" :{\n        \"to\":\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\",\n        \"amount\": 4000001000000,\n        \"destinationChain\": \"P\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVAX\",\n    \"params\" :{\n        \"to\":\"{{pchainAddress}}\",\n        \"amount\": 4000001000000,\n        \"destinationChain\": \"P\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -842,7 +842,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mint\",\n    \"params\" :{\n        \"amount\":10000000,\n        \"assetID\":\"MHSxjU1wGfBWPL3eC47ri8aKH9HhLUtRDurZqALDNzBne2NTU\",\n        \"to\":\"{{xchainAddress}}\",\n        \"minters\":[\n            \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n        ],\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mint\",\n    \"params\" :{\n        \"amount\":10000000,\n        \"assetID\":\"2qnR9pLQTDZ9boSbcrcjS4n1DJJkzbkNsJzgwYvmRy8uv47fZT\",\n        \"to\":\"{{xchainAddress}}\",\n        \"minters\":[\n            \"{{xchainAddress}}\"\n        ],\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -932,7 +932,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendNFT\",\n    \"params\" :{ \n        \"assetID\" :\"6DP2VKHJFyfFWJ3FXbFrm8FSNSMuHVpSB1GZY8geAfd58HxQy\",\n        \"to\"      :\"X-local1q9styn7wfk5mtlg76cy9sczgt3tavkjq0awk2w\",\n        \"groupID\" : 0,\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendNFT\",\n    \"params\" :{ \n        \"assetID\" :\"2Y1VBSy8WX5T7f7ifMPpjm8jbFWYvVv1iSQefhAcpwokhk2GXX\",\n        \"to\"      :\"{{xchainAddress}}\",\n        \"groupID\" : 0,\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1193,7 +1193,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ava.importAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"X\",\n        \"to\":\"0x4b879aff6b3d24352Ac1985c1F45BA4c3493A398\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avax.importAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"X\",\n        \"to\":\"0x4b879aff6b3d24352Ac1985c1F45BA4c3493A398\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1201,7 +1201,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/ava",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -1211,7 +1211,7 @@
 								"ext",
 								"bc",
 								"C",
-								"ava"
+								"avax"
 							]
 						}
 					},
@@ -1224,7 +1224,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ava.exportAVAX\",\n    \"params\": {\n        \"to\":\"{{xchainAddress}}\",\n        \"amount\": 99000000,\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avax.exportAVAX\",\n    \"params\": {\n        \"to\":\"{{xchainAddress}}\",\n        \"amount\": 99000000,\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1232,7 +1232,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/ava",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -1242,7 +1242,7 @@
 								"ext",
 								"bc",
 								"C",
-								"ava"
+								"avax"
 							]
 						}
 					},
@@ -1255,7 +1255,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ava.exportKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\":\"{{cchainAddress}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avax.exportKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\":\"{{cchainAddress}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1263,7 +1263,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/ava",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -1273,7 +1273,7 @@
 								"ext",
 								"bc",
 								"C",
-								"ava"
+								"avax"
 							]
 						}
 					},
@@ -1286,7 +1286,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ava.importKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"{{cchainAddress}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avax.importKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"{{cchainAddress}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1294,7 +1294,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/ava",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -1304,7 +1304,7 @@
 								"ext",
 								"bc",
 								"C",
-								"ava"
+								"avax"
 							]
 						}
 					},
@@ -2251,7 +2251,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"startTime\":1598726193,\n        \"endTime\":1599317594,\n        \"stakeAmount\":20000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"startTime\":1600406351,\n        \"endTime\":1602997371,\n        \"stakeAmount\":200000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2611,7 +2611,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStake\",\n    \"params\": {\n        \"addresses\": []\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStake\",\n    \"params\": {\n        \"addresses\": [{{pchainAddress}}]\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3087,75 +3087,6 @@
 				}
 			],
 			"description": "This API allows clients to interact with the P-Chain (Platform Chain), which maintains Avalanche’s validator set and handles blockchain creation. [More info](https://docs.avax.network/v1.0/en/api/platform)",
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Timestamp",
-			"item": [
-				{
-					"name": "getBlock",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"timestamp.getBlock\",\n    \"params\":{\n        \"id\":\"xqQV1jDnCXDxhfnNT7tDBcXeoH2jC3Hh7Pyv4GXE1z1hfup5K\"\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/timestamp",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"timestamp"
-							]
-						},
-						"description": "Get a block by its ID. If no ID is provided, get the latest block. [More info](https://docs.avax.network/v1.0/en/api/timestamp/#timestampgetblock)"
-					},
-					"response": []
-				},
-				{
-					"name": "proposeBlock",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"timestamp.proposeBlock\",\n    \"params\":{\n        \"data\":\"SkB92YpWm4Q2iPnLGCuDPZPgUQMxajqQQuz91oi3xD984f8r\"\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/timestamp",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"timestamp"
-							]
-						},
-						"description": "Propose the creation of a new block. [More info](https://docs.avax.network/v1.0/en/api/timestamp/#timestampproposeblock)"
-					},
-					"response": []
-				}
-			],
-			"description": "This API allows clients to interact with the Timestamp Chain.\n\nThe Timestamp Chain is a timestamp server. Each block contains a 32 byte payload and the timestamp when the block was created.\n\nThe genesis data for a new instance of the Timestamp Chain is the genesis block’s 32 byte payload. [More info](https://docs.avax.network/v1.0/en/api/timestamp)",
 			"protocolProfileBehavior": {}
 		}
 	],
