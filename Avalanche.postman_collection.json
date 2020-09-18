@@ -202,7 +202,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"auth.newToken\",\n    \"params\": {\n        \"password\":\"YOUR PASSWORD GOES HERE\",\n        \"endpoints\":[\"/ext/bc/X\", \"/ext/info\"]\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"auth.newToken\",\n    \"params\": {\n        \"password\":\"{{authPassword}}\",\n        \"endpoints\":[\"/ext/bc/X\", \"/ext/info\"]\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -722,7 +722,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVAX\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"to\":\"X-local1q9styn7wfk5mtlg76cy9sczgt3tavkjq0awk2w\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVAX\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"P\",\n        \"to\":\"{{xchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -752,7 +752,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"privateKey\":\"PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -760,7 +760,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -768,6 +768,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -1286,7 +1287,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avax.importKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"{{cchainAddress}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avax.importKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2912,7 +2913,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
