@@ -1188,68 +1188,6 @@
 					"response": []
 				},
 				{
-					"name": "exportKey",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avax.exportKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\":\"{{cchainAddress}}\"\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"C",
-								"avax"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "importKey",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avax.importKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"C",
-								"avax"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "personal_newAccount",
 					"request": {
 						"method": "POST",
