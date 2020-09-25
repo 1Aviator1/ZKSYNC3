@@ -338,7 +338,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -346,6 +346,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -368,7 +369,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -376,40 +377,11 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
 						"description": "Create a new fixed-cap, fungible asset. A quantity of it is created at initialization and then no more is ever created. The asset can be sent with `avm.send`. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreatefixedcapasset)"
-					},
-					"response": []
-				},
-				{
-					"name": "createMintTx",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mint\",\n    \"params\" :{\n        \"amount\": 10000000,\n        \"assetID\": \"2qnR9pLQTDZ9boSbcrcjS4n1DJJkzbkNsJzgwYvmRy8uv47fZT\",\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\": \"{{xchainAddress}}\",\n        \"minters\": [\n            \"{{xchainAddress}}\"\n        ],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"X"
-							]
-						},
-						"description": "Create an unsigned transaction to mint more of a variable-cap asset (an asset created with `avm.createVariableCapAsset`.) [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreateminttx)"
 					},
 					"response": []
 				},
@@ -420,7 +392,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createNFTAsset\",\n    \"params\" :{\n        \"name\":\"Coincert\",\n        \"symbol\":\"TIXX\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createNFTAsset\",\n    \"params\" :{\n        \"name\":\"Coincert\",\n        \"symbol\":\"TIXX\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            },\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -428,7 +400,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -436,6 +408,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -458,7 +431,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -466,6 +439,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -488,7 +462,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -496,6 +470,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -510,7 +485,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\": \"{{xchainAddress}}\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\": \"X-local1xnkhvsqu2w5h8gwc7k3hl7xcxuwhmaksm4s2d8\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -518,7 +493,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -526,6 +501,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -540,7 +516,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"{{xchainAddress}}\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -548,7 +524,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -556,6 +532,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -578,7 +555,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -586,6 +563,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -670,7 +648,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -678,6 +656,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -692,7 +671,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getTxStatus\",\n    \"params\" :{\n        \"txID\":\"3K4aPCTZVZwjWk44fEkdbESzRWoFAbZCRSSpcFouGGH2g1XUf\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"avm.getTxStatus\",\n    \"params\": {\n        \"txID\": \"2HHr7xUJgWiLESV7g8T3oWfWvdpWJXd4Hctj6U3KhzUN6EsgBG\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -700,7 +679,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -708,6 +687,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -722,7 +702,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{xchainAddress}}\"],\n        \"limit\": 5\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"],\n        \"limit\": 5\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -730,7 +710,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -738,6 +718,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -760,7 +741,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -768,6 +749,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -821,7 +803,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -829,6 +811,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -851,7 +834,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -859,10 +842,42 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
 						"description": "List addresses controlled by the given user. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmlistaddresses)"
+					},
+					"response": []
+				},
+				{
+					"name": "mint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mint\",\n    \"params\" :{\n        \"amount\": 10000000,\n        \"assetID\": \"2qnR9pLQTDZ9boSbcrcjS4n1DJJkzbkNsJzgwYvmRy8uv47fZT\",\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\": \"{{xchainAddress}}\",\n        \"minters\": [\n            \"{{xchainAddress}}\"\n        ],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Create an unsigned transaction to mint more of a variable-cap asset (an asset created with `avm.createVariableCapAsset`.) [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreateminttx)"
 					},
 					"response": []
 				},
@@ -873,7 +888,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"amount\":1,\n        \"assetID\":\"7ifkSF7D2heHgF7owoWQgzDV4fDzneqWJ9B4qa7peMPE8foBf\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{xchainAddress}}\",\n        \"minters\":[\n            \"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n        ],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"assetID\":\"2KGdt2HpFKpTH5CtGZjYt5XPWs6Pv9DLoRBhiFfntbezdRvZWP\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{xchainAddress}}\",\n        \"minters\":[\n            \"{{xchainAddress}}\"\n        ],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -881,7 +896,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -889,6 +904,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -911,7 +927,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -919,6 +935,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -933,7 +950,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendNFT\",\n    \"params\" :{ \n        \"assetID\" :\"2Y1VBSy8WX5T7f7ifMPpjm8jbFWYvVv1iSQefhAcpwokhk2GXX\",\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      :\"{{xchainAddress}}\",\n        \"groupID\" : 0,\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendNFT\",\n    \"params\" :{ \n        \"assetID\" :\"2KGdt2HpFKpTH5CtGZjYt5XPWs6Pv9DLoRBhiFfntbezdRvZWP\",\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      :\"{{xchainAddress}}\",\n        \"groupID\" : 0,\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -941,7 +958,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -949,6 +966,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -964,13 +982,13 @@
 			"name": "EVM",
 			"item": [
 				{
-					"name": "web3_clientVersion",
+					"name": "eth_blockNumber",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"web3_clientVersion\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_blockNumber\",\n    \"params\": [],\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -991,18 +1009,18 @@
 								"rpc"
 							]
 						},
-						"description": "Getting the current client version. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-current-client-version)"
+						"description": "Getting the most recent block number. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-most-recent-block-number)"
 					},
 					"response": []
 				},
 				{
-					"name": "net_version",
+					"name": "eth_call",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"net_version\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"raw": "{\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_call\",\n    \"params\": [\n        {\n            \"to\": \"0x197E90f9FAD81970bA7976f33CbD77088E5D7cf7\",\n            \"data\": \"0xc92aecc4\"\n        },\n        \"latest\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1023,7 +1041,7 @@
 								"rpc"
 							]
 						},
-						"description": "Getting the network ID. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-network-id)"
+						"description": "Call a contract. [More info](https://docs.avax.network/v1.0/en/api/evm/#call-a-contract)"
 					},
 					"response": []
 				},
@@ -1060,38 +1078,6 @@
 					"response": []
 				},
 				{
-					"name": "eth_blockNumber",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_blockNumber\",\n    \"params\": [],\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"C",
-								"rpc"
-							]
-						},
-						"description": "Getting the most recent block number. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-most-recent-block-number)"
-					},
-					"response": []
-				},
-				{
 					"name": "eth_getBalance",
 					"request": {
 						"method": "POST",
@@ -1120,6 +1106,38 @@
 							]
 						},
 						"description": "Getting an account’s balance. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-an-accounts-balance)"
+					},
+					"response": []
+				},
+				{
+					"name": "eth_signTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_signTransaction\",\n    \"params\": [{\n        \"from\": \"0xa64b27635c967dfe9674926bc004626163ddce97\",\n        \"to\": \"0x1c5b0e12e90e9c52235babad76cfccab2519bb95\",\n        \"gas\": \"0x5208\",\n        \"gasPrice\": \"0x0\",\n        \"nonce\": \"0x0\",\n        \"value\": \"0x0\"\n    }],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Signing a transaction.\n\nThis method will create a signed transaction, but will not publish it automatically to the network. Instead, the `raw` result output should be used with `eth_sendRawTransaction` to execute the transaction. [More info](https://docs.avax.network/v1.0/en/api/evm/#signing-a-transaction)"
 					},
 					"response": []
 				},
@@ -1156,198 +1174,6 @@
 					"response": []
 				},
 				{
-					"name": "web3_sha3",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"web3_sha3\",\n    \"params\": [\n        \"0x736e6f7773746f726d\"\n    ],\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"C",
-								"rpc"
-							]
-						},
-						"description": "Calculate a cryptographic hash.\n\nThe input parameter contains hexidecimal bytes of arbitrary length. The example here uses the UTF-8 text string “snowstorm” converted to hexidecimal bytes. [More info](https://docs.avax.network/v1.0/en/api/evm/#calculate-a-cryptographic-hash)"
-					},
-					"response": []
-				},
-				{
-					"name": "personal_newAccount",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_newAccount\",\n    \"params\": [\n        \"cheese\"\n    ],\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"C",
-								"rpc"
-							]
-						},
-						"description": "Creating a new account (private key generated automatically)\n\nThe EVM will create a new account using the passphrase `cheese` to encrypt and store the new account credentials. cheese is not the seed phrase and cannot be used to restore this account from scratch. Calling this function repeatedly with the same passphrase will create multiple unique accounts. Also keep in mind there are no options to export private keys stored in the EVM database. Users are encouraged to use wallet software instead for safer account creation and backup. This method is more suitable for quick account creation for a testnet."
-					},
-					"response": []
-				},
-				{
-					"name": "personal_importRawKey",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_importRawKey\",\n    \"params\": [\n        \"627119bb8286874a15d562d32829613311a678da26ca7a6a785ec4ad85937d07\",\n        \"{{cchainPassphrase}}\"\n    ],\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"C",
-								"rpc"
-							]
-						},
-						"description": "Creating a new account (using plaintext private key).\n\nIf the private key is known upfront, it can be provided as plaintext to load into the EVM account database. For more secure account management, consider using wallet software instead. The example below loads the private key `0x627119bb8286874a15d562d32829613311a678da26ca7a6a785ec4ad85937d06` with the passphrase `this is my passphrase`. Note that `0x` prefix cannot be included in the private key argument, otherwise the EVM will throw an error. The example response returns the associated public key."
-					},
-					"response": []
-				},
-				{
-					"name": "personal_listAccounts",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_listAccounts\",\n    \"params\": [],\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"C",
-								"rpc"
-							]
-						},
-						"description": "Listing accounts loaded in EVM node. [More info](https://docs.avax.network/v1.0/en/api/evm/#listing-accounts-loaded-in-evm-node)"
-					},
-					"response": []
-				},
-				{
-					"name": "personal_unlockAccount",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_unlockAccount\",\n    \"params\": [\n        \"{{cchainAddress}}\",\n        \"{{cchainPassphrase}}\",\n        600\n    ],\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"C",
-								"rpc"
-							]
-						},
-						"description": "Unlocking an account.\n\nPersonal accounts loaded directly in the EVM can only sign transactions while in an unlocked state. The example below unlocks the listed account address for 60 seconds. Note the associated passphrase `cheese` must be provided for authorization. [More info](https://docs.avax.network/v1.0/en/api/evm/#unlocking-an-account)"
-					},
-					"response": []
-				},
-				{
-					"name": "eth_signTransaction",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_signTransaction\",\n    \"params\": [{\n        \"from\": \"0xa64b27635c967dfe9674926bc004626163ddce97\",\n        \"to\": \"0x1c5b0e12e90e9c52235babad76cfccab2519bb95\",\n        \"gas\": \"0x5208\",\n        \"gasPrice\": \"0x0\",\n        \"nonce\": \"0x0\",\n        \"value\": \"0x0\"\n    }],\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:9650/ext/bc/C/rpc",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9650",
-							"path": [
-								"ext",
-								"bc",
-								"C",
-								"rpc"
-							]
-						},
-						"description": "Signing a transaction.\n\nThis method will create a signed transaction, but will not publish it automatically to the network. Instead, the `raw` result output should be used with `eth_sendRawTransaction` to execute the transaction. [More info](https://docs.avax.network/v1.0/en/api/evm/#signing-a-transaction)"
-					},
-					"response": []
-				},
-				{
 					"name": "eth_sendRawTransaction",
 					"request": {
 						"method": "POST",
@@ -1376,38 +1202,6 @@
 							]
 						},
 						"description": "Send a raw transaction.\n\nExample below shows a raw transaction published to the network and its associated transaction hash. [More info](https://docs.avax.network/v1.0/en/api/evm/#send-a-raw-transaction)"
-					},
-					"response": []
-				},
-				{
-					"name": "eth_call",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_call\",\n    \"params\": [\n        {\n            \"to\": \"0x197E90f9FAD81970bA7976f33CbD77088E5D7cf7\",\n            \"data\": \"0xc92aecc4\"\n        },\n        \"latest\"\n    ]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"C",
-								"rpc"
-							]
-						},
-						"description": "Call a contract. [More info](https://docs.avax.network/v1.0/en/api/evm/#call-a-contract)"
 					},
 					"response": []
 				},
@@ -1540,6 +1334,294 @@
 					"response": []
 				},
 				{
+					"name": "exportAVAX",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\" :\"avax.exportAVAX\",\n    \"params\" :{\n        \"from\": [\"{{cchainAddress}}\"],\n        \"to\":\"{{xchainAddress}}\",\n        \"amount\": 4000001000000,\n        \"destinationChain\": \"X\",\n        \"changeAddr\": \"{{cchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    },\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"avax"
+							]
+						},
+						"description": "Send AVAX from the X-Chain to an account on the P-Chain.\nAfter calling this method, you must call the P-Chain’s `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
+					},
+					"response": []
+				},
+				{
+					"name": "exportKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\" :\"avax.exportKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\": \"{{pchainAddress}}\"\n    },\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"avax"
+							]
+						},
+						"description": "Get the private key that controls a given address.\nThe returned private key can be added to a user with `avm.importKey`. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportkey)\n\n"
+					},
+					"response": []
+				},
+				{
+					"name": "importAVAX",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"avax.importAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"X\",\n        \"to\":\"{{cchainAddress}}\"\n    },\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"avax"
+							]
+						},
+						"description": "Send AVAX from the X-Chain to an account on the P-Chain.\nAfter calling this method, you must call the P-Chain’s `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
+					},
+					"response": []
+				},
+				{
+					"name": "importKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"avax.importKey\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    },\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"avax"
+							]
+						},
+						"description": "Give a user control over an address by providing the private key that controls the address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportkey)"
+					},
+					"response": []
+				},
+				{
+					"name": "net_version",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"net_version\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting the network ID. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-network-id)"
+					},
+					"response": []
+				},
+				{
+					"name": "personal_newAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_newAccount\",\n    \"params\": [\n        \"cheese\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Creating a new account (private key generated automatically)\n\nThe EVM will create a new account using the passphrase `cheese` to encrypt and store the new account credentials. cheese is not the seed phrase and cannot be used to restore this account from scratch. Calling this function repeatedly with the same passphrase will create multiple unique accounts. Also keep in mind there are no options to export private keys stored in the EVM database. Users are encouraged to use wallet software instead for safer account creation and backup. This method is more suitable for quick account creation for a testnet."
+					},
+					"response": []
+				},
+				{
+					"name": "personal_importRawKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_importRawKey\",\n    \"params\": [\n        \"627119bb8286874a15d562d32829613311a678da26ca7a6a785ec4ad85937d07\",\n        \"{{cchainPassphrase}}\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Creating a new account (using plaintext private key).\n\nIf the private key is known upfront, it can be provided as plaintext to load into the EVM account database. For more secure account management, consider using wallet software instead. The example below loads the private key `0x627119bb8286874a15d562d32829613311a678da26ca7a6a785ec4ad85937d06` with the passphrase `this is my passphrase`. Note that `0x` prefix cannot be included in the private key argument, otherwise the EVM will throw an error. The example response returns the associated public key."
+					},
+					"response": []
+				},
+				{
+					"name": "personal_listAccounts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_listAccounts\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Listing accounts loaded in EVM node. [More info](https://docs.avax.network/v1.0/en/api/evm/#listing-accounts-loaded-in-evm-node)"
+					},
+					"response": []
+				},
+				{
+					"name": "personal_unlockAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"personal_unlockAccount\",\n    \"params\": [\n        \"{{cchainAddress}}\",\n        \"{{cchainPassphrase}}\",\n        600\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Unlocking an account.\n\nPersonal accounts loaded directly in the EVM can only sign transactions while in an unlocked state. The example below unlocks the listed account address for 60 seconds. Note the associated passphrase `cheese` must be provided for authorization. [More info](https://docs.avax.network/v1.0/en/api/evm/#unlocking-an-account)"
+					},
+					"response": []
+				},
+				{
 					"name": "txpool_status",
 					"request": {
 						"method": "POST",
@@ -1568,6 +1650,70 @@
 							]
 						},
 						"description": "Getting count of pending transactions.\n\n“Pending” transactions will be non-zero during periods of heavy network use. “Queued” transactions indicate transactions have been submitted with nonce values ahead of the next expected value for an address, which places them on hold until a transaction with the next expected nonce value is submitted. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-count-of-pending-transactions)"
+					},
+					"response": []
+				},
+				{
+					"name": "web3_clientVersion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"web3_clientVersion\",\n    \"params\": [],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting the current client version. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-current-client-version)"
+					},
+					"response": []
+				},
+				{
+					"name": "web3_sha3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"web3_sha3\",\n    \"params\": [\n        \"0x736e6f7773746f726d\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Calculate a cryptographic hash.\n\nThe input parameter contains hexidecimal bytes of arbitrary length. The example here uses the UTF-8 text string “snowstorm” converted to hexidecimal bytes. [More info](https://docs.avax.network/v1.0/en/api/evm/#calculate-a-cryptographic-hash)"
 					},
 					"response": []
 				}
@@ -2136,7 +2282,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2144,6 +2290,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2166,7 +2313,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2174,6 +2321,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2196,7 +2344,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2204,6 +2352,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2226,7 +2375,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2234,6 +2383,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2256,7 +2406,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2264,6 +2414,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2286,7 +2437,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2294,6 +2445,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2316,7 +2468,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2324,6 +2476,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2346,7 +2499,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2354,6 +2507,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2376,7 +2530,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2384,6 +2538,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2406,7 +2561,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2414,6 +2569,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2428,7 +2584,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getHeight\",\n    \"params\": {}\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStakingAssetID\",\n    \"params\": {}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2436,7 +2592,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2444,6 +2600,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2466,7 +2623,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2474,6 +2631,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2496,7 +2654,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2504,6 +2662,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2518,7 +2677,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getTxStatus\",\n    \"params\": {\n        \"txID\": \"g2qkgkbfwkSrjKvCHN79XC3FkvC4pcC1abubLce42cyh2bSh9\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getTxStatus\",\n    \"params\": {\n        \"txID\": \"23CLURk1Czf1aLui1VdcuWSiDeFskfp3Sn8TQG7t6NKfeQRYDj\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2526,7 +2685,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2534,6 +2693,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2556,7 +2716,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2564,6 +2724,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2586,7 +2747,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2594,6 +2755,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2647,7 +2809,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2655,6 +2817,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2677,7 +2840,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2685,6 +2848,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2707,7 +2871,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2715,6 +2879,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2737,7 +2902,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2745,6 +2910,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2767,7 +2933,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2775,6 +2941,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2797,7 +2964,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2805,6 +2972,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2827,7 +2995,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2835,6 +3003,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2857,7 +3026,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2865,6 +3034,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2887,7 +3057,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2895,6 +3065,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2917,7 +3088,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2925,6 +3096,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
@@ -2947,7 +3119,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/P",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/P",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -2955,6 +3127,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"P"
 							]
 						},
