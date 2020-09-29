@@ -474,7 +474,7 @@
 								"X"
 							]
 						},
-						"description": "Send AVAX from the X-Chain to an account on the P-Chain.\nAfter calling this method, you must call the P-Chain’s `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
+						"description": "Export AVAX from both the X-Chain to the P-Chain as well as from the X-Chain to the C-Chain.\nAfter calling this method, you must call either the P-Chain’s `importAVAX` method or the C-Chain's `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
 					},
 					"response": []
 				},
@@ -485,7 +485,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\": \"X-local1xnkhvsqu2w5h8gwc7k3hl7xcxuwhmaksm4s2d8\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\": \"{{xchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -516,7 +516,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"{{xchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -702,7 +702,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"X-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"],\n        \"limit\": 5\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{xchainAddress}}\"],\n        \"limit\": 5\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -753,7 +753,7 @@
 								"X"
 							]
 						},
-						"description": "Finalize a transfer of AVAX from the P-Chain to the X-Chain.\n\nBefore this method is called, you must call the P-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportavax)"
+						"description": "Finalize a transfer of AVAX from either the P-Chain to the X-Chain or the C-Chain to the X-Chain.\n\nBefore this method is called, you must call either the P-Chain’s `exportAVAX` method or the C-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportavax)"
 					},
 					"response": []
 				},
@@ -919,7 +919,38 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" : \"{{avaxAssetId}}\",\n        \"amount\"  : 10000,\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"{{xchainAddress}}\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" : \"{{avaxAssetId}}\",\n        \"amount\"  : 2000000,\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"X-avax1g8u6w6jnnwd8p280q38wwrwkr357pzq3asspdz\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"{{memo}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmsend)"
+					},
+					"response": []
+				},
+				{
+					"name": "sendMultiple",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendMultiple\",\n    \"params\" :{ \n        \"outputs\": [\n            {\n                \"assetID\" : \"{{avaxAssetId}}\",\n                \"to\"      : \"{{xchainAddress}}\",\n                \"amount\"  : 1000000000\n            }\n        ],\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"{{memo}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2553,7 +2584,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getCurrentValidators\",\n    \"params\": {\n        \"subnetID\": \"j87H8JFHc3wWQ8FQ3P8gGyu9UHdPcz3BcqNTvJKUG6AJ6DDpF\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getCurrentValidators\",\n    \"params\": {\n        \"subnetID\": \"{{customSubnetID}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2883,7 +2914,7 @@
 								"P"
 							]
 						},
-						"description": "Send AVAX from an account on the P-Chain to an address on the X-Chain.\nThis transaction must be signed with the key of the account that the AVAX is sent from and which pays the transaction fee.\nAfter issuing this transaction, you must call the X-Chain’s `importAVA` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformexportavax)"
+						"description": "Send AVAX from an account on the C-Chain to an address on the X-Chain.\nThis transaction must be signed with the key of the account that the AVAX is sent from and which pays the transaction fee.\nAfter issuing this transaction, you must call the X-Chain’s `importAVA` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformexportavax)"
 					},
 					"response": []
 				},
@@ -2945,7 +2976,7 @@
 								"P"
 							]
 						},
-						"description": "Complete a transfer of AVAX from the X-Chain to the P-Chain.\n\nBefore this method is called, you must call the X-Chain’s `exportAVAX` method to initiate the transfer. [More Info](https://docs.avax.network/v1.0/en/api/platform/#avmimportava)"
+						"description": "Complete a transfer of AVAX from the X-Chain to the C-Chain.\n\nBefore this method is called, you must call the X-Chain’s `exportAVAX` method to initiate the transfer. [More Info](https://docs.avax.network/v1.0/en/api/platform/#avmimportava)"
 					},
 					"response": []
 				},
