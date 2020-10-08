@@ -919,7 +919,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" : \"{{avaxAssetId}}\",\n        \"amount\"  : 2000000,\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"X-avax1g8u6w6jnnwd8p280q38wwrwkr357pzq3asspdz\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"{{memo}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" : \"{{avaxAssetId}}\",\n        \"amount\"  : 2000000,\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"{{xchainAddress}}\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"{{memo}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
