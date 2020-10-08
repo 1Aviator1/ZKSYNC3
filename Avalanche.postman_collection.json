@@ -2708,7 +2708,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStake\",\n    \"params\": {\n        \"addresses\": [{{pchainAddress}}]\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStake\",\n    \"params\": {\n        \"addresses\": [\"{{pchainAddress}}\"]\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
