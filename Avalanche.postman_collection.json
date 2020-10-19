@@ -2646,7 +2646,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStakingAssetID\",\n    \"params\": {}\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getHeight\",\n    \"params\": {}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
