@@ -2739,7 +2739,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getTxStatus\",\n    \"params\": {\n        \"txID\": \"23CLURk1Czf1aLui1VdcuWSiDeFskfp3Sn8TQG7t6NKfeQRYDj\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getTxStatus\",\n    \"params\": {\n        \"txID\": \"23CLURk1Czf1aLui1VdcuWSiDeFskfp3Sn8TQG7t6NKfeQRYDj\",\n        \"includeReason\": true\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
