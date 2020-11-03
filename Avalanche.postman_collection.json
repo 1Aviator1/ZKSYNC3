@@ -474,7 +474,7 @@
 								"X"
 							]
 						},
-						"description": "Export AVAX from both the X-Chain to the P-Chain as well as from the X-Chain to the C-Chain.\nAfter calling this method, you must call either the P-Chain’s `importAVAX` method or the C-Chain's `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
+						"description": "Export a non-AVAX asset from the X-Chain to the C-Chain. After calling this method, you must call the C-Chain’s `import` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexport)"
 					},
 					"response": []
 				},
@@ -505,7 +505,7 @@
 								"X"
 							]
 						},
-						"description": "Export AVAX from both the X-Chain to the P-Chain as well as from the X-Chain to the C-Chain.\nAfter calling this method, you must call either the P-Chain’s `importAVAX` method or the C-Chain's `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
+						"description": "Export AVAX from the X-Chain to both the P-Chain as well as the C-Chain. After calling this method, you must call either the P-Chain’s `importAVAX` method or the C-Chain's `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
 					},
 					"response": []
 				},
@@ -1198,7 +1198,7 @@
 								"rpc"
 							]
 						},
-						"description": "Getting an account’s balance. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-an-accounts-balance)"
+						"description": "Getting an account’s non-AVAX balance. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-an-accounts-non-avax-balance)"
 					},
 					"response": []
 				},
