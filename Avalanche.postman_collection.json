@@ -448,6 +448,37 @@
 					"response": []
 				},
 				{
+					"name": "export",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.export\",\n    \"params\" :{\n        \"to\":\"{{cchainbech32address}}\",\n        \"amount\": 50,\n        \"assetID\": \"2W4XDTMrQJm7YALcnCL4krU7JpoGQQaDkTdn2HbzpsqombHRaB\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Export AVAX from both the X-Chain to the P-Chain as well as from the X-Chain to the C-Chain.\nAfter calling this method, you must call either the P-Chain’s `importAVAX` method or the C-Chain's `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
+					},
+					"response": []
+				},
+				{
 					"name": "exportAVAX",
 					"request": {
 						"method": "POST",
@@ -723,6 +754,37 @@
 							]
 						},
 						"description": "Get the UTXOs that reference a given address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetutxos)"
+					},
+					"response": []
+				},
+				{
+					"name": "import",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.import\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"P\",\n        \"to\":\"{{xchainAddress}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Finalize a transfer of AVAX from either the P-Chain to the X-Chain or the C-Chain to the X-Chain.\n\nBefore this method is called, you must call either the P-Chain’s `exportAVAX` method or the C-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportavax)"
 					},
 					"response": []
 				},
@@ -1109,6 +1171,38 @@
 					"response": []
 				},
 				{
+					"name": "eth_getAssetBalance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getAssetBalance\",\n    \"params\": [\n        \"{{cchainAddress}}\",\n        \"latest\",\n        \"2W4XDTMrQJm7YALcnCL4krU7JpoGQQaDkTdn2HbzpsqombHRaB\"\n    ],\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/rpc",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"rpc"
+							]
+						},
+						"description": "Getting an account’s balance. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-an-accounts-balance)"
+					},
+					"response": []
+				},
+				{
 					"name": "eth_getBalance",
 					"request": {
 						"method": "POST",
@@ -1365,6 +1459,38 @@
 					"response": []
 				},
 				{
+					"name": "export",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\" :\"avax.export\",\n    \"params\" :{\n        \"from\": [\"{{cchainAddress}}\"],\n        \"to\":\"{{xchainAddress}}\",\n        \"amount\": 25,\n        \"destinationChain\": \"X\",\n        \"changeAddr\": \"{{cchainAddress}}\",\n        \"assetID\": \"2W4XDTMrQJm7YALcnCL4krU7JpoGQQaDkTdn2HbzpsqombHRaB\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\"\n    },\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"avax"
+							]
+						},
+						"description": "Send AVAX from the X-Chain to an account on the P-Chain.\nAfter calling this method, you must call the P-Chain’s `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
+					},
+					"response": []
+				},
+				{
 					"name": "exportAVAX",
 					"request": {
 						"method": "POST",
@@ -1429,6 +1555,38 @@
 					"response": []
 				},
 				{
+					"name": "import",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"avax.import\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"X\",\n        \"to\":\"{{cchainAddress}}\"\n    },\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"avax"
+							]
+						},
+						"description": "Send AVAX from the X-Chain to an account on the P-Chain.\nAfter calling this method, you must call the P-Chain’s `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
+					},
+					"response": []
+				},
+				{
 					"name": "importAVAX",
 					"request": {
 						"method": "POST",
@@ -1456,7 +1614,7 @@
 								"avax"
 							]
 						},
-						"description": "Send AVAX from the X-Chain to an account on the P-Chain.\nAfter calling this method, you must call the P-Chain’s `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
+						"description": "Import AVAX from the X-Chain to an account on the C-Chain.\nBefore calling this method, you must call the X-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/v1.0/en/api/evm/#evmimportavax)"
 					},
 					"response": []
 				},
