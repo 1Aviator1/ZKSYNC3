@@ -34,7 +34,7 @@
 								"admin"
 							]
 						},
-						"description": "Assign an API an alias, a different endpoint for the API. The original endpoint will still work. This change only affects this node; other nodes will not know about this alias. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminalias)"
+						"description": "Assign an API an alias, a different endpoint for the API. The original endpoint will still work. This change only affects this node; other nodes will not know about this alias. [More info](https://docs.avax.network/build/apis/admin-api#admin-alias)"
 					},
 					"response": []
 				},
@@ -64,7 +64,7 @@
 								"admin"
 							]
 						},
-						"description": "Give a blockchain an alias, a different name that can be used any place the blockchain’s ID is used. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminaliaschain)"
+						"description": "Give a blockchain an alias, a different name that can be used any place the blockchain’s ID is used. [More info](https://docs.avax.network/build/apis/admin-api#admin-aliaschain)"
 					},
 					"response": []
 				},
@@ -94,7 +94,7 @@
 								"admin"
 							]
 						},
-						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminlockprofile)"
+						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/build/apis/admin-api#admin-lockprofile)"
 					},
 					"response": []
 				},
@@ -124,7 +124,7 @@
 								"admin"
 							]
 						},
-						"description": "Runs a memory profile writing to the specified file. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminmemoryprofile)"
+						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/build/apis/admin-api#admin-memoryprofile)"
 					},
 					"response": []
 				},
@@ -154,7 +154,7 @@
 								"admin"
 							]
 						},
-						"description": "Start profiling the CPU utilization of the node. Will write the profile to the specified file on stop. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminstartcpuprofiler)"
+						"description": "Start profiling the CPU utilization of the node. Will write the profile to the specified file on stop. [More info](https://docs.avax.network/build/apis/admin-api#admin-startcpuprofiler)"
 					},
 					"response": []
 				},
@@ -184,7 +184,7 @@
 								"admin"
 							]
 						},
-						"description": "Stop the CPU profile that was previously started. [More info](https://docs.avax.network/v1.0/en/api/admin/#adminstopcpuprofiler)"
+						"description": "Stop the CPU profile that was previously started. [More info](https://docs.avax.network/build/apis/admin-api#admin-stopcpuprofiler)"
 					},
 					"response": []
 				}
@@ -221,7 +221,7 @@
 								"auth"
 							]
 						},
-						"description": "Creates a new authorization token that grants access to one or more API endpoints.\n (https://docs.avax.network/v1.0/en/api/auth/#authnewtoken)"
+						"description": "Creates a new authorization token that grants access to one or more API endpoints.\n [More info](https://docs.avax.network/build/apis/auth-api#auth-newtoken)"
 					},
 					"response": []
 				},
@@ -251,7 +251,7 @@
 								"auth"
 							]
 						},
-						"description": "Revoke a previously generated token. The given token will no longer grant access to any endpoint.\nIf the token is invalid, does nothing. [More info](https://docs.avax.network/v1.0/en/api/auth/#authrevoketoken)"
+						"description": "Revoke a previously generated token. The given token will no longer grant access to any endpoint.\nIf the token is invalid, does nothing. [More info](https://docs.avax.network/build/apis/auth-api#auth-revoketoken)"
 					},
 					"response": []
 				},
@@ -281,7 +281,7 @@
 								"auth"
 							]
 						},
-						"description": "Change this node's authorization token password. Any authorization tokens created under an old password will become invalid. [More info](https://docs.avax.network/v1.0/en/api/auth/#authchangepassword)"
+						"description": "Change this node's authorization token password. Any authorization tokens created under an old password will become invalid. [More info](https://docs.avax.network/build/apis/auth-api#auth-changepassword)"
 					},
 					"response": []
 				}
@@ -350,7 +350,7 @@
 								"X"
 							]
 						},
-						"description": "Create a new address controlled by the given user. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreateaddress)"
+						"description": "Create a new address controlled by the given user. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-createaddress)"
 					},
 					"response": []
 				},
@@ -381,7 +381,7 @@
 								"X"
 							]
 						},
-						"description": "Create a new fixed-cap, fungible asset. A quantity of it is created at initialization and then no more is ever created. The asset can be sent with `avm.send`. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreatefixedcapasset)"
+						"description": "Create a new fixed-cap, fungible asset. A quantity of it is created at initialization and then no more is ever created. The asset can be sent with `avm.send`. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-createfixedcapasset)"
 					},
 					"response": []
 				},
@@ -412,7 +412,7 @@
 								"X"
 							]
 						},
-						"description": "Create a new non-fungible asset. No units of the asset exist at initialization. Minters can mint units of this asset using `mintTx` and `signMintTx`. The asset can be sent with `avm.sendNFT`. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreatenftasset)"
+						"description": "Create a new non-fungible asset. No units of the asset exist at initialization. Minters can mint units of this asset using `mintTx` and `signMintTx`. The asset can be sent with `avm.sendNFT`. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-createnftasset)"
 					},
 					"response": []
 				},
@@ -443,7 +443,7 @@
 								"X"
 							]
 						},
-						"description": "Create a new variable-cap, fungible asset. No units of the asset exist at initialization. Minters can mint units of this asset using `createMintTx`, `signMintTx` and `issueTx`. The asset can be sent with `avm.send`. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreatevariablecapasset)"
+						"description": "Create a new variable-cap, fungible asset. No units of the asset exist at initialization. Minters can mint units of this asset using `createMintTx`, `signMintTx` and `issueTx`. The asset can be sent with `avm.send`. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-createvariablecapasset)"
 					},
 					"response": []
 				},
@@ -454,7 +454,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.export\",\n    \"params\" :{\n        \"to\":\"{{cchainbech32address}}\",\n        \"amount\": 50,\n        \"assetID\": \"2W4XDTMrQJm7YALcnCL4krU7JpoGQQaDkTdn2HbzpsqombHRaB\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.export\",\n    \"params\" :{\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{cchainbech32address}}\",\n        \"amount\": 50,\n        \"assetID\": \"2YmsQfMaCczE4mLG1DPYUnRURNGfhjj4qrqnLRR3LmZ3GxDWPt\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -505,7 +505,7 @@
 								"X"
 							]
 						},
-						"description": "Export AVAX from the X-Chain to both the P-Chain as well as the C-Chain. After calling this method, you must call either the P-Chain’s `importAVAX` method or the C-Chain's `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportavax)"
+						"description": "Export AVAX from the X-Chain to both the P-Chain as well as the C-Chain. After calling this method, you must call either the P-Chain’s `importAVAX` method or the C-Chain's `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-exportavax)"
 					},
 					"response": []
 				},
@@ -536,7 +536,7 @@
 								"X"
 							]
 						},
-						"description": "Get the private key that controls a given address.\nThe returned private key can be added to a user with `avm.importKey`. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexportkey)\n\n"
+						"description": "Get the private key that controls a given address.\nThe returned private key can be added to a user with `avm.importKey`. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-exportkey)"
 					},
 					"response": []
 				},
@@ -567,7 +567,7 @@
 								"X"
 							]
 						},
-						"description": "Get the balances of all assets controlled by a given address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetallbalances)"
+						"description": "Get the balances of all assets controlled by a given address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-getallbalances)"
 					},
 					"response": []
 				},
@@ -598,7 +598,7 @@
 								"X"
 							]
 						},
-						"description": "Get information about an asset. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetassetdescription)"
+						"description": "Get information about an asset. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-getassetdescription)"
 					},
 					"response": []
 				},
@@ -660,7 +660,7 @@
 								"X"
 							]
 						},
-						"description": "Get the balance of an asset controlled by a given address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetbalance)"
+						"description": "Get the balance of an asset controlled by a given address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-getbalance)"
 					},
 					"response": []
 				},
@@ -691,7 +691,7 @@
 								"X"
 							]
 						},
-						"description": "Returns the specified transaction [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetbalance)"
+						"description": "Returns the specified transaction [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-gettx)"
 					},
 					"response": []
 				},
@@ -722,7 +722,7 @@
 								"X"
 							]
 						},
-						"description": "Get the status of a transaction sent to the network. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgettxstatus)"
+						"description": "Get the status of a transaction sent to the network. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-gettxstatus)"
 					},
 					"response": []
 				},
@@ -753,7 +753,7 @@
 								"X"
 							]
 						},
-						"description": "Get the UTXOs that reference a given address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetutxos)"
+						"description": "Get the UTXOs that reference a given address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-getutxos)"
 					},
 					"response": []
 				},
@@ -815,7 +815,7 @@
 								"X"
 							]
 						},
-						"description": "Finalize a transfer of AVAX from either the P-Chain to the X-Chain or the C-Chain to the X-Chain.\n\nBefore this method is called, you must call either the P-Chain’s `exportAVAX` method or the C-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportavax)"
+						"description": "Finalize a transfer of AVAX from either the P-Chain to the X-Chain or the C-Chain to the X-Chain.\n\nBefore this method is called, you must call either the P-Chain’s `exportAVAX` method or the C-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-importavax)"
 					},
 					"response": []
 				},
@@ -846,7 +846,7 @@
 								"X"
 							]
 						},
-						"description": "Give a user control over an address by providing the private key that controls the address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportkey)"
+						"description": "Give a user control over an address by providing the private key that controls the address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-importkey)"
 					},
 					"response": []
 				},
@@ -877,7 +877,7 @@
 								"X"
 							]
 						},
-						"description": "Send a signed transaction to the network. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmissuetx)"
+						"description": "Send a signed transaction to the network. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-issuetx)"
 					},
 					"response": []
 				},
@@ -908,7 +908,7 @@
 								"X"
 							]
 						},
-						"description": "List addresses controlled by the given user. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmlistaddresses)"
+						"description": "List addresses controlled by the given user. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-listaddresses)"
 					},
 					"response": []
 				},
@@ -939,7 +939,7 @@
 								"X"
 							]
 						},
-						"description": "Create an unsigned transaction to mint more of a variable-cap asset (an asset created with `avm.createVariableCapAsset`.) [More info](https://docs.avax.network/v1.0/en/api/avm/#avmcreateminttx)"
+						"description": "Create an unsigned transaction to mint more of a variable-cap asset (an asset created with `avm.createVariableCapAsset`.) [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-mint)"
 					},
 					"response": []
 				},
@@ -970,7 +970,7 @@
 								"X"
 							]
 						},
-						"description": "Mint more of a non-fungible asset (an asset created with `avm.createNFTAsset`.) [More info](https://docs.avax.network/v1.0/en/api/avm/#avmmintnft)"
+						"description": "Mint more of a non-fungible asset (an asset created with `avm.createNFTAsset`.) [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-mintnft)"
 					},
 					"response": []
 				},
@@ -1001,7 +1001,7 @@
 								"X"
 							]
 						},
-						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmsend)"
+						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-send)"
 					},
 					"response": []
 				},
@@ -1032,7 +1032,7 @@
 								"X"
 							]
 						},
-						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmsend)"
+						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-sendmultiple)"
 					},
 					"response": []
 				},
@@ -1063,7 +1063,7 @@
 								"X"
 							]
 						},
-						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmsend)"
+						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-sendnft)"
 					},
 					"response": []
 				}
@@ -1102,7 +1102,7 @@
 								"rpc"
 							]
 						},
-						"description": "Getting the most recent block number. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-most-recent-block-number)"
+						"description": "Getting the most recent block number. [More info](https://docs.avax.network/build/apis/contract-chain-c-chain-api#getting-the-most-recent-block-number)"
 					},
 					"response": []
 				},
@@ -1134,7 +1134,7 @@
 								"rpc"
 							]
 						},
-						"description": "Call a contract. [More info](https://docs.avax.network/v1.0/en/api/evm/#call-a-contract)"
+						"description": "Call a contract. [More info](https://docs.avax.network/build/apis/contract-chain-c-chain-api#call-a-contract)"
 					},
 					"response": []
 				},
@@ -1166,7 +1166,7 @@
 								"rpc"
 							]
 						},
-						"description": "Not well documented in JSON-RPC references. See instead EIP694. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-the-chain-id)"
+						"description": "Not well documented in JSON-RPC references. See instead EIP694. [More info](https://docs.avax.network/build/apis/contract-chain-c-chain-api#getting-the-chain-id)"
 					},
 					"response": []
 				},
@@ -1230,7 +1230,7 @@
 								"rpc"
 							]
 						},
-						"description": "Getting an account’s balance. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-an-accounts-balance)"
+						"description": "Getting an account’s balance. [More info](https://docs.avax.network/build/apis/contract-chain-c-chain-api#getting-an-accounts-balance)"
 					},
 					"response": []
 				},
@@ -1262,7 +1262,7 @@
 								"rpc"
 							]
 						},
-						"description": "Signing a transaction.\n\nThis method will create a signed transaction, but will not publish it automatically to the network. Instead, the `raw` result output should be used with `eth_sendRawTransaction` to execute the transaction. [More info](https://docs.avax.network/v1.0/en/api/evm/#signing-a-transaction)"
+						"description": "Signing a transaction.\n\nThis method will create a signed transaction, but will not publish it automatically to the network. Instead, the `raw` result output should be used with `eth_sendRawTransaction` to execute the transaction. [More info](https://docs.avax.network/build/apis/contract-chain-c-chain-api#signing-a-transaction)"
 					},
 					"response": []
 				},
@@ -1294,7 +1294,7 @@
 								"rpc"
 							]
 						},
-						"description": "Getting an account’s nonce. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-an-accounts-nonce)"
+						"description": "Getting an account’s nonce. [More info](https://docs.avax.network/build/apis/contract-chain-c-chain-api#getting-an-accounts-nonce)"
 					},
 					"response": []
 				},
@@ -1326,7 +1326,7 @@
 								"rpc"
 							]
 						},
-						"description": "Send a raw transaction.\n\nExample below shows a raw transaction published to the network and its associated transaction hash. [More info](https://docs.avax.network/v1.0/en/api/evm/#send-a-raw-transaction)"
+						"description": "Send a raw transaction.\n\nExample below shows a raw transaction published to the network and its associated transaction hash. [More info](https://docs.avax.network/build/apis/contract-chain-c-chain-api#send-a-raw-transaction)"
 					},
 					"response": []
 				},
@@ -1358,7 +1358,7 @@
 								"rpc"
 							]
 						},
-						"description": "Getting a block by hash. [More info](https://docs.avax.network/v1.0/en/api/evm/#getting-a-block-by-hash)"
+						"description": "Getting a block by hash. [More info](https://docs.avax.network/build/apis/contract-chain-c-chain-api#getting-a-block-by-hash)"
 					},
 					"response": []
 				},
@@ -1555,6 +1555,102 @@
 					"response": []
 				},
 				{
+					"name": "getTx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getTx\",\n    \"params\" :{\n        \"txID\":\"2LVVdbsbg7Lkp3bVBzbJeopp8HfBMApefoHLZ7VaFkXPPvd7KJ\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"avax"
+							]
+						},
+						"description": "Returns the specified transaction [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetbalance)"
+					},
+					"response": []
+				},
+				{
+					"name": "getTxStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"avax.getTxStatus\",\n    \"params\": {\n        \"txID\": \"2LVVdbsbg7Lkp3bVBzbJeopp8HfBMApefoHLZ7VaFkXPPvd7KJ\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"avax"
+							]
+						},
+						"description": "Get the status of a transaction sent to the network. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgettxstatus)"
+					},
+					"response": []
+				},
+				{
+					"name": "getUTXOs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{cchainbech32address}}\"],\n        \"sourceChain\": \"X\",\n        \"limit\": 5\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"avax"
+							]
+						},
+						"description": "Get the UTXOs that reference a given address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetutxos)"
+					},
+					"response": []
+				},
+				{
 					"name": "import",
 					"request": {
 						"method": "POST",
@@ -1647,6 +1743,38 @@
 							]
 						},
 						"description": "Give a user control over an address by providing the private key that controls the address. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportkey)"
+					},
+					"response": []
+				},
+				{
+					"name": "issueTx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avax.issueTx\",\n    \"params\" :{\n        \"tx\":\"6sTENqXfk3gahxkJbEPsmX9eJTEFZRSRw83cRJqoHWBiaeAhVbz9QV4i6SLd6Dek4eLsojeR8FbT3arFtsGz9ycpHFaWHLX69edJPEmj2tPApsEqsFd7wDVp7fFxkG6HmySR\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/C/avax",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"C",
+								"avax"
+							]
+						},
+						"description": "Send a signed transaction to the network. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-issuetx)"
 					},
 					"response": []
 				},
@@ -1939,7 +2067,7 @@
 								"health"
 							]
 						},
-						"description": "Get health check on this node. [More info](https://docs.avax.network/v1.0/en/api/health/#healthgetliveness)"
+						"description": "Get health check on this node. [More info](https://docs.avax.network/build/apis/health-api#health-getliveness)"
 					},
 					"response": []
 				}
@@ -1976,7 +2104,7 @@
 								"info"
 							]
 						},
-						"description": "Given a blockchain’s alias, get its ID. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetblockchainid)"
+						"description": "Given a blockchain’s alias, get its ID. [More info](https://docs.avax.network/build/apis/info-api#info-getblockchainid)"
 					},
 					"response": []
 				},
@@ -2006,7 +2134,7 @@
 								"info"
 							]
 						},
-						"description": "Get the ID of the network this node is participating in. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetnetworkid)"
+						"description": "Get the ID of the network this node is participating in. [More info](https://docs.avax.network/build/apis/info-api#info-getnetworkid)"
 					},
 					"response": []
 				},
@@ -2036,7 +2164,7 @@
 								"info"
 							]
 						},
-						"description": "Get the name of the network this node is participating in. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetnetworkname)"
+						"description": "Get the name of the network this node is participating in. [More info](https://docs.avax.network/build/apis/info-api#info-getnetworkname)"
 					},
 					"response": []
 				},
@@ -2066,7 +2194,37 @@
 								"info"
 							]
 						},
-						"description": "Get the name of the network this node is participating in. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetnodeid)"
+						"description": "Get the name of the network this node is participating in. [More info](https://docs.avax.network/build/apis/info-api#info-getnodeid)"
+					},
+					"response": []
+				},
+				{
+					"name": "getNodeIP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getNodeIP\",\n    \"params\" :{\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Get the IP of this node. [More info](https://docs.avax.network/build/apis/info-api#info-getnodeip)"
 					},
 					"response": []
 				},
@@ -2096,7 +2254,7 @@
 								"info"
 							]
 						},
-						"description": "Get the version of this node. [More info](https://docs.avax.network/v1.0/en/api/info/#infogetnodeversion)"
+						"description": "Get the version of this node. [More info](https://docs.avax.network/build/apis/info-api#info-getnodeversion)"
 					},
 					"response": []
 				},
@@ -2126,7 +2284,7 @@
 								"info"
 							]
 						},
-						"description": "Check whether a given chain is done bootstrapping. [More info](https://docs.avax.network/v1.0/en/api/info/#infoisbootstrapped)"
+						"description": "Check whether a given chain is done bootstrapping. [More info](https://docs.avax.network/build/apis/info-api#info-isbootstrapped)"
 					},
 					"response": []
 				},
@@ -2186,7 +2344,7 @@
 								"info"
 							]
 						},
-						"description": "Get description of peer connections. [More info](https://docs.avax.network/v1.0/en/api/info/#infopeers)"
+						"description": "Get description of peer connections. [More info](https://docs.avax.network/build/apis/info-api#info-peers)"
 					},
 					"response": []
 				}
@@ -2223,7 +2381,7 @@
 								"ipcs"
 							]
 						},
-						"description": "Register a blockchain so it publishes accepted vertices to a Unix domain socket. [More info](https://docs.avax.network/v1.0/en/api/ipc/#ipcspublishblockchain)"
+						"description": "Register a blockchain so it publishes accepted vertices to a Unix domain socket. [More info](https://docs.avax.network/build/apis/ipc-api#ipcs-publishblockchain)"
 					},
 					"response": []
 				},
@@ -2253,7 +2411,7 @@
 								"ipcs"
 							]
 						},
-						"description": "Deregister a blockchain so that it no longer publishes to a Unix domain socket. [More info](https://docs.avax.network/v1.0/en/api/ipc/#ipcspublishblockchain)"
+						"description": "Deregister a blockchain so that it no longer publishes to a Unix domain socket. [More info](https://docs.avax.network/build/apis/ipc-api#ipcs-unpublishblockchain)"
 					},
 					"response": []
 				}
@@ -2290,7 +2448,7 @@
 								"keystore"
 							]
 						},
-						"description": "Create a new user with the specified username and password. [More info](https://docs.avax.network/v1.0/en/api/keystore/#keystorecreateuser)"
+						"description": "Create a new user with the specified username and password. [More info](https://docs.avax.network/build/apis/keystore-api#keystore-createuser)"
 					},
 					"response": []
 				},
@@ -2320,7 +2478,7 @@
 								"keystore"
 							]
 						},
-						"description": "Delete a user. [More info](https://docs.avax.network/v1.0/en/api/keystore/#kesytoredeleteuser)"
+						"description": "Delete a user. [More info](https://docs.avax.network/build/apis/keystore-api#keystore-deleteuser)"
 					},
 					"response": []
 				},
@@ -2350,7 +2508,7 @@
 								"keystore"
 							]
 						},
-						"description": "Export a user. The user can be imported to another node with `keystore.importUser`. The user’s password remains encrypted. [More info](https://docs.avax.network/v1.0/en/api/keystore/#keystoreexportuser)"
+						"description": "Export a user. The user can be imported to another node with `keystore.importUser`. The user’s password remains encrypted. [More info](https://docs.avax.network/build/apis/keystore-api#keystore-exportuser)"
 					},
 					"response": []
 				},
@@ -2380,7 +2538,7 @@
 								"keystore"
 							]
 						},
-						"description": "Import a user. `password` must match the user’s password. `username` doesn’t have to match the username `user` had when it was exported. [More info](https://docs.avax.network/v1.0/en/api/keystore/#keystoreimportuser)"
+						"description": "Import a user. `password` must match the user’s password. `username` doesn’t have to match the username `user` had when it was exported. [More info](https://docs.avax.network/build/apis/keystore-api#keystore-importuser)"
 					},
 					"response": []
 				},
@@ -2410,7 +2568,7 @@
 								"keystore"
 							]
 						},
-						"description": "List the users in this keystore. [More info](https://docs.avax.network/v1.0/en/api/keystore/#keystorelistusers)"
+						"description": "List the users in this keystore. [More info](https://docs.avax.network/build/apis/keystore-api#keystore-listusers)"
 					},
 					"response": []
 				}
@@ -2445,7 +2603,7 @@
 								"metrics"
 							]
 						},
-						"description": "To get the node metrics. [More info](https://docs.avax.network/v1.0/en/api/metrics)"
+						"description": "To get the node metrics. [More info](https://docs.avax.network/build/apis/metrics-api)"
 					},
 					"response": []
 				}
