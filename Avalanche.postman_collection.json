@@ -2776,7 +2776,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"{{pchainAddress}}\"\n        ],\n        \"threshold\":1,\n        \"from\": [{{pchainAddress}}]\n        \"changeAddr\":\"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"{{pchainAddress}}\"\n        ],\n        \"threshold\":1,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\":\"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
