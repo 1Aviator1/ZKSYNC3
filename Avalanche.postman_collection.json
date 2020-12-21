@@ -189,8 +189,7 @@
 					"response": []
 				}
 			],
-			"description": "This API can be used for measuring node health and debugging. [More info](https://docs.avax.network/v1.0/en/api/admin)",
-			"protocolProfileBehavior": {}
+			"description": "This API can be used for measuring node health and debugging. [More info](https://docs.avax.network/v1.0/en/api/admin)"
 		},
 		{
 			"name": "Auth",
@@ -286,8 +285,7 @@
 					"response": []
 				}
 			],
-			"description": "This API can be used for measuring node health and debugging. [More info](https://docs.avax.network/v1.0/en/api/admin)",
-			"protocolProfileBehavior": {}
+			"description": "This API can be used for measuring node health and debugging. [More info](https://docs.avax.network/v1.0/en/api/admin)"
 		},
 		{
 			"name": "AVM",
@@ -299,7 +297,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\"     : 1,\n    \"method\" : \"avm.buildGenesis\",\n    \"params\" : {\n        \"genesisData\": {\n            \"asset1\": {\n                \"name\": \"myFixedCapAsset\",\n                \"symbol\":\"MFCA\",\n                \"initialState\": {\n                    \"fixedCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"8UeduLccQuSmYiY3fGQEyotM9uXxoHoQQ\"\n                        },\n                        {\n                            \"amount\":100000,\n                            \"address\": \"AgVkHvvDShLumJrzXzkwuHa7rYpewj9Kg\"\n                        },\n                        {\n                            \"amount\":50000,\n                            \"address\": \"AwBDGsUwNdXgVc8XG2E8A8dL3bkoVbkL9\"\n                        },\n                        {\n                            \"amount\":50000,\n                            \"address\": \"AATN8YjgmFjC2jQRq45sEeGcBFXNYPcM8\"\n                        }\n                    ]\n                }\n            },\n            \"asset2\": {\n                \"name\": \"myVarCapAsset\",\n                \"symbol\":\"MVCA\",\n                \"initialState\": {\n                    \"variableCap\" : [\n                        {\n                            \"minters\": [\n                                \"AATN8YjgmFjC2jQRq45sEeGcBFXNYPcM8\",\n                                \"FNqMDYafoDVYQ2o4a7Zd9maJAxcUEieQb\"\n                            ],\n                            \"threshold\":1\n                        },\n                        {\n                            \"minters\": [\n                                \"JJSiKQfha9Z2TiMxBZ8XdW9F6KFw8aKS4\",\n                                \"7jJHY1vZL6AAbCFb97KMLY8nqMQVyd5JG\",\n                                \"58pM5cEf1wMSncPdCwtQ8tbHs2xdMA4eo\"\n                            ],\n                            \"threshold\":2\n                        }\n                    ]\n                }\n            }\n        }\n    }\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\"     : 1,\n    \"method\" : \"avm.buildGenesis\",\n    \"params\" : {\n        \"genesisData\": {\n            \"asset1\": {\n                \"name\": \"myFixedCapAsset\",\n                \"symbol\":\"MFCA\",\n                \"initialState\": {\n                    \"fixedCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                        }\n                    ]\n                }\n            },\n            \"asset2\": {\n                \"name\": \"myVarCapAsset\",\n                \"symbol\":\"MVCA\",\n                \"initialState\": {\n                    \"variableCap\" : [\n                        {\n                            \"minters\": [\n                                \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                            ],\n                            \"threshold\":1\n                        }\n                    ]\n                }\n            }\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -608,7 +606,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f7d94043-85db-4047-999d-24b4e3b97254",
 								"exec": [
 									"var template = `",
 									"    <table bgcolor=\"#FFFFFF\">",
@@ -649,7 +646,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/X",
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
 							"protocol": "{{http}}",
 							"host": [
 								"{{host}}"
@@ -657,6 +654,7 @@
 							"port": "{{port}}",
 							"path": [
 								"ext",
+								"bc",
 								"X"
 							]
 						},
@@ -795,7 +793,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVAX\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"P\",\n        \"to\":\"{{xchainAddress}}\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVAX\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"C\",\n        \"to\":\"{{xchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -816,37 +814,6 @@
 							]
 						},
 						"description": "Finalize a transfer of AVAX from either the P-Chain to the X-Chain or the C-Chain to the X-Chain.\n\nBefore this method is called, you must call either the P-Chain’s `exportAVAX` method or the C-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-importavax)"
-					},
-					"response": []
-				},
-				{
-					"name": "importKey",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{http}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"ext",
-								"bc",
-								"X"
-							]
-						},
-						"description": "Give a user control over an address by providing the private key that controls the address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-importkey)"
 					},
 					"response": []
 				},
@@ -878,6 +845,37 @@
 							]
 						},
 						"description": "Send a signed transaction to the network. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-issuetx)"
+					},
+					"response": []
+				},
+				{
+					"name": "importKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Give a user control over an address by providing the private key that controls the address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-importkey)"
 					},
 					"response": []
 				},
@@ -1068,8 +1066,7 @@
 					"response": []
 				}
 			],
-			"description": "The X-Chain, Avalanche’s native platform for creating and trading assets, is an instance of the Avalanche Virtual Machine (AVM). This API allows clients to create and trade assets on the X-Chain and other instances of the AVM. [More info](https://docs.avax.network/v1.0/en/api/avm)",
-			"protocolProfileBehavior": {}
+			"description": "The X-Chain, Avalanche’s native platform for creating and trading assets, is an instance of the Avalanche Virtual Machine (AVM). This API allows clients to create and trade assets on the X-Chain and other instances of the AVM. [More info](https://docs.avax.network/v1.0/en/api/avm)"
 		},
 		{
 			"name": "EVM",
@@ -2035,8 +2032,7 @@
 					"response": []
 				}
 			],
-			"description": "This document describes the API of the C-Chain, which is an instance of the Ethereum Virtual Machine (EVM.)\n\nNote: Ethereum has its own notion of `networkID` and `chainID`. The C-Chain uses `1` and `43110` for these values, obtained using the `net_version` and `eth_chainId` methods shown below. These have no relationship to AVA’s view of networkID and chainID, and are purely internal to the C-Chain. [More info](https://docs.avax.network/v1.0/en/api/evm)",
-			"protocolProfileBehavior": {}
+			"description": "This document describes the API of the C-Chain, which is an instance of the Ethereum Virtual Machine (EVM.)\n\nNote: Ethereum has its own notion of `networkID` and `chainID`. The C-Chain uses `1` and `43110` for these values, obtained using the `net_version` and `eth_chainId` methods shown below. These have no relationship to AVA’s view of networkID and chainID, and are purely internal to the C-Chain. [More info](https://docs.avax.network/v1.0/en/api/evm)"
 		},
 		{
 			"name": "Health",
@@ -2072,8 +2068,7 @@
 					"response": []
 				}
 			],
-			"description": "This API can be used for measuring node health. [More info](https://docs.avax.network/v1.0/en/api/health)",
-			"protocolProfileBehavior": {}
+			"description": "This API can be used for measuring node health. [More info](https://docs.avax.network/v1.0/en/api/health)"
 		},
 		{
 			"name": "Info",
@@ -2349,8 +2344,7 @@
 					"response": []
 				}
 			],
-			"description": "This API can be used to access basic information about the node.",
-			"protocolProfileBehavior": {}
+			"description": "This API can be used to access basic information about the node."
 		},
 		{
 			"name": "IPC",
@@ -2416,8 +2410,7 @@
 					"response": []
 				}
 			],
-			"description": "The IPC API allows users to create a UNIX domain socket for a blockchain to publish to. When the blockchain accepts a vertex/block it will publish the vertex to the socket.\n\nA node will only expose this API if it is started with command-line argument `api-ipcs-enabled=true`. [More info](https://docs.avax.network/v1.0/en/api/ipc/)",
-			"protocolProfileBehavior": {}
+			"description": "The IPC API allows users to create a UNIX domain socket for a blockchain to publish to. When the blockchain accepts a vertex/block it will publish the vertex to the socket.\n\nA node will only expose this API if it is started with command-line argument `api-ipcs-enabled=true`. [More info](https://docs.avax.network/v1.0/en/api/ipc/)"
 		},
 		{
 			"name": "Keystore",
@@ -2573,8 +2566,7 @@
 					"response": []
 				}
 			],
-			"description": "Every node has a built-in keystore. Clients create users on the keystore, which act as identities to be used when interacting with blockchains. A keystore exists at the node level, so if you create a user on a node it exists only on that node. However, users may be imported and exported using this API. \n\n**You should only create a keystore user on a node that you operate, as the node operator has access to your plaintext password.**\n\n[More info](https://docs.avax.network/v1.0/en/api/keystore)",
-			"protocolProfileBehavior": {}
+			"description": "Every node has a built-in keystore. Clients create users on the keystore, which act as identities to be used when interacting with blockchains. A keystore exists at the node level, so if you create a user on a node it exists only on that node. However, users may be imported and exported using this API. \n\n**You should only create a keystore user on a node that you operate, as the node operator has access to your plaintext password.**\n\n[More info](https://docs.avax.network/v1.0/en/api/keystore)"
 		},
 		{
 			"name": "Metrics",
@@ -2586,10 +2578,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{http}}://{{host}}:{{port}}/ext/metrics",
@@ -2608,8 +2597,7 @@
 					"response": []
 				}
 			],
-			"description": "The API allows clients to get statistics about a node’s health and performance. [More info](https://docs.avax.network/v1.0/en/api/metrics/)",
-			"protocolProfileBehavior": {}
+			"description": "The API allows clients to get statistics about a node’s health and performance. [More info](https://docs.avax.network/v1.0/en/api/metrics/)"
 		},
 		{
 			"name": "PlatformVM",
@@ -2745,7 +2733,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"timestamp\",\n        \"SubnetID\":\"{{avalancheSubnetId}}\",\n        \"name\":\"My new timestamp\",\n        \"genesisData\": \"45oj4CqFViNHUtBxJ55TZfqaVAXFwMRMj2XkHVqUYjJYoTaEM\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"avm\",\n        \"SubnetID\":\"{{avalancheSubnetId}}\",\n        \"name\":\"My new avm\",\n        \"genesisData\": \"111115LHK2ZCYttSKPmmhsTDSuKiCkmHz65nUS1YqybvjirwGLLt376k1RwnTt72WobPqrG7rmgrKVqSq6VxDsKXYGnRmfhdLCEhsYjMegZmu5L5wEQ6k1BHu1QN6jk8kfoLQfAnKAxv8t5PmGJUwmTyoHz9aoDpfwJfkzjLut3TSSHzVLzH5bPoc5fYMwKGA1Zaps4Byo6rPpAZgiDG1jokzLuVXFDMxiFSDGHHA7uB5Nx2qaywtUXtyTi7JMYMKQMcB2UQEZbpPB9QcHg88mA8uzT2i5YYSiT9uZpAUjd6cfNiPedBJqi5AdjtcAmHvhszCS7YurbVmB4sHEP3PMxyKAHMnQ8dyxefQCDPUpSGMFp6qzomuXQSQeTi\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3545,9 +3533,7 @@
 					"response": []
 				}
 			],
-			"description": "This API allows clients to interact with the P-Chain (Platform Chain), which maintains Avalanche’s validator set and handles blockchain creation. [More info](https://docs.avax.network/v1.0/en/api/platform)",
-			"protocolProfileBehavior": {}
+			"description": "This API allows clients to interact with the P-Chain (Platform Chain), which maintains Avalanche’s validator set and handles blockchain creation. [More info](https://docs.avax.network/v1.0/en/api/platform)"
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
