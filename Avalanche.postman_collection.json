@@ -731,7 +731,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{xchainAddress}}\"],\n        \"limit\": 5\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{xchainAddress}}\"],\n        \"limit\": 5,\n        \"sourceChain\": \"X\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
