@@ -69,6 +69,36 @@
 					"response": []
 				},
 				{
+					"name": "getChainAliases",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.getChainAliases\",\n    \"params\" :{\n        \"chain\":\"2eNy1mUFdmaxXNj1eQHUe7Np4gju9sJsEtWQ4MX3ToiNKuADed\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/admin",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"admin"
+							]
+						},
+						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/build/apis/admin-api#admin-lockprofile)"
+					},
+					"response": []
+				},
+				{
 					"name": "lockProfile",
 					"request": {
 						"method": "POST",
@@ -349,6 +379,37 @@
 							]
 						},
 						"description": "Create a new address controlled by the given user. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-createaddress)"
+					},
+					"response": []
+				},
+				{
+					"name": "createAsset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createAsset\",\n    \"params\" :{\n        \"name\":\"myVariableCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"denomination\": 0,  \n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Create a new variable-cap, fungible asset. No units of the asset exist at initialization. Minters can mint units of this asset using `createMintTx`, `signMintTx` and `issueTx`. The asset can be sent with `avm.send`. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-createvariablecapasset)"
 					},
 					"response": []
 				},
@@ -1004,6 +1065,37 @@
 					"response": []
 				},
 				{
+					"name": "sendAsManager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendAsManager\",\n    \"params\" :{ \n        \"assetID\" : \"{{avaxAssetId}}\",\n        \"amount\"  : 2000000,\n        \"feeFrom\": [\"{{xchainAddress}}\"],\n        \"feeChangeAddr\": \"{{xchainAddress}}\",\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"{{xchainAddress}}\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"{{memo}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-send)"
+					},
+					"response": []
+				},
+				{
 					"name": "sendMultiple",
 					"request": {
 						"method": "POST",
@@ -1062,6 +1154,37 @@
 							]
 						},
 						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-sendnft)"
+					},
+					"response": []
+				},
+				{
+					"name": "updateManagedAsset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.updateManagedAsset\",\n    \"params\" :{ \n        \"assetID\" : {{avaxAssetId}},\n        \"frozen\": true,\n        \"manager\":{\n            \"threshold\": 1,\n            \"addresses\": [\n                \"{{xchainAddress}}\"\n            ]\n        },\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"{{xchainAddress}}\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"{{memo}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http}}://{{host}}:{{port}}/ext/bc/X",
+							"protocol": "{{http}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-send)"
 					},
 					"response": []
 				}
@@ -2609,7 +2732,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"startTime\":1600406351,\n        \"endTime\":1602997371,\n        \"stakeAmount\":200000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"startTime\":1613347036,\n        \"endTime\":1631215800,\n        \"stakeAmount\":200000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
