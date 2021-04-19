@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e337c02e-d072-4741-b24f-e38be44db4b7",
+		"_postman_id": "007a173c-071b-4df4-8914-368bfacf1d3f",
 		"name": "Avalanche",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -2194,6 +2194,672 @@
 			"description": "This API can be used for measuring node health. [More info](https://docs.avax.network/v1.0/en/api/health)"
 		},
 		{
+			"name": "Index",
+			"item": [
+				{
+					"name": "X-Chain Transactions",
+					"item": [
+						{
+							"name": "getLastAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/X/tx",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"tx"
+									]
+								},
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getlastaccepted)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerByIndex",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/X/tx",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"tx"
+									]
+								},
+								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerbyindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerRange",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/X/tx",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"tx"
+									]
+								},
+								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerrange)"
+							},
+							"response": []
+						},
+						{
+							"name": "getIndex",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"6fXf5hncR8LXvwtM8iezFQBpK5cubV6y1dWgpJCcNyzGB1EzY\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/X/tx",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"tx"
+									]
+								},
+								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "isAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"6fXf5hncR8LXvwtM8iezFQBpK5cubV6y1dWgpJCcNyzGB1EzY\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/X/tx",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"tx"
+									]
+								},
+								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-isaccepted)"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "X-Chain Vertices",
+					"item": [
+						{
+							"name": "getLastAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/X/vtx",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"vtx"
+									]
+								},
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getlastaccepted)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerByIndex",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/X/vtx",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"vtx"
+									]
+								},
+								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerbyindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerRange",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/X/vtx",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"vtx"
+									]
+								},
+								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerrange)"
+							},
+							"response": []
+						},
+						{
+							"name": "getIndex",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"6fXf5hncR8LXvwtM8iezFQBpK5cubV6y1dWgpJCcNyzGB1EzY\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/X/vtx",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"vtx"
+									]
+								},
+								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "isAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"6fXf5hncR8LXvwtM8iezFQBpK5cubV6y1dWgpJCcNyzGB1EzY\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/X/vtx",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"vtx"
+									]
+								},
+								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-isaccepted)"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "P-Chain Blocks",
+					"item": [
+						{
+							"name": "getLastAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/P/block",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"P",
+										"block"
+									]
+								},
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getlastaccepted)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerByIndex",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/P/block",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"P",
+										"block"
+									]
+								},
+								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerbyindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerRange",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/P/block",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"P",
+										"block"
+									]
+								},
+								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerrange)"
+							},
+							"response": []
+						},
+						{
+							"name": "getIndex",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/P/block",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"P",
+										"block"
+									]
+								},
+								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "isAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/P/block",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"P",
+										"block"
+									]
+								},
+								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-isaccepted)"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "C-Chain Blocks",
+					"item": [
+						{
+							"name": "getLastAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/C/block",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"C",
+										"block"
+									]
+								},
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getlastaccepted)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerByIndex",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/C/block",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"C",
+										"block"
+									]
+								},
+								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerbyindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerRange",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/C/block",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"C",
+										"block"
+									]
+								},
+								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerrange)"
+							},
+							"response": []
+						},
+						{
+							"name": "getIndex",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/C/block",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"C",
+										"block"
+									]
+								},
+								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "isAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{http}}://{{host}}:{{port}}/ext/index/C/block",
+									"protocol": "{{http}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"C",
+										"block"
+									]
+								},
+								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-isaccepted)"
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "This API can be used to query data from AvalancheGo's database. The Index API is only available when node is run with --index-enabled option."
+		},
+		{
 			"name": "Info",
 			"item": [
 				{
@@ -2443,7 +3109,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.peers\",\n    \"params\" :{\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.peers\",\n    \"params\" :{\n        \"nodeIDs\": []\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3042,7 +3708,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getCurrentValidators\",\n    \"params\": {\n        \"subnetID\": \"{{customSubnetID}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getCurrentValidators\",\n    \"params\": {\n        \"subnetID\":null,\n        \"nodeIDs\":[]\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3197,7 +3863,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getPendingValidators\",\n    \"params\": {\n        \"subnetID\": \"{{avalancheSubnetId}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getPendingValidators\",\n    \"params\": {\n        \"subnetID\": null,\n        \"nodeIDs\": []\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
