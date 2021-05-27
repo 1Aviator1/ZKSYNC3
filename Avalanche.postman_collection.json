@@ -3795,6 +3795,37 @@
 					"response": []
 				},
 				{
+					"name": "getRewardUTXOs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getRewardUTXOs\",\n    \"params\" :{\n        \"txID\":\"2nmH8LithVbdjaXsxVQCQfXtzN9hBbmebrsaEYnLM9T32Uy2Y4\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "Returns the UTXOs that were rewarded after the provided transaction's staking or delegation period ended."
+					},
+					"response": []
+				},
+				{
 					"name": "getStake",
 					"request": {
 						"method": "POST",
