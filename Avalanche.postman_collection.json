@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e2bf7d02-bde8-4c54-af75-b15ad7922a01",
+		"_postman_id": "72e39b9d-49f8-416f-89db-118fcb994d21",
 		"name": "Avalanche",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1707,13 +1707,13 @@
 					"response": []
 				},
 				{
-					"name": "getTxStatus",
+					"name": "getAtomicTxStatus",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"avax.getTxStatus\",\n    \"params\": {\n        \"txID\": \"2LVVdbsbg7Lkp3bVBzbJeopp8HfBMApefoHLZ7VaFkXPPvd7KJ\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"avax.getAtomicTxStatus\",\n    \"params\": {\n        \"txID\": \"2LVVdbsbg7Lkp3bVBzbJeopp8HfBMApefoHLZ7VaFkXPPvd7KJ\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
