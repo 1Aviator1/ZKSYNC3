@@ -327,7 +327,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\"     : 1,\n    \"method\" : \"avm.buildGenesis\",\n    \"params\" : {\n        \"genesisData\": {\n            \"asset1\": {\n                \"name\": \"myFixedCapAsset\",\n                \"symbol\":\"MFCA\",\n                \"initialState\": {\n                    \"fixedCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                        }\n                    ]\n                }\n            },\n            \"asset2\": {\n                \"name\": \"myVarCapAsset\",\n                \"symbol\":\"MVCA\",\n                \"initialState\": {\n                    \"variableCap\" : [\n                        {\n                            \"minters\": [\n                                \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                            ],\n                            \"threshold\":1\n                        }\n                    ]\n                }\n            }\n        }\n    }\n}",
+              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\"     : 1,\n    \"method\" : \"avm.buildGenesis\",\n    \"params\" : {\n        \"genesisData\": {\n            \"asset1\": {\n                \"name\": \"asset1\",\n                \"symbol\":\"MFCA\",\n                \"memo\": \"2Zc54v4ek37TEwu4LiV3j41PUMRd6acDDU3ZCVSxE7X\",\n                \"denomination\": 1, \n                \"initialState\": {\n                    \"fixedCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                        }\n                    ]\n                }\n            },\n            \"asset2\": {\n                \"name\": \"asset2\",\n                \"symbol\":\"MVCA\",\n                \"memo\": \"2Zc54v4ek37TEwu4LiV3j41PUMRd6acDDU3ZCVSxE7X\",\n                \"denomination\": 2, \n                \"initialState\": {\n                    \"variableCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                        }\n                    ]\n                }\n            }\n        },\n        \"networkId\": 12345\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1195,6 +1195,38 @@
 			"name": "EVM",
 			"item": [
 				{
+          "name": "eth_baseFee",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_baseFee\",\n    \"params\": [],\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{host}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "ext",
+                "bc",
+                "C",
+                "rpc"
+              ]
+            },
+            "description": "Get the base fee for the next block. [More info](https://docs.avax.network/build/apis/contract-chain-c-chain-api#eth_baseFee)"
+          },
+          "response": []
+        },
+        {
 					"name": "eth_blockNumber",
 					"request": {
 						"method": "POST",
@@ -1355,6 +1387,38 @@
 					"response": []
 				},
 				{
+          "name": "eth_maxPriorityFeePerGas",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_maxPriorityFeePerGas\",\n    \"params\": [],\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{host}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "ext",
+                "bc",
+                "C",
+                "rpc"
+              ]
+            },
+            "description": "Get the priority fee needed to be included in a block. [More info](https://docs.avax.network/build/apis/contract-chain-c-chain-api#eth_maxPriorityFeePerGas)"
+          },
+          "response": []
+        },
+        {
 					"name": "eth_signTransaction",
 					"request": {
 						"method": "POST",
@@ -3460,7 +3524,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"subnetID\":\"{{avalancheSubnetId}}\",\n        \"startTime\":1583524047,\n        \"endTime\":1604102399,\n        \"weight\":1,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"subnetID\":\"{{avalancheSubnetId}}\",\n        \"startTime\":1625782598,\n        \"endTime\":1627078419,\n        \"weight\":20,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3639,7 +3703,7 @@
 					},
 					"response": []
 				},
-				{
+        {
 					"name": "getBlockchainStatus",
 					"request": {
 						"method": "POST",
