@@ -1739,13 +1739,13 @@
 					"response": []
 				},
 				{
-					"name": "getTx",
+					"name": "getAtomicTx",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getTx\",\n    \"params\" :{\n        \"txID\":\"2LVVdbsbg7Lkp3bVBzbJeopp8HfBMApefoHLZ7VaFkXPPvd7KJ\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getAtomicTx\",\n    \"params\" :{\n        \"txID\":\"n1D9UkjiryEBtW8qznD1TDkGEuYRFj5tLaS8NhVpMLYsx1FHa\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1777,7 +1777,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"avax.getAtomicTxStatus\",\n    \"params\": {\n        \"txID\": \"2LVVdbsbg7Lkp3bVBzbJeopp8HfBMApefoHLZ7VaFkXPPvd7KJ\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"avax.getAtomicTxStatus\",\n    \"params\": {\n        \"txID\": \"n1D9UkjiryEBtW8qznD1TDkGEuYRFj5tLaS8NhVpMLYsx1FHa\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
