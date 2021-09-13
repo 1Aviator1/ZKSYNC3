@@ -730,7 +730,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getTx\",\n    \"params\" :{\n        \"txID\":\"2QouvFWUbjuySRxeX5xMbNCuAaKWfbk5FeEa2JmoF85RKLk2dD\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getTx\",\n    \"params\" :{\n        \"txID\":\"2QouvFWUbjuySRxeX5xMbNCuAaKWfbk5FeEa2JmoF85RKLk2dD\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1745,7 +1745,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getAtomicTx\",\n    \"params\" :{\n        \"txID\":\"n1D9UkjiryEBtW8qznD1TDkGEuYRFj5tLaS8NhVpMLYsx1FHa\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getAtomicTx\",\n    \"params\" :{\n        \"txID\":\"2GD5SRYJQr2kw5jE73trBFiAgVQyrCaeg223TaTyJFYXf2kPty\",\n        \"encoding\": \"cb58\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4082,7 +4082,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTx\",\n    \"params\" :{\n        \"txID\":\"LK5gemsUXLQEuAjq37iGct2E5GC72KKLZxaVoDF7foQiSY6mu\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTx\",\n    \"params\" :{\n        \"txID\":\"Cy7cZUot6DCUUDz1VuA2C7vFVWSzW3DgLhYXUAiLWH8BKafbH\",\n        \"encoding\": \"cb58\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
