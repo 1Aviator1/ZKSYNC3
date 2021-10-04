@@ -2225,13 +2225,13 @@
 			"name": "Health",
 			"item": [
 				{
-					"name": "getLiveness",
+					"name": "health",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"health.getLiveness\"\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"health.health\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2250,7 +2250,7 @@
 								"health"
 							]
 						},
-						"description": "Get health check on this node. [More info](https://docs.avax.network/build/apis/health-api#health-getliveness)"
+						"description": "Get health check on this node. [More info](https://docs.avax.network/build/apis/health-api#health-health)"
 					},
 					"response": []
 				}
