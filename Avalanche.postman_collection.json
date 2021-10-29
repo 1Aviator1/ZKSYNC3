@@ -327,7 +327,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\"     : 1,\n    \"method\" : \"avm.buildGenesis\",\n    \"params\" : {\n        \"genesisData\": {\n            \"asset1\": {\n                \"name\": \"asset1\",\n                \"symbol\":\"MFCA\",\n                \"memo\": \"2Zc54v4ek37TEwu4LiV3j41PUMRd6acDDU3ZCVSxE7X\",\n                \"denomination\": 1, \n                \"initialState\": {\n                    \"fixedCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                        }\n                    ]\n                }\n            },\n            \"asset2\": {\n                \"name\": \"asset2\",\n                \"symbol\":\"MVCA\",\n                \"memo\": \"2Zc54v4ek37TEwu4LiV3j41PUMRd6acDDU3ZCVSxE7X\",\n                \"denomination\": 2, \n                \"initialState\": {\n                    \"variableCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                        }\n                    ]\n                }\n            }\n        },\n        \"networkId\": 12345\n    }\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\"     : 1,\n    \"method\" : \"avm.buildGenesis\",\n    \"params\" : {\n        \"genesisData\": {\n            \"asset1\": {\n                \"name\": \"asset1\",\n                \"symbol\":\"MFCA\",\n                \"memo\": \"2Zc54v4ek37TEwu4LiV3j41PUMRd6acDDU3ZCVSxE7X\",\n                \"denomination\": 1, \n                \"initialState\": {\n                    \"fixedCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                        }\n                    ]\n                }\n            },\n            \"asset2\": {\n                \"name\": \"asset2\",\n                \"symbol\":\"MVCA\",\n                \"memo\": \"2Zc54v4ek37TEwu4LiV3j41PUMRd6acDDU3ZCVSxE7X\",\n                \"denomination\": 2, \n                \"initialState\": {\n                    \"variableCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                        }\n                    ]\n                }\n            }\n        },\n        \"networkId\": 12345,\n        \"encoding\":\"cb58\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -792,7 +792,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{xchainAddress}}\"],\n        \"limit\": 5,\n        \"sourceChain\": \"X\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{xchainAddress}}\"],\n        \"limit\": 5,\n        \"sourceChain\": \"X\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -885,7 +885,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.issueTx\",\n    \"params\" :{\n        \"tx\":\"6sTENqXfk3gahxkJbEPsmX9eJTEFZRSRw83cRJqoHWBiaeAhVbz9QV4i6SLd6Dek4eLsojeR8FbT3arFtsGz9ycpHFaWHLX69edJPEmj2tPApsEqsFd7wDVp7fFxkG6HmySR\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.issueTx\",\n    \"params\" :{\n        \"tx\":\"6sTENqXfk3gahxkJbEPsmX9eJTEFZRSRw83cRJqoHWBiaeAhVbz9QV4i6SLd6Dek4eLsojeR8FbT3arFtsGz9ycpHFaWHLX69edJPEmj2tPApsEqsFd7wDVp7fFxkG6HmySR\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1009,7 +1009,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"assetID\":\"2KGdt2HpFKpTH5CtGZjYt5XPWs6Pv9DLoRBhiFfntbezdRvZWP\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{xchainAddress}}\",\n        \"minters\":[\n            \"{{xchainAddress}}\"\n        ],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"assetID\":\"2KGdt2HpFKpTH5CtGZjYt5XPWs6Pv9DLoRBhiFfntbezdRvZWP\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{xchainAddress}}\",\n        \"minters\":[\n            \"{{xchainAddress}}\"\n        ],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" ,\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1040,7 +1040,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" : \"{{avaxAssetId}}\",\n        \"amount\"  : 2000000000,\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"X-local1q8ayy4dxap07fvm3k8fydgsac3wt4eh933pmt6\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" : \"{{avaxAssetId}}\",\n        \"amount\"  : 2000000000,\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"{{xchainAddress}}\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1745,7 +1745,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getAtomicTx\",\n    \"params\" :{\n        \"txID\":\"2GD5SRYJQr2kw5jE73trBFiAgVQyrCaeg223TaTyJFYXf2kPty\",\n        \"encoding\": \"cb58\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getAtomicTx\",\n    \"params\" :{\n        \"txID\":\"2GD5SRYJQr2kw5jE73trBFiAgVQyrCaeg223TaTyJFYXf2kPty\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1809,7 +1809,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{cchainbech32address}}\"],\n        \"sourceChain\": \"X\",\n        \"limit\": 5\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{cchainbech32address}}\"],\n        \"sourceChain\": \"X\",\n        \"limit\": 5,\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1937,7 +1937,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avax.issueTx\",\n    \"params\" :{\n        \"tx\":\"6sTENqXfk3gahxkJbEPsmX9eJTEFZRSRw83cRJqoHWBiaeAhVbz9QV4i6SLd6Dek4eLsojeR8FbT3arFtsGz9ycpHFaWHLX69edJPEmj2tPApsEqsFd7wDVp7fFxkG6HmySR\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avax.issueTx\",\n    \"params\" :{\n        \"tx\":\"0x00\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2250,7 +2250,7 @@
 								"health"
 							]
 						},
-						"description": "Get health check on this node. [More info](https://docs.avax.network/build/apis/health-api#health-health)"
+						"description": "Get health check on this node. [More info](https://docs.avax.network/build/apis/health-api#health-getliveness)"
 					},
 					"response": []
 				}
@@ -2270,7 +2270,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2291,7 +2291,7 @@
 										"tx"
 									]
 								},
-								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getlastaccepted)"
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
 							},
 							"response": []
 						},
@@ -2302,7 +2302,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2323,7 +2323,39 @@
 										"tx"
 									]
 								},
-								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerbyindex)"
+								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerByID",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"2dGz8JSfX17QqW12pARrt2iWNhXdcpXMYPVSYRn9HrReGpMXqQ\",\n        \"encoding\":\"hex\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/tx",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"tx"
+									]
+								},
+								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2334,7 +2366,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2355,7 +2387,7 @@
 										"tx"
 									]
 								},
-								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerrange)"
+								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerrange)"
 							},
 							"response": []
 						},
@@ -2366,7 +2398,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"6fXf5hncR8LXvwtM8iezFQBpK5cubV6y1dWgpJCcNyzGB1EzY\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"2dGz8JSfX17QqW12pARrt2iWNhXdcpXMYPVSYRn9HrReGpMXqQ\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2387,7 +2419,7 @@
 										"tx"
 									]
 								},
-								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getindex)"
+								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getindex)"
 							},
 							"response": []
 						},
@@ -2398,7 +2430,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"6fXf5hncR8LXvwtM8iezFQBpK5cubV6y1dWgpJCcNyzGB1EzY\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"2dGz8JSfX17QqW12pARrt2iWNhXdcpXMYPVSYRn9HrReGpMXqQ\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2419,7 +2451,7 @@
 										"tx"
 									]
 								},
-								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-isaccepted)"
+								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.isaccepted)"
 							},
 							"response": []
 						}
@@ -2435,7 +2467,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2456,7 +2488,7 @@
 										"vtx"
 									]
 								},
-								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getlastaccepted)"
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
 							},
 							"response": []
 						},
@@ -2467,7 +2499,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2488,7 +2520,39 @@
 										"vtx"
 									]
 								},
-								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerbyindex)"
+								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerByID",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"8JeLjRDCojGAZXYNvLDxeU7XhKaTiMzJsSEue7d37kA1n1Htm\",\n        \"encoding\":\"hex\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/vtx",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"vtx"
+									]
+								},
+								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2499,7 +2563,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2520,7 +2584,7 @@
 										"vtx"
 									]
 								},
-								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerrange)"
+								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerrange)"
 							},
 							"response": []
 						},
@@ -2531,7 +2595,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"6fXf5hncR8LXvwtM8iezFQBpK5cubV6y1dWgpJCcNyzGB1EzY\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"kLBLyNrBr9rjHFBScjvogspz167wrTD47SqbTsLk6YGGnjHwZ\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2552,7 +2616,7 @@
 										"vtx"
 									]
 								},
-								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getindex)"
+								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getindex)"
 							},
 							"response": []
 						},
@@ -2563,7 +2627,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"6fXf5hncR8LXvwtM8iezFQBpK5cubV6y1dWgpJCcNyzGB1EzY\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"kLBLyNrBr9rjHFBScjvogspz167wrTD47SqbTsLk6YGGnjHwZ\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2584,7 +2648,7 @@
 										"vtx"
 									]
 								},
-								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-isaccepted)"
+								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.isaccepted)"
 							},
 							"response": []
 						}
@@ -2600,7 +2664,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2621,7 +2685,7 @@
 										"block"
 									]
 								},
-								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getlastaccepted)"
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
 							},
 							"response": []
 						},
@@ -2632,7 +2696,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2653,7 +2717,39 @@
 										"block"
 									]
 								},
-								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerbyindex)"
+								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerByID",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"8JeLjRDCojGAZXYNvLDxeU7XhKaTiMzJsSEue7d37kA1n1Htm\",\n        \"encoding\":\"hex\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/P/block",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"P",
+										"block"
+									]
+								},
+								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2664,7 +2760,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2685,7 +2781,7 @@
 										"block"
 									]
 								},
-								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerrange)"
+								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerrange)"
 							},
 							"response": []
 						},
@@ -2696,7 +2792,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2717,7 +2813,7 @@
 										"block"
 									]
 								},
-								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getindex)"
+								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getindex)"
 							},
 							"response": []
 						},
@@ -2728,7 +2824,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2749,7 +2845,7 @@
 										"block"
 									]
 								},
-								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-isaccepted)"
+								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.isaccepted)"
 							},
 							"response": []
 						}
@@ -2765,7 +2861,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2786,7 +2882,7 @@
 										"block"
 									]
 								},
-								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getlastaccepted)"
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
 							},
 							"response": []
 						},
@@ -2797,7 +2893,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByIndex\",\n    \"params\": {\n        \"index\":0,\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2818,7 +2914,39 @@
 										"block"
 									]
 								},
-								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerbyindex)"
+								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "getContainerByID",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"8JeLjRDCojGAZXYNvLDxeU7XhKaTiMzJsSEue7d37kA1n1Htm\",\n        \"encoding\":\"hex\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/C/block",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"ext",
+										"index",
+										"C",
+										"block"
+									]
+								},
+								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2829,7 +2957,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerRange\",\n    \"params\": {\n        \"startIndex\":0,\n        \"numtoFetch\":10,\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2850,7 +2978,7 @@
 										"block"
 									]
 								},
-								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getcontainerrange)"
+								"description": "Returns containers with indices in [startIndex, startIndex+1, ... , startIndex + numToFetch - 1]. numToFetch must be in \\[0,1024\\] [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerrange)"
 							},
 							"response": []
 						},
@@ -2861,7 +2989,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getIndex\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2882,7 +3010,7 @@
 										"block"
 									]
 								},
-								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-getindex)"
+								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getindex)"
 							},
 							"response": []
 						},
@@ -2893,7 +3021,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"cb58\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.isAccepted\",\n    \"params\": {\n        \"containerID\":\"4AqeFPxtTW4B5D6oR8gRZTvRKnnqkUWiV6mUNZxjUMbQKYWpi\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2914,7 +3042,7 @@
 										"block"
 									]
 								},
-								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index-isaccepted)"
+								"description": "Returns true if the container is in this index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.isaccepted)"
 							},
 							"response": []
 						}
@@ -3335,7 +3463,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"keystore.exportUser\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"keystore.exportUser\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3365,7 +3493,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.importUser\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"user\"    :\"21fDEsBk5U3FkquFGYpNdn3G9Ctr8BhW5wPVDuJqR86rEKKminsx8VvNFL4dKu6m6YjmJvwDA6f3a32d9F1qnTCkhD4Fw1URX3Cmz3GD3buzZp316dacYzx7gcEs2khxcaoGBudbcg3wiKJvbQhJS4Lcc5HZxEuMZtgNrgJgTBeoZrSpVgqafadQiUYTVycHmabFdduBS2C628v71Gx6gCMRYg15wxvg5jbLjF8xvijMDgdw29bf7aHkp5MT69mnj4pNr7VoKgquktCbu9tK2uX1PWea8kDDXzKaYwYC4tVVpGefX9qVvLf8eFaudkLiKdMM2FbedyUzQo9zS5cEJDLwH9EtANdqnp5kHqTRVeGebVsGXaVf7LMfQg4DZAGSk5C8qrDUdqkKH7MY9UW19DguKCY8jERkK2wauzKdHw4kMmYBA5SVMbjn88i61rq7iUHUuGis9927ihBS1\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.importUser\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"user\"    :\"0x0000b79e54bb3452985874844fd02ce47671725850111b14d5b06d4b3e142ec852b39d1be2bdead684977bc0a1bfa6eeb06e000000040000004066687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f292500000000000000000000000000000000000000000000000000000000000000000000004c00000000002a92a15386259d71410fe602a9a1e2207a7afae3efd8d86f142577405476e5337a0736ba095b0fe911cb3100000018226dc5aec589008bc87ce142d5488d942f7e9d37374be99f0000003466687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f29253cb7d3842e8cee6a0ebd09f1fe884f6861e1b29c00000052000000000030b46ad90c1ef2f22282a9ab9c045cf190506148a7afcf4e94360e7e4109ef9abbc4aa97dd84533a5b081c0da489e205f00000001825e30947b222849b4f69b0a1eaf1dd49c82f5b64995d3c4e00000040faa57ee922f01eb75ca224d2e8aaf9cb60973d011e0ac08c7b3798c3aacf79de00000000000000000000000000000000000000000000000000000000000000000000004c00000000002a098545758bbf938acd508762ffff24bd2e8e0f80313fb0957c51fea30df6f304a94568c30dfb06257deb00000018e722d87e7d5964aa8a8772b0985d0723d398681ef29fad7900000034faa57ee922f01eb75ca224d2e8aaf9cb60973d011e0ac08c7b3798c3aacf79de3cb7d3842e8cee6a0ebd09f1fe884f6861e1b29c00000052000000000030722156f457680f16cf010d7cb3b350aaf210ae9ed58aaf89017f0046c5380ddf76fb944a6ff9a287a6a6e6c6303c751a000000183edfb66b8b01e6197507cde7e4909f816d3accf753155f96b346b48c\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3896,7 +4024,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getRewardUTXOs\",\n    \"params\" :{\n        \"txID\":\"2nmH8LithVbdjaXsxVQCQfXtzN9hBbmebrsaEYnLM9T32Uy2Y4\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getRewardUTXOs\",\n    \"params\" :{\n        \"txID\":\"2nmH8LithVbdjaXsxVQCQfXtzN9hBbmebrsaEYnLM9T32Uy2Y4\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3927,7 +4055,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStake\",\n    \"params\": {\n        \"addresses\": [\"{{pchainAddress}}\"]\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStake\",\n    \"params\": {\n        \"addresses\": [\"{{pchainAddress}}\"],\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4082,7 +4210,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTx\",\n    \"params\" :{\n        \"txID\":\"Cy7cZUot6DCUUDz1VuA2C7vFVWSzW3DgLhYXUAiLWH8BKafbH\",\n        \"encoding\": \"cb58\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTx\",\n    \"params\" :{\n        \"txID\":\"Cy7cZUot6DCUUDz1VuA2C7vFVWSzW3DgLhYXUAiLWH8BKafbH\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4144,7 +4272,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"],\n        \"sourceChain\": \"X\",\n        \"limit\": 5\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"],\n        \"sourceChain\": \"X\",\n        \"limit\": 5,\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4330,7 +4458,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.issueTx\",\n    \"params\": {\n        \"tx\":\"111Bit5JNASbJyTLrd2kWkYRoc96swEWoWdmEhuGAFK3rCAyTnTzomuFwgx1SCUdUE71KbtXPnqj93KGr3CeftpPN37kVyqBaAQ5xaDjr7wVBTUYi9iV7kYJnHF61yovViJF74mJJy7WWQKeRMDRTiPuii5gsd11gtNahCCsKbm9seJtk2h1wAPZn9M1eL84CGVPnLUiLP\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.issueTx\",\n    \"params\": {\n        \"tx\":\"0x00\",\n        \"encoding\": \"hex\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
