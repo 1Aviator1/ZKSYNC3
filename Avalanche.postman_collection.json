@@ -3295,6 +3295,36 @@
 					"response": []
 				},
 				{
+					"name": "uptime",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.uptime\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Returns the network's observed uptime of this node. [More info](https://docs.avax.network/build/avalanchego-apis/info-api#info-uptime)"
+					},
+					"response": []
+				},
+				{
 					"name": "peers",
 					"request": {
 						"method": "POST",
