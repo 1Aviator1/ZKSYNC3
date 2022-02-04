@@ -600,6 +600,37 @@
 					"response": []
 				},
 				{
+					"name": "getAddressTxs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"{{xchainAddress}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Returns all transactions that change the balance of the given address. A transaction is said to change an address's balance if either is true:\n\n*   A UTXO that the transaction consumes was at least partially owned by the address.\n*   A UTXO that the transaction produces is at least partially owned by the address.\n    \n\nNote: Indexing (`index-transactions`) must be enabled in the X-chain config. [More info](https://docs.avax.network/build/avalanchego-apis/x-chain#avm-get-address-txs-api)"
+					},
+					"response": []
+				},
+				{
 					"name": "getAllBalances",
 					"request": {
 						"method": "POST",
@@ -3080,7 +3111,7 @@
 								"info"
 							]
 						},
-						"description": "Given a blockchain’s alias, get its ID. [More info](https://docs.avax.network/build/apis/info-api#info-getblockchainid)"
+						"description": "Given a blockchain’s alias, get its ID. [More info](https://docs.avax.network/build/avalanchego-apis/info#infogetblockchainid)"
 					},
 					"response": []
 				},
@@ -3260,7 +3291,7 @@
 								"info"
 							]
 						},
-						"description": "Check whether a given chain is done bootstrapping. [More info](https://docs.avax.network/build/apis/info-api#info-isbootstrapped)"
+						"description": "Check whether a given chain is done bootstrapping. [More info](https://docs.avax.network/build/avalanchego-apis/info-api#infoisbootstrapped)"
 					},
 					"response": []
 				},
@@ -3744,7 +3775,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"avm\",\n        \"SubnetID\":\"{{avalancheSubnetId}}\",\n        \"name\":\"My new avm\",\n        \"genesisData\": \"111115LHK2ZCYttSKPmmhsTDSuKiCkmHz65nUS1YqybvjirwGLLt376k1RwnTt72WobPqrG7rmgrKVqSq6VxDsKXYGnRmfhdLCEhsYjMegZmu5L5wEQ6k1BHu1QN6jk8kfoLQfAnKAxv8t5PmGJUwmTyoHz9aoDpfwJfkzjLut3TSSHzVLzH5bPoc5fYMwKGA1Zaps4Byo6rPpAZgiDG1jokzLuVXFDMxiFSDGHHA7uB5Nx2qaywtUXtyTi7JMYMKQMcB2UQEZbpPB9QcHg88mA8uzT2i5YYSiT9uZpAUjd6cfNiPedBJqi5AdjtcAmHvhszCS7YurbVmB4sHEP3PMxyKAHMnQ8dyxefQCDPUpSGMFp6qzomuXQSQeTi\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"avm\",\n        \"SubnetID\":\"{{avalancheSubnetId}}\",\n        \"name\":\"My new avm\",\n        \"genesisData\": \"111115LHK2ZCYttSKPmmhsTDSuKiCkmHz65nUS1YqybvjirwGLLt376k1RwnTt72WobPqrG7rmgrKVqSq6VxDsKXYGnRmfhdLCEhsYjM\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3955,6 +3986,37 @@
 					"response": []
 				},
 				{
+					"name": "getTotalStake",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTotalStake\",\n    \"params\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "Get the total amount of nAVAX staked on the Primary Network. [More info](https://docs.avax.network/build/avalanchego-apis/p-chain#platformgettotalstake)"
+					},
+					"response": []
+				},
+				{
 					"name": "getCurrentValidators",
 					"request": {
 						"method": "POST",
@@ -3962,6 +4024,37 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getCurrentValidators\",\n    \"params\": {\n        \"subnetID\":null,\n        \"nodeIDs\":[]\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "List the current validators of the given Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetcurrentvalidators)"
+					},
+					"response": []
+				},
+				{
+					"name": "getMaxStakeAmount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getMaxStakeAmount\",\n    \"params\": {\n        \"subnetID\":\"\",\n        \"nodeID\":\"\",\n        \"startTime\": 123,\n        \"endTime\": 321\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4265,6 +4358,37 @@
 					"response": []
 				},
 				{
+					"name": "getTimestamp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTimestamp\",\n    \"params\" :{}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "Returns the specified transaction [More info](https://docs.avax.network/v1.0/en/api/avm/#avmgetbalance)"
+					},
+					"response": []
+				},
+				{
 					"name": "getTxStatus",
 					"request": {
 						"method": "POST",
@@ -4302,7 +4426,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"],\n        \"sourceChain\": \"X\",\n        \"limit\": 5,\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"P-custom18jma8ppw3nhx5r4ap8clazz0dps7rv5u9xde7p\"],\n        \"sourceChain\": \"X\",\n        \"limit\": 5,\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
