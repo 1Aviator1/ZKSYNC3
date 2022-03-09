@@ -99,6 +99,66 @@
 					"response": []
 				},
 				{
+					"name": "getLoggerLevel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.getLoggerLevel\",\n    \"params\" :{\n        \"loggerName\":\"C\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"admin"
+							]
+						},
+						"description": "Returns log and display levels of loggers. [More info](https://docs.avax.network/build/avalanchego-apis/admin#admingetloggerlevel)"
+					},
+					"response": []
+				},
+				{
+					"name": "loadVMs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.loadVMs\",\n    \"params\" :{}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"admin"
+							]
+						},
+						"description": "Dynamically loads any virtual machines installed on the node as plugins. [More info](https://docs.avax.network/build/avalanchego-apis/admin#adminloadvms)"
+					},
+					"response": []
+				},
+				{
 					"name": "lockProfile",
 					"request": {
 						"method": "POST",
@@ -155,6 +215,36 @@
 							]
 						},
 						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/build/apis/admin-api#admin-memoryprofile)"
+					},
+					"response": []
+				},
+				{
+					"name": "setLoggerLevel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"admin.setLoggerLevel\",\n    \"params\" :{\n        \"loggerName\": \"C\",\n        \"logLevel\": \"DEBUG\",\n        \"displayLevel\": \"INFO\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"admin"
+							]
+						},
+						"description": "Sets log and display levels of loggers. [More info](https://docs.avax.network/build/avalanchego-apis/admin#adminsetloggerlevel)"
 					},
 					"response": []
 				},
