@@ -3416,6 +3416,36 @@
 					"response": []
 				},
 				{
+					"name": "getVMs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.getVMs\",\n    \"params\": {\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Get the virtual machines installed on this node. [More info](https://docs.avax.network/build/avalanchego-apis/info#infogetvms)"
+					},
+					"response": []
+				},
+				{
 					"name": "uptime",
 					"request": {
 						"method": "POST",
