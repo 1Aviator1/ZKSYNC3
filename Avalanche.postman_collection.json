@@ -23,12 +23,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/admin",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -53,12 +51,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/admin",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -83,12 +79,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/admin",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -113,12 +107,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/admin",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -143,12 +135,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/admin",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -173,12 +163,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/admin",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -203,12 +191,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/admin",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -233,12 +219,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/admin",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -263,12 +247,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/admin",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -293,12 +275,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/admin",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/admin",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"admin"
@@ -329,12 +309,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/auth",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/auth",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"auth"
@@ -359,12 +337,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/auth",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/auth",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"auth"
@@ -389,12 +365,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/auth",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/auth",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"auth"
@@ -417,7 +391,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\"     : 1,\n    \"method\" : \"avm.buildGenesis\",\n    \"params\" : {\n        \"genesisData\": {\n            \"asset1\": {\n                \"name\": \"asset1\",\n                \"symbol\":\"MFCA\",\n                \"memo\": \"2Zc54v4ek37TEwu4LiV3j41PUMRd6acDDU3ZCVSxE7X\",\n                \"denomination\": 1, \n                \"initialState\": {\n                    \"fixedCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                        }\n                    ]\n                }\n            },\n            \"asset2\": {\n                \"name\": \"asset2\",\n                \"symbol\":\"MVCA\",\n                \"memo\": \"2Zc54v4ek37TEwu4LiV3j41PUMRd6acDDU3ZCVSxE7X\",\n                \"denomination\": 2, \n                \"initialState\": {\n                    \"variableCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u\"\n                        }\n                    ]\n                }\n            }\n        },\n        \"networkId\": 12345,\n        \"encoding\":\"cb58\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\"     : 1,\n    \"method\" : \"avm.buildGenesis\",\n    \"params\" : {\n        \"genesisData\": {\n            \"asset1\": {\n                \"name\": \"asset1\",\n                \"symbol\":\"MFCA\",\n                \"memo\": \"2Zc54v4ek37TEwu4LiV3j41PUMRd6acDDU3ZCVSxE7X\",\n                \"denomination\": 1, \n                \"initialState\": {\n                    \"fixedCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"custom18jma8ppw3nhx5r4ap8clazz0dps7rv5u9xde7p\"\n                        }\n                    ]\n                }\n            },\n            \"asset2\": {\n                \"name\": \"asset2\",\n                \"symbol\":\"MVCA\",\n                \"memo\": \"2Zc54v4ek37TEwu4LiV3j41PUMRd6acDDU3ZCVSxE7X\",\n                \"denomination\": 2, \n                \"initialState\": {\n                    \"variableCap\" : [\n                        {\n                            \"amount\":100000,\n                            \"address\": \"custom18jma8ppw3nhx5r4ap8clazz0dps7rv5u9xde7p\"\n                        }\n                    ]\n                }\n            }\n        },\n        \"networkId\": 1337,\n        \"encoding\":\"cb58\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -425,12 +399,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/vm/avm",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/vm/avm",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"vm",
@@ -456,12 +428,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -487,12 +457,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -518,12 +486,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -549,12 +515,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -580,12 +544,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -611,12 +573,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -624,6 +584,35 @@
 							]
 						},
 						"description": "Export a non-AVAX asset from the X-Chain to the C-Chain. After calling this method, you must call the C-Chain’s `import` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmexport)"
+					},
+					"response": []
+				},
+				{
+					"name": "exportAVAX",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVAX\",\n    \"params\" :{\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{cchainbech32address}}\",\n        \"amount\": 4000001000000,\n        \"destinationChain\": \"C\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ext/bc/X",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Export AVAX from the X-Chain to both the P-Chain as well as the C-Chain. After calling this method, you must call either the P-Chain’s `importAVAX` method or the C-Chain's `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-exportavax)"
 					},
 					"response": []
 				},
@@ -642,12 +631,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -673,12 +660,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -704,12 +689,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -735,12 +718,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -797,12 +778,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -828,12 +807,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -859,12 +836,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -890,12 +865,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -921,12 +894,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -934,6 +905,35 @@
 							]
 						},
 						"description": "Finalize a transfer of AVAX from either the P-Chain to the X-Chain or the C-Chain to the X-Chain.\n\nBefore this method is called, you must call either the P-Chain’s `exportAVAX` method or the C-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/v1.0/en/api/avm/#avmimportavax)"
+					},
+					"response": []
+				},
+				{
+					"name": "importAVAX",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVAX\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"C\",\n        \"to\":\"{{xchainAddress}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ext/bc/X",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ext",
+								"bc",
+								"X"
+							]
+						},
+						"description": "Finalize a transfer of AVAX from either the P-Chain to the X-Chain or the C-Chain to the X-Chain.\n\nBefore this method is called, you must call either the P-Chain’s `exportAVAX` method or the C-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-importavax)"
 					},
 					"response": []
 				},
@@ -952,12 +952,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -983,12 +981,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1014,12 +1010,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1045,12 +1039,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1076,12 +1068,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1107,12 +1097,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1138,12 +1126,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1169,12 +1155,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1200,12 +1184,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1231,12 +1213,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/X",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/X",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1268,12 +1248,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1300,12 +1278,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1332,12 +1308,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1364,12 +1338,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1396,12 +1368,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1428,12 +1398,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1460,12 +1428,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1492,12 +1458,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1524,12 +1488,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1556,12 +1518,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1588,12 +1548,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1620,12 +1578,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1652,12 +1608,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1684,12 +1638,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1716,12 +1668,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/avax",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1748,12 +1698,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/avax",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1780,12 +1728,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/avax",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1812,12 +1758,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/avax",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1844,12 +1788,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/avax",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1876,12 +1818,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/avax",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1908,12 +1848,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/avax",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1940,12 +1878,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/avax",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -1972,12 +1908,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/avax",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2004,12 +1938,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/avax",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/avax",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2036,12 +1968,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2068,12 +1998,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2100,12 +2028,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2132,12 +2058,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2164,12 +2088,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2196,12 +2118,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2228,12 +2148,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2260,12 +2178,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/C/rpc",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/C/rpc",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -2298,12 +2214,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/health",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/health",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"health"
@@ -2337,12 +2251,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/tx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/tx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2369,12 +2281,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/tx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/tx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2401,12 +2311,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/tx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/tx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2433,12 +2341,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/tx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/tx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2465,12 +2371,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/tx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/tx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2497,12 +2401,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/tx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/tx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2534,12 +2436,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/vtx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/vtx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2566,12 +2466,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/vtx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/vtx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2598,12 +2496,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/vtx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/vtx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2630,12 +2526,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/vtx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/vtx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2662,12 +2556,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/vtx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/vtx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2694,12 +2586,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/X/vtx",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/X/vtx",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2731,12 +2621,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/P/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/P/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2763,12 +2651,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/P/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/P/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2795,12 +2681,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/P/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/P/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2827,12 +2711,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/P/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/P/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2859,12 +2741,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/P/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/P/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2891,12 +2771,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/P/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/P/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2928,12 +2806,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/C/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/C/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2960,12 +2836,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/C/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/C/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -2992,12 +2866,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/C/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/C/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -3024,12 +2896,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/C/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/C/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -3056,12 +2926,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/C/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/C/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -3088,12 +2956,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/ext/index/C/block",
-									"protocol": "{{protocol}}",
+									"raw": "{{baseURL}}/ext/index/C/block",
 									"host": [
-										"{{host}}"
+										"{{baseURL}}"
 									],
-									"port": "{{port}}",
 									"path": [
 										"ext",
 										"index",
@@ -3128,12 +2994,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3158,12 +3022,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3188,12 +3050,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3218,12 +3078,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3248,12 +3106,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3278,12 +3134,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3308,12 +3162,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3338,12 +3190,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3368,12 +3218,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3398,12 +3246,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3428,12 +3274,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/info",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/info",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"info"
@@ -3464,12 +3308,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/ipcs",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/ipcs",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"ipcs"
@@ -3494,12 +3336,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/ipcs",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/ipcs",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"ipcs"
@@ -3530,12 +3370,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/keystore",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/keystore",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"keystore"
@@ -3560,12 +3398,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/keystore",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/keystore",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"keystore"
@@ -3590,12 +3426,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/keystore",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/keystore",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"keystore"
@@ -3620,12 +3454,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/keystore",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/keystore",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"keystore"
@@ -3650,12 +3482,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/keystore",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/keystore",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"keystore"
@@ -3681,12 +3511,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/metrics",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/metrics",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"metrics"
@@ -3717,12 +3545,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -3748,12 +3574,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -3779,12 +3603,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -3810,12 +3632,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -3841,12 +3661,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -3872,12 +3690,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -3895,7 +3711,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"address\":\"{{pchainAddress}}\"    \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"address\":\"P-custom1u6eth2fg33ye63mnyu5jswtj326jaypvhyar45\"    \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3903,12 +3719,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -3934,12 +3748,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -3965,12 +3777,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -3996,12 +3806,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4027,12 +3835,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4058,12 +3864,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4089,12 +3893,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4120,12 +3922,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4151,12 +3951,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4182,12 +3980,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4213,12 +4009,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4244,12 +4038,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4275,12 +4067,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4306,12 +4096,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4337,12 +4125,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4368,12 +4154,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4399,12 +4183,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4430,12 +4212,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4461,12 +4241,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4492,12 +4270,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4523,12 +4299,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4554,12 +4328,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4585,12 +4357,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4616,12 +4386,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4647,12 +4415,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4678,12 +4444,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4709,12 +4473,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4740,12 +4502,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4771,12 +4531,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
@@ -4802,12 +4560,10 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/ext/bc/P",
-							"protocol": "{{protocol}}",
+							"raw": "{{baseURL}}/ext/bc/P",
 							"host": [
-								"{{host}}"
+								"{{baseURL}}"
 							],
-							"port": "{{port}}",
 							"path": [
 								"ext",
 								"bc",
