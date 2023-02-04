@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "72e39b9d-49f8-416f-89db-118fcb994d21",
+		"_postman_id": "1ee7a070-3262-42d5-9cb2-3ec00a0a5d5e",
 		"name": "Avalanche",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12086068"
 	},
 	"item": [
 		{
@@ -588,35 +589,6 @@
 					"response": []
 				},
 				{
-					"name": "exportAVAX",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportAVAX\",\n    \"params\" :{\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{cchainbech32address}}\",\n        \"amount\": 4000001000000,\n        \"destinationChain\": \"C\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/X",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"X"
-							]
-						},
-						"description": "Export AVAX from the X-Chain to both the P-Chain as well as the C-Chain. After calling this method, you must call either the P-Chain’s `importAVAX` method or the C-Chain's `importAVAX` method to complete the transfer. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-exportavax)"
-					},
-					"response": []
-				},
-				{
 					"name": "exportKey",
 					"request": {
 						"method": "POST",
@@ -652,7 +624,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"{{xchainAddress}}\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAddressTxs\",\n    \"params\" :{\n        \"address\":\"{{xchainAddress}}\",\n        \"assetID\": \"AVAX\",\n        \"pageSize\": 20,\n        \"cursor\": 0\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -799,7 +771,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getTx\",\n    \"params\" :{\n        \"txID\":\"2QouvFWUbjuySRxeX5xMbNCuAaKWfbk5FeEa2JmoF85RKLk2dD\",\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getTx\",\n    \"params\" :{\n        \"txID\":\"{{txID}}\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -828,7 +800,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"avm.getTxStatus\",\n    \"params\": {\n        \"txID\": \"2HHr7xUJgWiLESV7g8T3oWfWvdpWJXd4Hctj6U3KhzUN6EsgBG\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"avm.getTxStatus\",\n    \"params\": {\n        \"txID\": \"{{txID}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -857,7 +829,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{xchainAddress}}\"],\n        \"limit\": 5,\n        \"sourceChain\": \"X\",\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{xchainAddress}}\"],\n        \"limit\": 5,\n        \"sourceChain\": \"X\",\n        \"encoding\": \"hex\",\n        \"startIndex\": { \n            \"address\": \"{{xchainAddress}}\",\n            \"utxo\": \"{{utxo}}\"\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -909,13 +881,13 @@
 					"response": []
 				},
 				{
-					"name": "importAVAX",
+					"name": "importKey",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importAVAX\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"C\",\n        \"to\":\"{{xchainAddress}}\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -933,7 +905,7 @@
 								"X"
 							]
 						},
-						"description": "Finalize a transfer of AVAX from either the P-Chain to the X-Chain or the C-Chain to the X-Chain.\n\nBefore this method is called, you must call either the P-Chain’s `exportAVAX` method or the C-Chain’s `exportAVAX` method to initiate the transfer. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-importavax)"
+						"description": "Give a user control over an address by providing the private key that controls the address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-importkey)"
 					},
 					"response": []
 				},
@@ -963,35 +935,6 @@
 							]
 						},
 						"description": "Send a signed transaction to the network. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-issuetx)"
-					},
-					"response": []
-				},
-				{
-					"name": "importKey",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/X",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"X"
-							]
-						},
-						"description": "Give a user control over an address by providing the private key that controls the address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-importkey)"
 					},
 					"response": []
 				},
@@ -1112,35 +1055,6 @@
 					"response": []
 				},
 				{
-					"name": "sendAsManager",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendAsManager\",\n    \"params\" :{ \n        \"assetID\" : \"{{avaxAssetId}}\",\n        \"amount\"  : 2000000,\n        \"feeFrom\": [\"{{xchainAddress}}\"],\n        \"feeChangeAddr\": \"{{xchainAddress}}\",\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"{{xchainAddress}}\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"{{memo}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/X",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"X"
-							]
-						},
-						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-send)"
-					},
-					"response": []
-				},
-				{
 					"name": "sendMultiple",
 					"request": {
 						"method": "POST",
@@ -1195,35 +1109,6 @@
 							]
 						},
 						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-sendnft)"
-					},
-					"response": []
-				},
-				{
-					"name": "updateManagedAsset",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.updateManagedAsset\",\n    \"params\" :{ \n        \"assetID\" : {{avaxAssetId}},\n        \"frozen\": true,\n        \"manager\":{\n            \"threshold\": 1,\n            \"addresses\": [\n                \"{{xchainAddress}}\"\n            ]\n        },\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"{{xchainAddress}}\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"{{memo}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/X",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"X"
-							]
-						},
-						"description": "Send a quantity of an asset to an address. [More info](https://docs.avax.network/build/apis/exchange-chain-x-chain-api#avm-send)"
 					},
 					"response": []
 				}
@@ -2237,13 +2122,13 @@
 					"name": "X-Chain Transactions",
 					"item": [
 						{
-							"name": "getLastAccepted",
+							"name": "getContainerByID",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"2dGz8JSfX17QqW12pARrt2iWNhXdcpXMYPVSYRn9HrReGpMXqQ\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2262,7 +2147,7 @@
 										"tx"
 									]
 								},
-								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
+								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2293,36 +2178,6 @@
 									]
 								},
 								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyindex)"
-							},
-							"response": []
-						},
-						{
-							"name": "getContainerByID",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"2dGz8JSfX17QqW12pARrt2iWNhXdcpXMYPVSYRn9HrReGpMXqQ\",\n        \"encoding\":\"hex\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseURL}}/ext/index/X/tx",
-									"host": [
-										"{{baseURL}}"
-									],
-									"path": [
-										"ext",
-										"index",
-										"X",
-										"tx"
-									]
-								},
-								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2387,6 +2242,36 @@
 							"response": []
 						},
 						{
+							"name": "getLastAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/ext/index/X/tx",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"tx"
+									]
+								},
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
+							},
+							"response": []
+						},
+						{
 							"name": "isAccepted",
 							"request": {
 								"method": "POST",
@@ -2422,13 +2307,13 @@
 					"name": "X-Chain Vertices",
 					"item": [
 						{
-							"name": "getLastAccepted",
+							"name": "getContainerByID",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"8JeLjRDCojGAZXYNvLDxeU7XhKaTiMzJsSEue7d37kA1n1Htm\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2447,7 +2332,7 @@
 										"vtx"
 									]
 								},
-								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
+								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2478,36 +2363,6 @@
 									]
 								},
 								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyindex)"
-							},
-							"response": []
-						},
-						{
-							"name": "getContainerByID",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"8JeLjRDCojGAZXYNvLDxeU7XhKaTiMzJsSEue7d37kA1n1Htm\",\n        \"encoding\":\"hex\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseURL}}/ext/index/X/vtx",
-									"host": [
-										"{{baseURL}}"
-									],
-									"path": [
-										"ext",
-										"index",
-										"X",
-										"vtx"
-									]
-								},
-								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2572,6 +2427,36 @@
 							"response": []
 						},
 						{
+							"name": "getLastAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/ext/index/X/vtx",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"ext",
+										"index",
+										"X",
+										"vtx"
+									]
+								},
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
+							},
+							"response": []
+						},
+						{
 							"name": "isAccepted",
 							"request": {
 								"method": "POST",
@@ -2607,13 +2492,13 @@
 					"name": "P-Chain Blocks",
 					"item": [
 						{
-							"name": "getLastAccepted",
+							"name": "getContainerByID",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"8JeLjRDCojGAZXYNvLDxeU7XhKaTiMzJsSEue7d37kA1n1Htm\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2632,7 +2517,7 @@
 										"block"
 									]
 								},
-								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
+								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2663,36 +2548,6 @@
 									]
 								},
 								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyindex)"
-							},
-							"response": []
-						},
-						{
-							"name": "getContainerByID",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"8JeLjRDCojGAZXYNvLDxeU7XhKaTiMzJsSEue7d37kA1n1Htm\",\n        \"encoding\":\"hex\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseURL}}/ext/index/P/block",
-									"host": [
-										"{{baseURL}}"
-									],
-									"path": [
-										"ext",
-										"index",
-										"P",
-										"block"
-									]
-								},
-								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2753,6 +2608,36 @@
 									]
 								},
 								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "getLastAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/ext/index/P/block",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"ext",
+										"index",
+										"P",
+										"block"
+									]
+								},
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
 							},
 							"response": []
 						},
@@ -2792,13 +2677,13 @@
 					"name": "C-Chain Blocks",
 					"item": [
 						{
-							"name": "getLastAccepted",
+							"name": "getContainerByID",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"8JeLjRDCojGAZXYNvLDxeU7XhKaTiMzJsSEue7d37kA1n1Htm\",\n        \"encoding\":\"hex\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2817,7 +2702,7 @@
 										"block"
 									]
 								},
-								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
+								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2848,36 +2733,6 @@
 									]
 								},
 								"description": "Get container by index. The first container accepted is at index 0, the second is at index 1, etc. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyindex)"
-							},
-							"response": []
-						},
-						{
-							"name": "getContainerByID",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getContainerByID\",\n    \"params\": {\n        \"containerID\":\"8JeLjRDCojGAZXYNvLDxeU7XhKaTiMzJsSEue7d37kA1n1Htm\",\n        \"encoding\":\"hex\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseURL}}/ext/index/C/block",
-									"host": [
-										"{{baseURL}}"
-									],
-									"path": [
-										"ext",
-										"index",
-										"C",
-										"block"
-									]
-								},
-								"description": "Get container by ID. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getcontainerbyid)"
 							},
 							"response": []
 						},
@@ -2938,6 +2793,36 @@
 									]
 								},
 								"description": "Get a container's index. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getindex)"
+							},
+							"response": []
+						},
+						{
+							"name": "getLastAccepted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"index.getLastAccepted\",\n    \"params\": {\n        \"encoding\":\"hex\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/ext/index/C/block",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"ext",
+										"index",
+										"C",
+										"block"
+									]
+								},
+								"description": "Get the most recently accepted container. [More info](https://docs.avax.network/build/avalanchego-apis/index-api#index.getlastaccepted)"
 							},
 							"response": []
 						},
@@ -2979,6 +2864,34 @@
 		{
 			"name": "Info",
 			"item": [
+				{
+					"name": "isBootstrapped",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.isBootstrapped\",\n    \"params\": {\n        \"chain\": \"X\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ext/info",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Check whether a given chain is done bootstrapping. [More info](https://docs.avax.network/build/avalanchego-apis/info-api#infoisbootstrapped)"
+					},
+					"response": []
+				},
 				{
 					"name": "getBlockchainID",
 					"request": {
@@ -3148,34 +3061,6 @@
 					"response": []
 				},
 				{
-					"name": "isBootstrapped",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.isBootstrapped\",\n    \"params\": {\n        \"chain\": \"X\"\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/info",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"info"
-							]
-						},
-						"description": "Check whether a given chain is done bootstrapping. [More info](https://docs.avax.network/build/avalanchego-apis/info-api#infoisbootstrapped)"
-					},
-					"response": []
-				},
-				{
 					"name": "getTxFee",
 					"request": {
 						"method": "POST",
@@ -3232,34 +3117,6 @@
 					"response": []
 				},
 				{
-					"name": "uptime",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.uptime\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/info",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"info"
-							]
-						},
-						"description": "Returns the network's observed uptime of this node. [More info](https://docs.avax.network/build/avalanchego-apis/info-api#info-uptime)"
-					},
-					"response": []
-				},
-				{
 					"name": "peers",
 					"request": {
 						"method": "POST",
@@ -3284,6 +3141,34 @@
 							]
 						},
 						"description": "Get description of peer connections. [More info](https://docs.avax.network/build/apis/info-api#info-peers)"
+					},
+					"response": []
+				},
+				{
+					"name": "uptime",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"info.uptime\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ext/info",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ext",
+								"info"
+							]
+						},
+						"description": "Returns the network's observed uptime of this node. [More info](https://docs.avax.network/build/avalanchego-apis/info-api#info-uptime)"
 					},
 					"response": []
 				}
@@ -3537,7 +3422,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"startTime\":1613347036,\n        \"endTime\":1631215800,\n        \"stakeAmount\":200000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"startTime\":1613347036,\n        \"endTime\":1631215800,\n        \"stakeAmount\":200000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3560,42 +3445,13 @@
 					"response": []
 				},
 				{
-					"name": "addValidator",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"startTime\":1606245174,\n        \"endTime\":1608837056,\n        \"stakeAmount\":2000000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"delegationFeeRate\":10,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/P",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"P"
-							]
-						},
-						"description": "Add a validator to the Default Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformadddefaultsubnetvalidator)"
-					},
-					"response": []
-				},
-				{
 					"name": "addSubnetValidator",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"subnetID\":\"{{avalancheSubnetId}}\",\n        \"startTime\":1625782598,\n        \"endTime\":1627078419,\n        \"weight\":20,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"subnetID\":\"{{avalancheSubnetId}}\",\n        \"startTime\":1625782598,\n        \"endTime\":1627078419,\n        \"weight\":20,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3614,6 +3470,35 @@
 							]
 						},
 						"description": "Add a validator to a Subnet other than the Default Subnet. The validator must validate the Default Subnet for the entire duration they validate this Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformaddnondefaultsubnetvalidator)"
+					},
+					"response": []
+				},
+				{
+					"name": "addValidator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"startTime\":1606245174,\n        \"endTime\":1608837056,\n        \"stakeAmount\":2000000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"delegationFeeRate\":10,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ext/bc/P",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "Add a validator to the Default Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformadddefaultsubnetvalidator)"
 					},
 					"response": []
 				},
@@ -3653,7 +3538,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"avm\",\n        \"SubnetID\":\"{{avalancheSubnetId}}\",\n        \"name\":\"My new avm\",\n        \"genesisData\": \"111115LHK2ZCYttSKPmmhsTDSuKiCkmHz65nUS1YqybvjirwGLLt376k1RwnTt72WobPqrG7rmgrKVqSq6VxDsKXYGnRmfhdLCEhsYjM\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"avm\",\n        \"SubnetID\":\"{{avalancheSubnetId}}\",\n        \"name\":\"My new avm\",\n        \"genesisData\": \"111115LHK2ZCYttSKPmmhsTDSuKiCkmHz65nUS1YqybvjirwGLLt376k1RwnTt72WobPqrG7rmgrKVqSq6VxDsKXYGnRmfhdLCEhsYjM\",\n        \"encoding\": \"hex\",\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3705,13 +3590,71 @@
 					"response": []
 				},
 				{
+					"name": "exportAVAX",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.exportAVAX\",\n    \"params\": {\n        \"to\":\"{{xchainAddress}}\",\n        \"amount\":54321,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ext/bc/P",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "Send AVAX from an account on the C-Chain to an address on the X-Chain.\nThis transaction must be signed with the key of the account that the AVAX is sent from and which pays the transaction fee.\nAfter issuing this transaction, you must call the X-Chain’s `importAVA` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformexportavax)"
+					},
+					"response": []
+				},
+				{
+					"name": "exportKey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"address\": \"{{pchainAddress}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ext/bc/P",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "Get the private key that controls a given address.\nThe returned private key can be added to a user with `platform.importKey`. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformexportkey)"
+					},
+					"response": []
+				},
+				{
 					"name": "getBalance",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"address\":\"P-custom1u6eth2fg33ye63mnyu5jswtj326jaypvhyar45\"    \n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"addresses\":[\"{{pchainAddress}}\"]    \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3734,13 +3677,13 @@
 					"response": []
 				},
 				{
-					"name": "getBlockchains",
+					"name": "getBlock",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getBlockchains\",\n    \"params\": {},\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getBlock\",\n    \"params\": {\n        \"blockID\": \"{{blockID}}\",\n        \"encoding\": \"hex\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3758,12 +3701,12 @@
 								"P"
 							]
 						},
-						"description": "Get all the blockchains that exist (excluding the P-Chain). [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetblockchains)"
+						"description": "Get a block by its ID. [More info](https://docs.avax.network/apis/avalanchego/apis/p-chain#platformgetblock)"
 					},
 					"response": []
 				},
 				{
-					"name": "timestamp",
+					"name": "getBlockchains",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -3827,7 +3770,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getCurrentSupply\",\n    \"params\": {}\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getCurrentSupply\",\n    \"params\": {\n        \"subnetID\": \"{{avalancheSubnetId}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3850,35 +3793,6 @@
 					"response": []
 				},
 				{
-					"name": "getTotalStake",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTotalStake\",\n    \"params\": {}\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/P",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"P"
-							]
-						},
-						"description": "Get the total amount of nAVAX staked on the Primary Network. [More info](https://docs.avax.network/build/avalanchego-apis/p-chain#platformgettotalstake)"
-					},
-					"response": []
-				},
-				{
 					"name": "getCurrentValidators",
 					"request": {
 						"method": "POST",
@@ -3886,35 +3800,6 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getCurrentValidators\",\n    \"params\": {\n        \"subnetID\":null,\n        \"nodeIDs\":[]\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/P",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"P"
-							]
-						},
-						"description": "List the current validators of the given Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetcurrentvalidators)"
-					},
-					"response": []
-				},
-				{
-					"name": "getMaxStakeAmount",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getMaxStakeAmount\",\n    \"params\": {\n        \"subnetID\":\"\",\n        \"nodeID\":\"\",\n        \"startTime\": 123,\n        \"endTime\": 321\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3966,13 +3851,42 @@
 					"response": []
 				},
 				{
+					"name": "getMaxStakeAmount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getMaxStakeAmount\",\n    \"params\": {\n        \"subnetID\":\"\",\n        \"nodeID\":\"\",\n        \"startTime\": 123,\n        \"endTime\": 321\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ext/bc/P",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "List the current validators of the given Subnet. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetcurrentvalidators)"
+					},
+					"response": []
+				},
+				{
 					"name": "getMinStake",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getMinStake\",\n    \"params\": {}\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getMinStake\",\n    \"params\": {\n        \"subnetID\": \"{{avalancheSubnetId}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3991,6 +3905,35 @@
 							]
 						},
 						"description": "Returns the minimum stake amount [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetminstake)"
+					},
+					"response": []
+				},
+				{
+					"name": "getPendingValidators",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getPendingValidators\",\n    \"params\": {\n        \"subnetID\": null,\n        \"nodeIDs\": []\n    },\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ext/bc/P",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "List the validators in the pending validator set of the specified Subnet. Each validator is not currently validating the Subnet but will in the future. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetpendingvalidators)"
 					},
 					"response": []
 				},
@@ -4053,71 +3996,13 @@
 					"response": []
 				},
 				{
-					"name": "getTxStatus",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getTxStatus\",\n    \"params\": {\n        \"txID\": \"23CLURk1Czf1aLui1VdcuWSiDeFskfp3Sn8TQG7t6NKfeQRYDj\",\n        \"includeReason\": true\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/P",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"P"
-							]
-						},
-						"description": "Returns the status of a platform chain transaction."
-					},
-					"response": []
-				},
-				{
-					"name": "getPendingValidators",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getPendingValidators\",\n    \"params\": {\n        \"subnetID\": null,\n        \"nodeIDs\": []\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/P",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"P"
-							]
-						},
-						"description": "List the validators in the pending validator set of the specified Subnet. Each validator is not currently validating the Subnet but will in the future. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformgetpendingvalidators)"
-					},
-					"response": []
-				},
-				{
 					"name": "getStakingAssetID",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStakingAssetID\",\n    \"params\": {}\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStakingAssetID\",\n    \"params\": {\n        \"subnetID\": \"{{avalancheSubnetId}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4146,7 +4031,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getSubnets\",\n    \"params\": {},\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getSubnets\",\n    \"params\": {\n        \"ids\": [\"{{avalancheSubnetId}}\"]\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4169,13 +4054,13 @@
 					"response": []
 				},
 				{
-					"name": "getTx",
+					"name": "getTimestamp",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTx\",\n    \"params\" :{\n        \"txID\":\"Cy7cZUot6DCUUDz1VuA2C7vFVWSzW3DgLhYXUAiLWH8BKafbH\",\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTimestamp\",\n    \"params\" :{}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4198,13 +4083,42 @@
 					"response": []
 				},
 				{
-					"name": "getTimestamp",
+					"name": "getTotalStake",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTimestamp\",\n    \"params\" :{}\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTotalStake\",\n    \"params\": {\n        \"subnetID\": \"{{avalancheSubnetId}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ext/bc/P",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ext",
+								"bc",
+								"P"
+							]
+						},
+						"description": "Get the total amount of nAVAX staked on the Primary Network. [More info](https://docs.avax.network/build/avalanchego-apis/p-chain#platformgettotalstake)"
+					},
+					"response": []
+				},
+				{
+					"name": "getTx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getTx\",\n    \"params\" :{\n        \"txID\":\"Cy7cZUot6DCUUDz1VuA2C7vFVWSzW3DgLhYXUAiLWH8BKafbH\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4262,7 +4176,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"P-custom18jma8ppw3nhx5r4ap8clazz0dps7rv5u9xde7p\"],\n        \"sourceChain\": \"X\",\n        \"limit\": 5,\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getUTXOs\",\n    \"params\" :{\n        \"addresses\":[\"{{pchainAddress}}\"],\n        \"sourceChain\": \"P\",\n        \"limit\": 5,\n        \"encoding\": \"hex\",\n        \"startIndex\": {\n            \"address\": \"{{pchainAddress}}\",\n            \"utxo\": \"LUC1cmcxnfNR9LdkACS2ccGKLEK7SYqB4gLLTycQfg1koyfSq\"\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4291,7 +4205,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getValidatorsAt\",\n    \"params\" :{\n        \"height\": 0,\n        \"subnetID\": \"11111111111111111111111111111111LpoYY\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getValidatorsAt\",\n    \"params\" :{\n        \"height\": 0,\n        \"subnetID\": \"{{avalancheSubnetId}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4314,71 +4228,13 @@
 					"response": []
 				},
 				{
-					"name": "exportAVAX",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.exportAVAX\",\n    \"params\": {\n        \"to\":\"{{xchainAddress}}\",\n        \"amount\":54321,\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/P",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"P"
-							]
-						},
-						"description": "Send AVAX from an account on the C-Chain to an address on the X-Chain.\nThis transaction must be signed with the key of the account that the AVAX is sent from and which pays the transaction fee.\nAfter issuing this transaction, you must call the X-Chain’s `importAVA` method to complete the transfer. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformexportavax)"
-					},
-					"response": []
-				},
-				{
-					"name": "exportKey",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"address\": \"{{pchainAddress}}\"\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/ext/bc/P",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"ext",
-								"bc",
-								"P"
-							]
-						},
-						"description": "Get the private key that controls a given address.\nThe returned private key can be added to a user with `platform.importKey`. [More info](https://docs.avax.network/v1.0/en/api/platform/#platformexportkey)"
-					},
-					"response": []
-				},
-				{
 					"name": "importAVAX",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"X\",\n        \"to\":\"{{pchainAddress}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"X\",\n        \"to\":\"{{pchainAddress}}\",\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
