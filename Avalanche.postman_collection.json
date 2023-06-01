@@ -415,13 +415,13 @@
 					"response": []
 				},
 				{
-					"name": "createAddress",
+					"name": "createAddress - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avm.createAddress\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avm.createAddress\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -444,13 +444,13 @@
 					"response": []
 				},
 				{
-					"name": "createAsset",
+					"name": "createAsset - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createAsset\",\n    \"params\" :{\n        \"name\":\"myVariableCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"denomination\": 0,  \n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createAsset\",\n    \"params\" :{\n        \"name\":\"myVariableCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"denomination\": 0,  \n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -473,13 +473,13 @@
 					"response": []
 				},
 				{
-					"name": "createFixedCapAsset",
+					"name": "createFixedCapAsset - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createFixedCapAsset\",\n    \"params\" :{\n        \"name\": \"Test Token\",\n        \"symbol\":\"TEST\",\n        \"denomination\": 0,  \n        \"initialHolders\": [\n            {\n                \"address\":\"{{xchainAddress}}\",\n                \"amount\":400\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createFixedCapAsset\",\n    \"params\" :{\n        \"name\": \"Test Token\",\n        \"symbol\":\"TEST\",\n        \"denomination\": 0,  \n        \"initialHolders\": [\n            {\n                \"address\":\"{{xchainAddress}}\",\n                \"amount\":400\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -502,13 +502,13 @@
 					"response": []
 				},
 				{
-					"name": "createNFTAsset",
+					"name": "createNFTAsset - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createNFTAsset\",\n    \"params\" :{\n        \"name\":\"Coincert\",\n        \"symbol\":\"TIXX\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            },\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createNFTAsset\",\n    \"params\" :{\n        \"name\":\"Coincert\",\n        \"symbol\":\"TIXX\",\n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            },\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -531,13 +531,13 @@
 					"response": []
 				},
 				{
-					"name": "createVariableCapAsset",
+					"name": "createVariableCapAsset - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createVariableCapAsset\",\n    \"params\" :{\n        \"name\":\"myVariableCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"denomination\": 0,  \n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.createVariableCapAsset\",\n    \"params\" :{\n        \"name\":\"myVariableCapAsset\",\n        \"symbol\":\"MFCA\",\n        \"denomination\": 0,  \n        \"minterSets\":[\n            {\n                \"minters\":[\n                    \"{{xchainAddress}}\"\n                ],\n                \"threshold\": 1\n            }\n        ],\n        \"from\": [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -560,13 +560,13 @@
 					"response": []
 				},
 				{
-					"name": "export",
+					"name": "export - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.export\",\n    \"params\" :{\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{cchainbech32address}}\",\n        \"amount\": 4000001000000         ,\n        \"assetID\": \"AVAX\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.export\",\n    \"params\" :{\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{cchainbech32address}}\",\n        \"amount\": 4000001000000         ,\n        \"assetID\": \"AVAX\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -589,13 +589,13 @@
 					"response": []
 				},
 				{
-					"name": "exportKey",
+					"name": "exportKey - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\": \"{{xchainAddress}}\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.exportKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"address\": \"{{xchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -618,13 +618,13 @@
 					"response": []
 				},
 				{
-					"name": "getAddressTxs",
+					"name": "getAddressTxs - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAddressTxs\",\n    \"params\" :{\n        \"address\":\"{{xchainAddress}}\",\n        \"assetID\": \"AVAX\",\n        \"pageSize\": 20,\n        \"cursor\": 0\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAddressTxs\",\n    \"params\" :{\n        \"address\":\"{{xchainAddress}}\",\n        \"assetID\": \"AVAX\",\n        \"pageSize\": 20,\n        \"cursor\": 0\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -647,13 +647,13 @@
 					"response": []
 				},
 				{
-					"name": "getAllBalances",
+					"name": "getAllBalances - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"{{xchainAddress}}\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.getAllBalances\",\n    \"params\" :{\n        \"address\":\"{{xchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -705,33 +705,13 @@
 					"response": []
 				},
 				{
-					"name": "getBalance",
+					"name": "getBalance - DEPRECATED",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"var template = `",
-									"    <table bgcolor=\"#FFFFFF\">",
-									"        <tr>",
-									"            <th>Name</th>",
-									"            <th>Email</th>",
-									"        </tr>",
-									"",
-									"        {{#each response}}",
-									"            <tr>",
-									"                <td>{{name}}</td>",
-									"                <td>{{email}}</td>",
-									"            </tr>",
-									"        {{/each}}",
-									"    </table>",
-									"`;",
-									"",
-									"// Set visualizer",
-									"pm.visualizer.set(template, {",
-									"    // Pass the response body parsed as JSON as `data`",
-									"    response: pm.response.json()",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -742,7 +722,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"jsonrpc\":\"2.0\",\n  \"id\"     : 1,\n  \"method\" :\"avm.getBalance\",\n  \"params\" :{\n      \"address\":\"{{xchainAddress}}\",\n      \"assetID\": \"{{avaxAssetId}}\"\n  }\n} ",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n  \"jsonrpc\":\"2.0\",\n  \"id\"     : 1,\n  \"method\" :\"avm.getBalance\",\n  \"params\" :{\n      \"address\":\"{{xchainAddress}}\",\n      \"assetID\": \"{{avaxAssetId}}\"\n  }\n} ",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -771,27 +751,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"var template = `",
-									"    <table bgcolor=\"#FFFFFF\">",
-									"        <tr>",
-									"            <th>Name</th>",
-									"            <th>Email</th>",
-									"        </tr>",
-									"",
-									"        {{#each response}}",
-									"            <tr>",
-									"                <td>{{name}}</td>",
-									"                <td>{{email}}</td>",
-									"            </tr>",
-									"        {{/each}}",
-									"    </table>",
-									"`;",
-									"",
-									"// Set visualizer",
-									"pm.visualizer.set(template, {",
-									"    // Pass the response body parsed as JSON as `data`",
-									"    response: pm.response.json()",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -831,27 +791,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"var template = `",
-									"    <table bgcolor=\"#FFFFFF\">",
-									"        <tr>",
-									"            <th>Name</th>",
-									"            <th>Email</th>",
-									"        </tr>",
-									"",
-									"        {{#each response}}",
-									"            <tr>",
-									"                <td>{{name}}</td>",
-									"                <td>{{email}}</td>",
-									"            </tr>",
-									"        {{/each}}",
-									"    </table>",
-									"`;",
-									"",
-									"// Set visualizer",
-									"pm.visualizer.set(template, {",
-									"    // Pass the response body parsed as JSON as `data`",
-									"    response: pm.response.json()",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -891,27 +831,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"var template = `",
-									"    <table bgcolor=\"#FFFFFF\">",
-									"        <tr>",
-									"            <th>Name</th>",
-									"            <th>Email</th>",
-									"        </tr>",
-									"",
-									"        {{#each response}}",
-									"            <tr>",
-									"                <td>{{name}}</td>",
-									"                <td>{{email}}</td>",
-									"            </tr>",
-									"        {{/each}}",
-									"    </table>",
-									"`;",
-									"",
-									"// Set visualizer",
-									"pm.visualizer.set(template, {",
-									"    // Pass the response body parsed as JSON as `data`",
-									"    response: pm.response.json()",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1032,13 +952,13 @@
 					"response": []
 				},
 				{
-					"name": "import",
+					"name": "import - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.import\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"P\",\n        \"to\":\"{{xchainAddress}}\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.import\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"P\",\n        \"to\":\"{{xchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1061,13 +981,13 @@
 					"response": []
 				},
 				{
-					"name": "importKey",
+					"name": "importKey - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.importKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1119,13 +1039,13 @@
 					"response": []
 				},
 				{
-					"name": "listAddresses",
+					"name": "listAddresses - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avm.listAddresses\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"avm.listAddresses\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1148,13 +1068,13 @@
 					"response": []
 				},
 				{
-					"name": "mint",
+					"name": "mint - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mint\",\n    \"params\" :{\n        \"amount\": 10000000,\n        \"assetID\": \"2qnR9pLQTDZ9boSbcrcjS4n1DJJkzbkNsJzgwYvmRy8uv47fZT\",\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\": \"{{xchainAddress}}\",\n        \"minters\": [\n            \"{{xchainAddress}}\"\n        ],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mint\",\n    \"params\" :{\n        \"amount\": 10000000,\n        \"assetID\": \"2qnR9pLQTDZ9boSbcrcjS4n1DJJkzbkNsJzgwYvmRy8uv47fZT\",\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\": \"{{xchainAddress}}\",\n        \"minters\": [\n            \"{{xchainAddress}}\"\n        ],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1177,13 +1097,13 @@
 					"response": []
 				},
 				{
-					"name": "mintNFT",
+					"name": "mintNFT - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"assetID\":\"2KGdt2HpFKpTH5CtGZjYt5XPWs6Pv9DLoRBhiFfntbezdRvZWP\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{xchainAddress}}\",\n        \"minters\":[\n            \"{{xchainAddress}}\"\n        ],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" ,\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     : 1,\n    \"method\" :\"avm.mintNFT\",\n    \"params\" :{\n        \"assetID\":\"2KGdt2HpFKpTH5CtGZjYt5XPWs6Pv9DLoRBhiFfntbezdRvZWP\",\n        \"payload\":\"2EWh72jYQvEJF9NLk\",\n        \"from\": [\"{{xchainAddress}}\"],\n        \"to\":\"{{xchainAddress}}\",\n        \"minters\":[\n            \"{{xchainAddress}}\"\n        ],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" ,\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1206,13 +1126,13 @@
 					"response": []
 				},
 				{
-					"name": "send",
+					"name": "send - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" : \"{{avaxAssetId}}\",\n        \"amount\"  : 2000000000,\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"{{xchainAddress}}\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.send\",\n    \"params\" :{ \n        \"assetID\" : \"{{avaxAssetId}}\",\n        \"amount\"  : 2000000000,\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      : \"{{xchainAddress}}\",\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1235,13 +1155,13 @@
 					"response": []
 				},
 				{
-					"name": "sendMultiple",
+					"name": "sendMultiple - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendMultiple\",\n    \"params\" :{ \n        \"outputs\": [\n            {\n                \"assetID\" : \"{{avaxAssetId}}\",\n                \"to\"      : \"{{xchainAddress}}\",\n                \"amount\"  : 1000000000\n            }\n        ],\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"{{memo}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendMultiple\",\n    \"params\" :{ \n        \"outputs\": [\n            {\n                \"assetID\" : \"{{avaxAssetId}}\",\n                \"to\"      : \"{{xchainAddress}}\",\n                \"amount\"  : 1000000000\n            }\n        ],\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"memo\"    : \"{{memo}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1264,13 +1184,13 @@
 					"response": []
 				},
 				{
-					"name": "sendNFT",
+					"name": "sendNFT - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendNFT\",\n    \"params\" :{ \n        \"assetID\" :\"2KGdt2HpFKpTH5CtGZjYt5XPWs6Pv9DLoRBhiFfntbezdRvZWP\",\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      :\"{{xchainAddress}}\",\n        \"groupID\" : 0,\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.sendNFT\",\n    \"params\" :{ \n        \"assetID\" :\"2KGdt2HpFKpTH5CtGZjYt5XPWs6Pv9DLoRBhiFfntbezdRvZWP\",\n        \"from\"    : [\"{{xchainAddress}}\"],\n        \"to\"      :\"{{xchainAddress}}\",\n        \"groupID\" : 0,\n        \"changeAddr\": \"{{xchainAddress}}\",\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\" \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3359,13 +3279,13 @@
 			"name": "IPC",
 			"item": [
 				{
-					"name": "publishBlockchain",
+					"name": "publishBlockchain - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ipcs.publishBlockchain\",\n    \"params\":{\n        \"blockchainID\":\"{{avalanceBlockchainId}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ipcs.publishBlockchain\",\n    \"params\":{\n        \"blockchainID\":\"{{avalanceBlockchainId}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3387,13 +3307,13 @@
 					"response": []
 				},
 				{
-					"name": "unpublishBlockchain",
+					"name": "unpublishBlockchain - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ipcs.unpublishBlockchain\",\n    \"params\":{\n        \"blockchainID\":\"{{avalanceBlockchainId}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"ipcs.unpublishBlockchain\",\n    \"params\":{\n        \"blockchainID\":\"{{avalanceBlockchainId}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3421,13 +3341,13 @@
 			"name": "Keystore",
 			"item": [
 				{
-					"name": "createUser",
+					"name": "createUser - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.createUser\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.createUser\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3449,13 +3369,13 @@
 					"response": []
 				},
 				{
-					"name": "deleteUser",
+					"name": "deleteUser - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.deleteUser\",\n    \"params\" : {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.deleteUser\",\n    \"params\" : {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3477,13 +3397,13 @@
 					"response": []
 				},
 				{
-					"name": "exportUser",
+					"name": "exportUser  - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"keystore.exportUser\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"id\": 1,\n    \"method\": \"keystore.exportUser\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3505,13 +3425,13 @@
 					"response": []
 				},
 				{
-					"name": "importUser",
+					"name": "importUser - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.importUser\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"user\"    :\"0x0000b79e54bb3452985874844fd02ce47671725850111b14d5b06d4b3e142ec852b39d1be2bdead684977bc0a1bfa6eeb06e000000040000004066687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f292500000000000000000000000000000000000000000000000000000000000000000000004c00000000002a92a15386259d71410fe602a9a1e2207a7afae3efd8d86f142577405476e5337a0736ba095b0fe911cb3100000018226dc5aec589008bc87ce142d5488d942f7e9d37374be99f0000003466687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f29253cb7d3842e8cee6a0ebd09f1fe884f6861e1b29c00000052000000000030b46ad90c1ef2f22282a9ab9c045cf190506148a7afcf4e94360e7e4109ef9abbc4aa97dd84533a5b081c0da489e205f00000001825e30947b222849b4f69b0a1eaf1dd49c82f5b64995d3c4e00000040faa57ee922f01eb75ca224d2e8aaf9cb60973d011e0ac08c7b3798c3aacf79de00000000000000000000000000000000000000000000000000000000000000000000004c00000000002a098545758bbf938acd508762ffff24bd2e8e0f80313fb0957c51fea30df6f304a94568c30dfb06257deb00000018e722d87e7d5964aa8a8772b0985d0723d398681ef29fad7900000034faa57ee922f01eb75ca224d2e8aaf9cb60973d011e0ac08c7b3798c3aacf79de3cb7d3842e8cee6a0ebd09f1fe884f6861e1b29c00000052000000000030722156f457680f16cf010d7cb3b350aaf210ae9ed58aaf89017f0046c5380ddf76fb944a6ff9a287a6a6e6c6303c751a000000183edfb66b8b01e6197507cde7e4909f816d3accf753155f96b346b48c\",\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.importUser\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"user\"    :\"0x0000b79e54bb3452985874844fd02ce47671725850111b14d5b06d4b3e142ec852b39d1be2bdead684977bc0a1bfa6eeb06e000000040000004066687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f292500000000000000000000000000000000000000000000000000000000000000000000004c00000000002a92a15386259d71410fe602a9a1e2207a7afae3efd8d86f142577405476e5337a0736ba095b0fe911cb3100000018226dc5aec589008bc87ce142d5488d942f7e9d37374be99f0000003466687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f29253cb7d3842e8cee6a0ebd09f1fe884f6861e1b29c00000052000000000030b46ad90c1ef2f22282a9ab9c045cf190506148a7afcf4e94360e7e4109ef9abbc4aa97dd84533a5b081c0da489e205f00000001825e30947b222849b4f69b0a1eaf1dd49c82f5b64995d3c4e00000040faa57ee922f01eb75ca224d2e8aaf9cb60973d011e0ac08c7b3798c3aacf79de00000000000000000000000000000000000000000000000000000000000000000000004c00000000002a098545758bbf938acd508762ffff24bd2e8e0f80313fb0957c51fea30df6f304a94568c30dfb06257deb00000018e722d87e7d5964aa8a8772b0985d0723d398681ef29fad7900000034faa57ee922f01eb75ca224d2e8aaf9cb60973d011e0ac08c7b3798c3aacf79de3cb7d3842e8cee6a0ebd09f1fe884f6861e1b29c00000052000000000030722156f457680f16cf010d7cb3b350aaf210ae9ed58aaf89017f0046c5380ddf76fb944a6ff9a287a6a6e6c6303c751a000000183edfb66b8b01e6197507cde7e4909f816d3accf753155f96b346b48c\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3533,13 +3453,13 @@
 					"response": []
 				},
 				{
-					"name": "listUsers",
+					"name": "listUsers - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.listUsers\"\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"keystore.listUsers\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3596,13 +3516,13 @@
 			"name": "PlatformVM",
 			"item": [
 				{
-					"name": "addDelegator",
+					"name": "addDelegator - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"startTime\":1613347036,\n        \"endTime\":1631215800,\n        \"stakeAmount\":200000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addDelegator\",\n    \"params\": {\n        \"nodeId\":\"{{avalancheNodeId}}\",\n        \"startTime\":1613347036,\n        \"endTime\":1631215800,\n        \"stakeAmount\":200000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3625,13 +3545,13 @@
 					"response": []
 				},
 				{
-					"name": "addSubnetValidator",
+					"name": "addSubnetValidator - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"subnetID\":\"{{avalancheSubnetId}}\",\n        \"startTime\":1625782598,\n        \"endTime\":1627078419,\n        \"weight\":20,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addSubnetValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"subnetID\":\"{{avalancheSubnetId}}\",\n        \"startTime\":1625782598,\n        \"endTime\":1627078419,\n        \"weight\":20,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3654,13 +3574,13 @@
 					"response": []
 				},
 				{
-					"name": "addValidator",
+					"name": "addValidator - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"startTime\":1606245174,\n        \"endTime\":1608837056,\n        \"stakeAmount\":2000000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"delegationFeeRate\":10,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.addValidator\",\n    \"params\": {\n        \"nodeID\":\"{{avalancheNodeId}}\",\n        \"startTime\":1606245174,\n        \"endTime\":1608837056,\n        \"stakeAmount\":2000000000000,\n        \"rewardAddress\": \"{{pchainAddress}}\",\n        \"delegationFeeRate\":10,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3683,13 +3603,13 @@
 					"response": []
 				},
 				{
-					"name": "createAddress",
+					"name": "createAddress - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createAddress\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createAddress\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3712,13 +3632,13 @@
 					"response": []
 				},
 				{
-					"name": "createBlockchain",
+					"name": "createBlockchain - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"avm\",\n        \"SubnetID\":\"{{avalancheSubnetId}}\",\n        \"name\":\"My new avm\",\n        \"genesisData\": \"111115LHK2ZCYttSKPmmhsTDSuKiCkmHz65nUS1YqybvjirwGLLt376k1RwnTt72WobPqrG7rmgrKVqSq6VxDsKXYGnRmfhdLCEhsYjM\",\n        \"encoding\": \"hex\",\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createBlockchain\",\n    \"params\" : {\n        \"vmID\":\"avm\",\n        \"SubnetID\":\"{{avalancheSubnetId}}\",\n        \"name\":\"My new avm\",\n        \"genesisData\": \"111115LHK2ZCYttSKPmmhsTDSuKiCkmHz65nUS1YqybvjirwGLLt376k1RwnTt72WobPqrG7rmgrKVqSq6VxDsKXYGnRmfhdLCEhsYjM\",\n        \"encoding\": \"hex\",\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3741,13 +3661,13 @@
 					"response": []
 				},
 				{
-					"name": "createSubnet",
+					"name": "createSubnet - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"{{pchainAddress}}\"\n        ],\n        \"threshold\":1,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\":\"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.createSubnet\",\n    \"params\": {\n        \"controlKeys\":[\n            \"{{pchainAddress}}\"\n        ],\n        \"threshold\":1,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\":\"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3770,13 +3690,13 @@
 					"response": []
 				},
 				{
-					"name": "exportAVAX",
+					"name": "exportAVAX - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.exportAVAX\",\n    \"params\": {\n        \"to\":\"{{xchainAddress}}\",\n        \"amount\":54321,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.exportAVAX\",\n    \"params\": {\n        \"to\":\"{{xchainAddress}}\",\n        \"amount\":54321,\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\",\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3799,13 +3719,13 @@
 					"response": []
 				},
 				{
-					"name": "exportKey",
+					"name": "exportKey - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"address\": \"{{pchainAddress}}\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.exportKey\",\n    \"params\" :{\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\",\n        \"address\": \"{{pchainAddress}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3828,13 +3748,13 @@
 					"response": []
 				},
 				{
-					"name": "getBalance",
+					"name": "getBalance - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"addresses\":[\"{{pchainAddress}}\"]    \n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getBalance\",\n    \"params\" :{\n      \"addresses\":[\"{{pchainAddress}}\"]    \n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3886,13 +3806,13 @@
 					"response": []
 				},
 				{
-					"name": "getBlockchains",
+					"name": "getBlockchains - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getBlockchains\",\n    \"params\": {},\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getBlockchains\",\n    \"params\": {},\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4031,13 +3951,13 @@
 					"response": []
 				},
 				{
-					"name": "getMaxStakeAmount",
+					"name": "getMaxStakeAmount - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getMaxStakeAmount\",\n    \"params\": {\n        \"subnetID\":\"\",\n        \"nodeID\":\"\",\n        \"startTime\": 123,\n        \"endTime\": 321\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getMaxStakeAmount\",\n    \"params\": {\n        \"subnetID\":\"\",\n        \"nodeID\":\"\",\n        \"startTime\": 123,\n        \"endTime\": 321\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4118,13 +4038,13 @@
 					"response": []
 				},
 				{
-					"name": "getRewardUTXOs",
+					"name": "getRewardUTXOs - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getRewardUTXOs\",\n    \"params\" :{\n        \"txID\":\"2nmH8LithVbdjaXsxVQCQfXtzN9hBbmebrsaEYnLM9T32Uy2Y4\",\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getRewardUTXOs\",\n    \"params\" :{\n        \"txID\":\"2nmH8LithVbdjaXsxVQCQfXtzN9hBbmebrsaEYnLM9T32Uy2Y4\",\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4147,13 +4067,13 @@
 					"response": []
 				},
 				{
-					"name": "getStake",
+					"name": "getStake - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStake\",\n    \"params\": {\n        \"addresses\": [\"{{pchainAddress}}\"],\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.getStake\",\n    \"params\": {\n        \"addresses\": [\"{{pchainAddress}}\"],\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4205,13 +4125,13 @@
 					"response": []
 				},
 				{
-					"name": "getSubnets",
+					"name": "getSubnets - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getSubnets\",\n    \"params\": {\n        \"ids\": [\"{{avalancheSubnetId}}\"]\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.getSubnets\",\n    \"params\": {\n        \"ids\": [\"{{avalancheSubnetId}}\"]\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4408,13 +4328,13 @@
 					"response": []
 				},
 				{
-					"name": "importAVAX",
+					"name": "importAVAX - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"X\",\n        \"to\":\"{{pchainAddress}}\",\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.importAVAX\",\n    \"params\": {\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"sourceChain\": \"X\",\n        \"to\":\"{{pchainAddress}}\",\n        \"from\": [\"{{pchainAddress}}\"],\n        \"changeAddr\": \"{{pchainAddress}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4437,13 +4357,13 @@
 					"response": []
 				},
 				{
-					"name": "importKey",
+					"name": "importKey - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    }\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"platform.importKey\",\n    \"params\" :{\n        \"username\":\"{{avalancheUsername}}\",\n        \"password\":\"{{avalanchePassword}}\",\n        \"privateKey\":\"{{privkey}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4495,13 +4415,13 @@
 					"response": []
 				},
 				{
-					"name": "listAddresses",
+					"name": "listAddresses - DEPRECATED",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.listAddresses\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
+							"raw": "//Deprecated as of v1.9.12.\n\n\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.listAddresses\",\n    \"params\": {\n        \"username\": \"{{avalancheUsername}}\",\n        \"password\": \"{{avalanchePassword}}\"\n    },\n    \"id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
