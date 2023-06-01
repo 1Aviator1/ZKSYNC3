@@ -33,7 +33,7 @@
 								"admin"
 							]
 						},
-						"description": "Assign an API an alias, a different endpoint for the API. The original endpoint will still work. This change only affects this node; other nodes will not know about this alias. [More info](https://docs.avax.network/build/apis/admin-api#admin-alias)"
+						"description": "Assign an API an alias, a different endpoint for the API. The original endpoint will still work. This change only affects this node; other nodes will not know about this alias. [More info](https://docs.avax.network/apis/avalanchego/apis/admin#adminalias)"
 					},
 					"response": []
 				},
@@ -61,7 +61,7 @@
 								"admin"
 							]
 						},
-						"description": "Give a blockchain an alias, a different name that can be used any place the blockchain’s ID is used. [More info](https://docs.avax.network/build/apis/admin-api#admin-aliaschain)"
+						"description": "Give a blockchain an alias, a different name that can be used any place the blockchain’s ID is used. [More info](https://docs.avax.network/apis/avalanchego/apis/admin#adminaliaschain)"
 					},
 					"response": []
 				},
@@ -89,7 +89,7 @@
 								"admin"
 							]
 						},
-						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/build/apis/admin-api#admin-lockprofile)"
+						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/apis/avalanchego/apis/admin#admingetchainaliases)"
 					},
 					"response": []
 				},
@@ -117,7 +117,7 @@
 								"admin"
 							]
 						},
-						"description": "Returns log and display levels of loggers. [More info](https://docs.avax.network/build/avalanchego-apis/admin#admingetloggerlevel)"
+						"description": "Returns log and display levels of loggers. [More info](https://docs.avax.network/apis/avalanchego/apis/admin#admingetloggerlevel)"
 					},
 					"response": []
 				},
@@ -173,7 +173,7 @@
 								"admin"
 							]
 						},
-						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/build/apis/admin-api#admin-lockprofile)"
+						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/apis/avalanchego/apis/admin#adminlockprofile)"
 					},
 					"response": []
 				},
@@ -201,7 +201,7 @@
 								"admin"
 							]
 						},
-						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/build/apis/admin-api#admin-memoryprofile)"
+						"description": "Dump the mutex statistics of the node to the specified file. [More info](https://docs.avax.network/apis/avalanchego/apis/admin#adminmemoryprofile)"
 					},
 					"response": []
 				},
@@ -229,7 +229,7 @@
 								"admin"
 							]
 						},
-						"description": "Sets log and display levels of loggers. [More info](https://docs.avax.network/build/avalanchego-apis/admin#adminsetloggerlevel)"
+						"description": "Sets log and display levels of loggers. [More info](https://docs.avax.network/apis/avalanchego/apis/admin#adminsetloggerlevel)"
 					},
 					"response": []
 				},
@@ -257,7 +257,7 @@
 								"admin"
 							]
 						},
-						"description": "Start profiling the CPU utilization of the node. Will write the profile to the specified file on stop. [More info](https://docs.avax.network/build/apis/admin-api#admin-startcpuprofiler)"
+						"description": "Start profiling the CPU utilization of the node. Will write the profile to the specified file on stop. [More info](https://docs.avax.network/apis/avalanchego/apis/admin#adminstartcpuprofiler)"
 					},
 					"response": []
 				},
@@ -285,7 +285,7 @@
 								"admin"
 							]
 						},
-						"description": "Stop the CPU profile that was previously started. [More info](https://docs.avax.network/build/apis/admin-api#admin-stopcpuprofiler)"
+						"description": "Stop the CPU profile that was previously started. [More info](https://docs.avax.network/apis/avalanchego/apis/admin#adminstopcpuprofiler)"
 					},
 					"response": []
 				}
@@ -319,7 +319,7 @@
 								"auth"
 							]
 						},
-						"description": "Creates a new authorization token that grants access to one or more API endpoints.\n [More info](https://docs.avax.network/build/apis/auth-api#auth-newtoken)"
+						"description": "Creates a new authorization token that grants access to one or more API endpoints.  \n[More info](https://docs.avax.network/apis/avalanchego/apis/auth#authnewtoken)"
 					},
 					"response": []
 				},
@@ -347,7 +347,7 @@
 								"auth"
 							]
 						},
-						"description": "Revoke a previously generated token. The given token will no longer grant access to any endpoint.\nIf the token is invalid, does nothing. [More info](https://docs.avax.network/build/apis/auth-api#auth-revoketoken)"
+						"description": "Revoke a previously generated token. The given token will no longer grant access to any endpoint.  \nIf the token is invalid, does nothing. [More info](https://docs.avax.network/apis/avalanchego/apis/auth#authrevoketoken)"
 					},
 					"response": []
 				},
@@ -375,7 +375,7 @@
 								"auth"
 							]
 						},
-						"description": "Change this node's authorization token password. Any authorization tokens created under an old password will become invalid. [More info](https://docs.avax.network/build/apis/auth-api#auth-changepassword)"
+						"description": "Change this node's authorization token password. Any authorization tokens created under an old password will become invalid. [More info](https://docs.avax.network/apis/avalanchego/apis/auth#authchangepassword)"
 					},
 					"response": []
 				}
@@ -802,7 +802,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getBlockByHeight\",\n    \"params\" :{\n        \"height\": {{height}},\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avm.getBlockByHeight\",\n    \"params\" :{\n        \"height\": {{xhcainBlockHeight}},\n        \"encoding\": \"hex\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
