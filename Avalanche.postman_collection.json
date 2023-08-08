@@ -5018,9 +5018,18 @@
 									"    outputsAmount.innerHTML = outAmountInAvax + \" AVAX\"",
 									"",
 									"}",
+									"",
+									"function convertTime() {",
+									"    const dateCell = document.getElementById(\"time\")",
+									"    const date = dateCell.innerText",
+									"    const splitDate = date.split(\"T\")",
+									"    const time = splitDate[1].split(\"000Z\")",
+									"",
+									"    dateCell.innerHTML = splitDate[0] + \"  |  \" + time[0]",
+									"}",
 									"</script>",
 									"",
-									"<body onLoad = \"convertToAvax()\">",
+									"<body onLoad = \"convertToAvax(), convertTime()\">",
 									"",
 									"<table>",
 									"        <tr>",
@@ -5059,7 +5068,7 @@
 									"",
 									"        <tr>",
 									"        <td class = \"generalInfo\"> Date: </td>",
-									"        <td class = \"generalInfo\" colspan=\"2\"> {{response.timestamp}} </td>",
+									"        <td class = \"generalInfo\" id = \"time\" colspan=\"2\"> {{response.timestamp}} </td>",
 									"        </tr>",
 									"",
 									"        <tr>",
@@ -5300,7 +5309,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getAtomicTx\",\n    \"params\" :{\n        \"txID\":\"9zX25brVj24xMBXJFw973MGVgkuDwvFPyBQoqo4pLye5mBkhN\",\n        \"encoding\": \"hex\"\n    }\n}",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"id\"     :1,\n    \"method\" :\"avax.getAtomicTx\",\n    \"params\" :{\n        \"txID\":\"9zX25brVj24xMBXJFw973MGVgkuDwvFPyBQoqo4pLye5mBkhN\",\n        \"encoding\": \"hex\"\n    }\n}\n\n//choose \"Visualize\" from the output section to see the decoded tx",
 							"options": {
 								"raw": {
 									"language": "json"
